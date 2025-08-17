@@ -24,6 +24,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
 import { ExternalLink } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function Home() {
   return (
@@ -100,7 +101,9 @@ export default function Home() {
                       <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
                       <div className="p-6 flex-grow flex flex-col">
                         <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                        <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
+                        <ScrollArea className="h-32 pr-4 mb-4">
+                           <p className="text-muted-foreground flex-grow">{project.description}</p>
+                        </ScrollArea>
                         <div className="flex flex-wrap gap-2 mb-4">
                           {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
                         </div>
@@ -125,8 +128,8 @@ export default function Home() {
               {EXPERIENCE_DATA.entries.map((item, index) => (
                 <div key={index} className="relative mb-8 pl-8 md:pl-0">
                   <div className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-primary rounded-full -translate-x-1/2 border-4 border-background"></div>
-                  <div className={ `md:pl-12 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right md:pl-0 md:pr-12'}` }>
-                    <PixelCard className={` ${index % 2 === 0 ? '' : 'md:float-right'}` }>
+                  <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12'}` }>
+                    <PixelCard>
                       <div className="p-6">
                         <p className="text-sm text-muted-foreground">{item.date}</p>
                         <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
