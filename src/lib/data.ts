@@ -54,72 +54,72 @@ export const PROJECTS_DATA = {
     description: "Embark on a journey through my completed quests. Each project is a level I've designed and conquered.",
     projects: [
         {
-            title: "Outfit Recommendation Chatbot using NVIDIA",
-            description: "Developed a personalized outfit recommendation system using Retrieval-Augmented Generation (RAG) architecture powered by NVIDIA LLM (Llama-3.1 Nemotron Nano 8B). Integrated FAISS for fast similarity search on vectorized instruction-following dataset. Applied prompt engineering to fine-tune responses in the style of a fashion stylist. The system provides context-aware, text-based outfit suggestions with potential for future multimodal expansion and real-world deployment.",
-            image: "https://placehold.co/600x400.png",
-            dataAiHint: "fashion chatbot",
-            skills: ["NVIDIA", "RAG", "FAISS", "LLM"],
-            link: "#",
-            year: "2025",
-            collaborators: ["-"]
-        },
-        {
-            title: "Infographic: Exploring Rice Production in Indonesia",
-            description: "Behind Indonesia's glittering achievement as one of the world's largest rice producers lies a paradox that challenges national food security. The infographic 'From Fields to Distribution' reveals a stark contrast between impressive production milestones and the unequal realities of distribution. An infographic submitted to the 2025 Gammafest IPB Statistical Visualization Competition.",
-            image: "https://placehold.co/600x400.png",
-            dataAiHint: "rice fields infographic",
-            skills: ["Infographic", "Data Visualization"],
-            link: "#",
-            year: "2025",
-            collaborators: ["-"]
-        },
-        {
-            title: "Toy Store KPI Analysis with PowerBI Dashboard",
-            description: "As one of the most dynamic sectors in retail, the toy industry is undergoing rapid changes driven by product innovation and shifting consumer preferences. 'Maven Toys,' as one of the key players in this industry, must have a deep understanding of its sales performance in order to compete effectively. In this context, the use of BI dashboards is becoming increasingly important to provide data-driven insights to management. Dashboards not only present information visually but also enable in-depth interactive analysis.",
-            image: "https://placehold.co/600x400.png",
-            dataAiHint: "business dashboard toys",
-            skills: ["PowerBI", "Dashboard", "KPI Analysis"],
-            link: "#",
-            year: "2025",
-            collaborators: ["-"]
-        },
-        {
-            title: "Plankton Classification using ResNet",
-            description: "Plankton classification model using Deep Learning based on the ResNet-101 architecture pre-trained on ImageNet. The model achieved accuracies of 99.55% (training), 88.17% (validation), and 99.15% (testing).",
-            image: "https://placehold.co/600x400.png",
-            dataAiHint: "plankton microscope",
-            skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
-            link: "#",
-            year: "2025",
-            collaborators: ["-"]
-        },
-        {
             title: "Spices Detection With Streamlit",
-            description: "Spice Detection is an AI-powered online platform designed to identify 31 varieties of Indonesian spices through image analysis. Developed using Python and implemented with the Streamlit framework, this platform boasts a prediction accuracy of up to 83%.",
+            description: "Spice Detection is an AI-powered online platform designed to identify 31 varieties of Indonesian spices through image analysis. Developed using Python and implemented with the Streamlit framework, this platform boasts a prediction accuracy of up to 83% and aims to simplify the identification and enrich public knowledge of Indonesia's diverse spices.",
             image: "https://placehold.co/600x400.png",
             dataAiHint: "indonesian spices",
             skills: ["Streamlit", "Python", "AI", "Image Analysis"],
-            link: "#",
+            link: "https://deteksi-rempah.streamlit.app/",
             year: "2024",
             collaborators: ["-"]
         },
         {
             title: "Know Your Batik Website With Streamlit",
-            description: "Know Your Batik is a website that allows users to detect types of batik based on uploaded images or photos. This website is designed to help users recognize and understand different types of batik through image processing technology.",
+            description: "Know Your Batik is a website that allows users to detect types of batik based on uploaded images or photos. To address the lack of public understanding about the variety of batik and to prevent cultural claims by other countries, the Know Your Batik website serves as an innovative solution. This website is designed to help users recognize and understand different types of batik through image processing technology.",
             image: "https://placehold.co/600x400.png",
             dataAiHint: "batik pattern",
             skills: ["Streamlit", "Image Processing", "Python"],
-            link: "#",
+            link: "https://knowyourbatik.streamlit.app/",
             year: "2024",
-            collaborators: ["-"]
+            collaborators: ["Raid Muhammad Naufal", "Deva Anjani", "Natasya Egalina"]
         },
         {
             title: "Journal Mancing With Streamlit",
-            description: "A final project for a Programming Algorithms course involved creating a fishing log app using Python libraries like Streamlit, Sqlite3, and Pandas. The application functions similarly to a note-taking app on mobile devices but is tailored for fishing activities.",
+            description: "A final project for a Programming Algorithms course involved creating a fishing log app using Python libraries like Streamlit, Sqlite3, and Pandas. The application, which has been deployed on the Streamlit community and stored in a GitHub repository, functions similarly to a note-taking app on mobile devices but is tailored for fishing activities. This specialized app offers various features to aid anglers in recording and monitoring their fishing endeavors, aiming to enhance their fishing experiences",
             image: "https://placehold.co/600x400.png",
             dataAiHint: "fishing app",
-            skills: ["Streamlit",, "Python", "SQLite", "Pandas"],
-            link: "#",
+            skills: ["Streamlit", "Python", "SQLite", "Pandas"],
+            link: "https://github.com/alkhrzmy/journeymancing",
+            year: "2023",
+            collaborators: ["Gymnastiar", "Natasya Egalina", "Khusnunisa"]
+        },
+        {
+            title: "Paper at UPN Jatim Data Science National Seminar",
+            description: "Title: Metode Seleksi Variabel dalam Pemodelan Regresi Linear Data Curah Hujan Provinsi Lampung. Abstract: Understanding the amount of rainfall is crucial for engineering planning... The model with five variables is validated as the best model.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "research paper regression",
+            skills: ["Linear Regression", "Variable Selection", "R"],
+            link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
+            year: "2024",
+            collaborators: ["Elok Fiola", "Presilia", "Dea Mutia", "Mika Alvionita", "Febri Irawati"]
+        },
+        {
+            title: "Plankton Classification using ResNet",
+            description: "This project develops an automatic plankton classification model using Deep Learning based on the ResNet-101 architecture pre-trained on ImageNet... The implementation of this model holds potential for efficiently supporting marine ecosystem health monitoring, environmental change detection, and biodiversity studies.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "plankton microscope",
+            skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
+            link: "https://github.com/strng-fer/PlanktonDetection/",
+            year: "2025",
+            collaborators: ["-"]
+        },
+        {
+            title: "Gowalla Dataset Exploratory",
+            description: "The Gowalla dataset provides us with the opportunity to explore the Social Map and Travel Ecosystem of Gowalla Users... user profile visualizations will help identify the most active users and their favorite frequently visited locations.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "social media map",
+            skills: ["Data Visualization", "Network Analysis", "Python"],
+            link: "https://drive.google.com/drive/folders/1vhED9LFEvF52u0-hflfeULJkM6nDu5xc?usp=sharing",
+            year: "2024",
+            collaborators: ["Hermawan Manurung", "Happy Syahrul Ramadhan"]
+        },
+        {
+            title: "Global CO2 Emissions Dashboard",
+            description: "This dashboard presents an analysis of global CO2 emissions through various visualizations. The left panel highlights the top CO2-emitting countries, while the world map in the center illustrates the distribution of emissions per capita... This dashboard is designed to provide insights into emission patterns and their global impact.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "co2 emissions dashboard",
+            skills: ["Tableau", "Data Visualization", "Dashboard"],
+            link: "https://public.tableau.com/views/Book1_17428733383470/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
             year: "2023",
             collaborators: ["-"]
         },
