@@ -53,6 +53,14 @@ export const PROJECTS_DATA = {
     description: "Embark on a journey through my completed quests. Each project is a level I've designed and conquered.",
     projects: [
         {
+            title: "Outfit Recommendation Chatbot using NVIDIA",
+            description: "Developed a personalized outfit recommendation system using Retrieval-Augmented Generation (RAG) architecture powered by NVIDIA LLM (Llama-3.1 Nemotron Nano 8B). Integrated FAISS for fast similarity search on vectorized instruction-following dataset. Applied prompt engineering to fine-tune responses in the style of a fashion stylist. The system provides context-aware, text-based outfit suggestions with potential for future multimodal expansion and real-world deployment.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "fashion chatbot",
+            skills: ["NVIDIA", "RAG", "FAISS", "LLM"],
+            link: "#"
+        },
+        {
             title: "Infographic: Exploring Rice Production in Indonesia",
             description: "Behind Indonesia's glittering achievement as one of the world's largest rice producers lies a paradox that challenges national food security. The infographic 'From Fields to Distribution' reveals a stark contrast between impressive production milestones and the unequal realities of distribution. An infographic submitted to the 2025 Gammafest IPB Statistical Visualization Competition.",
             image: "https://placehold.co/600x400.png",
@@ -108,10 +116,16 @@ export const EXPERIENCE_DATA = {
     description: "Chronicles of my professional adventures in the realm of data.",
     entries: [
         {
-            date: "September 2023 – January 2025",
-            title: "Basic Math Tutorial Assistant",
+            date: "June 2025 – Now",
+            title: "Research Assistant Intern",
+            company: "Indonesian National Research and Innovation Agency (BRIN-RI)",
+            description: "Drafted a research paper on deep learning modeling for plankton identification from Belitung Island. Trained and evaluated four deep learning architectures (AlexNet, DenseNet, VGG16, and InceptionV3) on the Belitung plankton dataset, achieving the highest accuracy of 95% with the DenseNet model. Performed manual labeling and segmentation of 86 microscopic plankton images, and applied data augmentation techniques to expand the dataset to over 500 annotated images. Developed and refined an Android-based plankton identification application integrated with a mobile microscope."
+        },
+        {
+            date: "January 2025 – June 2025",
+            title: "Statistical for Data Science Practicum Assistant",
             company: "Sumatera Institute of Technology",
-            description: "Teaching 10 basic math module to 130+ first-year students across 2 semester. Discussing issues raised by the professor, answering questions from mid-semester and end-of-semester exams. Designed and assigned 10+ self-study task modules per semester, resulting in an 85% completion rate and improved independent problem-solving skills. Increased student enthusiasm through interactive workshops, reflected in a 4.5/5 satisfaction score in post-semester feedback surveys. Evaluate the comprehension and difficulties of first-year students to avoid hindering their learning."
+            description: "Taught statistical concepts (hypothesis testing, regression) to 60+ students. Assisted in 10 laboratory sessions on R tools. Managing 500+ pre-test data and student assignments. Mentored 1 students group in capstone projects for real-world problems. Evaluating students' learning outcomes."
         },
         {
             date: "September 2024 – December 2024",
@@ -120,11 +134,11 @@ export const EXPERIENCE_DATA = {
             description: "Delivered practical programming labs to 60+ students to understanding of the Programming Algorithms course. Assisted in 10 laboratory sessions, helping 95% of students successfully complete Python algorithmic projects. Managing 500+ pre-test data and student assignments. Motivating students. Evaluating students' learning outcomes."
         },
         {
-            date: "January 2025 – Now",
-            title: "Statistical for Data Science Practicum Assistant",
+            date: "September 2023 – January 2025",
+            title: "Basic Math Tutorial Assistant",
             company: "Sumatera Institute of Technology",
-            description: "Taught statistical concepts (hypothesis testing, regression) to 60+ students. Assisted in 10 laboratory sessions on R tools. Managing 500+ pre-test data and student assignments. Mentored 1 students group in capstone projects for real-world problems. Evaluating students' learning outcomes."
-        }
+            description: "Teaching 10 basic math module to 130+ first-year students across 2 semester. Discussing issues raised by the professor, answering questions from mid-semester and end-of-semester exams. Designed and assigned 10+ self-study task modules per semester, resulting in an 85% completion rate and improved independent problem-solving skills. Increased student enthusiasm through interactive workshops, reflected in a 4.5/5 satisfaction score in post-semester feedback surveys. Evaluate the comprehension and difficulties of first-year students to avoid hindering their learning."
+        },
     ]
 }
 
@@ -132,7 +146,7 @@ export const EDUCATION_DATA = {
     title: "Educational Lore",
     entries: [
         {
-            degree: "Data Science (CGPA: 3.32/4.00)",
+            degree: "Data Science (CGPA: 3.43/4.00)",
             institution: "Sumatera Institute of Technology",
             date: "September 2022 - Now",
             icon: GraduationCap,
