@@ -70,7 +70,7 @@ export default function Home() {
             <PixelCard className="max-w-5xl mx-auto">
               <div className="p-6 md:p-8 grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-1 flex justify-center">
-                  <Avatar className="w-40 h-40 pixel-border">
+                  <Avatar className="w-40 h-40 pixel-border bg-white">
                     <Image src={ABOUT_DATA.avatar} alt="Pixel character avatar" width={160} height={160} data-ai-hint="professional headshot" className="image-pixelated" />
                     <AvatarFallback>DS</AvatarFallback>
                   </Avatar>
@@ -204,7 +204,7 @@ export default function Home() {
                     <PixelCard>
                       <div className="p-6">
                         <div className="flex items-start gap-4">
-                            <Avatar className="w-12 h-12 pixel-border shrink-0">
+                            <Avatar className="w-12 h-12 pixel-border shrink-0 bg-white">
                                 <AvatarImage src={item.logo} alt={`${item.company} logo`} className="image-pixelated object-contain" />
                                 <AvatarFallback>{item.company.charAt(0)}</AvatarFallback>
                             </Avatar>
@@ -230,7 +230,7 @@ export default function Home() {
               {EDUCATION_DATA.entries.map((item, index) => (
                 <PixelCard key={index}>
                   <div className="p-6 flex items-start gap-4">
-                    <Avatar className="w-16 h-16 pixel-border shrink-0">
+                    <Avatar className="w-16 h-16 pixel-border shrink-0 bg-white">
                         <AvatarImage src={item.logo} alt={`${item.institution} logo`} className="image-pixelated object-contain" />
                         <AvatarFallback>{item.institution.charAt(0)}</AvatarFallback>
                     </Avatar>

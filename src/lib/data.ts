@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone } from 'lucide-react';
+import { Github, Linkedin, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone, Phone } from 'lucide-react';
 
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
@@ -9,18 +9,17 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-    { name: 'GitHub', url: 'https://github.com', icon: Github },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
-    { name: 'Twitter', url: 'https://twitter.com', icon: Twitter },
+    { name: 'GitHub', url: 'https://github.com/strng-fer', icon: Github },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/feryadi-yulius/', icon: Linkedin },
+    { name: 'Phone', url: 'https://wa.me/6288706487712', icon: Phone }
 ];
-
 
 export const ABOUT_DATA = {
     title: "Character Profile",
     name: "Feryadi Yulius",
     subtitle: "Undergraduated Data Science Student",
     story: "Data Science student at Sumatera Institute of Technology with a passion for technology, mathematics, data science, and machine learning especially in NLP and Image Processing. Fluent both in English and Bahasa Indonesia. Mastering Python, R, and SQL for data analysis. With strong leadership, communication, critical thinking, and analytical skills, envisions making meaningful contributions to data-driven decision-making and technology.",
-    avatar: "/images/feryadi-yulius-avatar.png",
+    avatar: "/images/feryadi-yulius-avatar.webp",
     stats: [
         { label: "Natural Language Processing (NLP)" },
         { label: "Image Processing & Computer Vision" },
@@ -56,26 +55,26 @@ export const PROJECTS_DATA = {
         {
             title: "Phytoplankton from Belitung Coastal Classification using DeepLearning",
             description: "Cleaned 236 images from a 26-class phytoplankton dataset sourced from Belitung coastal waters. Applied 9 augmentation techniques for oversampling, expanding the dataset to over 10,000 images. Trained CNN models using 13 architecture variants including ResNet, DenseNet, EfficientNet, MobileNet, InceptionV3, and ConvNeXt.",
-            image: "https://placehold.co/600x400.png",
+            image: "/images/classification.png",
             dataAiHint: "phytoplankton deep learning",
             skills: ["Deep Learning", "CNN", "ResNet", "DenseNet", "EfficientNet", "MobileNet", "InceptionV3", "ConvNeXt"],
-            link: "",
+            link: "https://www.canva.com/design/DAGvYFV9D_E/o2FQAv_C0GI54Lk6ga856g/view?utm_content=DAGvYFV9D_E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h728aad55ea",
             relatedUrl1: "",
             relatedUrl2: "",
             year: "2025",
-            collaborators: ["-"]
+            collaborators: ["Raid Muhammad Naufal", "Dr. Esa Prakasa, M.T"]
         },
         {
             title: "Build Phytoplankton Automatic Clasification using Android Apps",
             description: "Language: Kotlin, Framework: Android SDK, ML Framework: TensorFlow Lite, Min SDK: 24 (Android 7.0), Target SDK: 36 (Android 16), Database: Firebase",
-            image: "https://placehold.co/600x400.png",
+            image: "/images/planktoscan-androidapps.png",
             dataAiHint: "android app development",
             skills: ["Android", "Kotlin", "TensorFlow Lite", "Firebase"],
             link: "https://github.com/strng-fer/PlanktonIdentificationApps",
-            relatedUrl1: "",
+            relatedUrl1: "https://www.canva.com/design/DAGvYFV9D_E/o2FQAv_C0GI54Lk6ga856g/view?utm_content=DAGvYFV9D_E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h728aad55ea",
             relatedUrl2: "",
             year: "2025",
-            collaborators: ["-"]
+            collaborators: ["Raid Muhammad Naufal", "Dr. Esa Prakasa, M.T"]
         },
         {
             title: "Spices Detection With Streamlit",
@@ -179,21 +178,21 @@ export const EXPERIENCE_DATA = {
             date: "February 2025 – June 2025",
             title: "Grader for Functional Programing",
             company: "Sumatera Institute of Technology",
-            logo: "/images/logo-itera.png",
+            logo: "/images/logo-sainsdata.png",
             description: "Assigned weekly coursework to 50+ students in a structured and timely manner. Evaluated assignments, quizzes, mid-term, and final exams consistently over a 16-week academic period. Supervised examinations to ensure academic integrity and a conducive test environment."
         },
         {
             date: "January 2025 – June 2025",
             title: "Statistical for Data Science Practicum Assistant",
             company: "Sumatera Institute of Technology",
-            logo: "/images/logo-itera.png",
+            logo: "/images/logo-sainsdata.png",
             description: "Taught statistical concepts (hypothesis testing, regression) to 60+ students. Assisted in 10 laboratory sessions on R tools. Managing 500+ pre-test data and student assignments. Mentored 1 students group in capstone projects for real-world problems. Evaluating students' learning outcomes."
         },
         {
             date: "September 2024 – December 2024",
             title: "Programming Algorithm Practicum Assistant",
             company: "Sumatera Institute of Technology",
-            logo: "/images/logo-itera.png",
+            logo: "/images/logo-sainsdata.png",
             description: "Delivered practical programming labs to 60+ students to understanding of the Programming Algorithms course. Assisted in 10 laboratory sessions, helping 95% of students successfully complete Python algorithmic projects. Managing 500+ pre-test data and student assignments. Motivating students. Evaluating students' learning outcomes."
         },
         {
