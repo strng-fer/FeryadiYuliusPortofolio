@@ -48,10 +48,10 @@ export default function Home() {
         <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
           <Image
             src="https://placehold.co/1920x1080.png"
-            alt="Pixel art world map background"
-            data-ai-hint="pixel art world map"
+            alt="Abstract data visualization background"
+            data-ai-hint="data visualization abstract"
             fill
-            className="object-cover image-pixelated"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 p-4">
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="p-6 md:p-8 grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-1 flex justify-center">
                   <Avatar className="w-40 h-40 pixel-border">
-                    <Image src={ABOUT_DATA.avatar} alt="Pixel character avatar" width={160} height={160} data-ai-hint="pixel art avatar" className="image-pixelated" />
+                    <Image src={ABOUT_DATA.avatar} alt="Pixel character avatar" width={160} height={160} data-ai-hint="professional headshot" className="image-pixelated" />
                     <AvatarFallback>DS</AvatarFallback>
                   </Avatar>
                 </div>
