@@ -23,7 +23,7 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function Home() {
@@ -65,16 +65,15 @@ export default function Home() {
                   <p className="text-muted-foreground mb-4">{ABOUT_DATA.subtitle}</p>
                   <p className="mb-6">{ABOUT_DATA.story}</p>
                   <div>
-                    <h4 className="font-headline text-xl mb-2">Stats</h4>
-                    {ABOUT_DATA.stats.map(stat => (
-                      <div key={stat.label} className="mb-2">
-                        <div className="flex justify-between mb-1 text-sm">
+                    <h4 className="font-headline text-xl mb-3">Key Strengths</h4>
+                    <ul className="space-y-2">
+                      {ABOUT_DATA.stats.map(stat => (
+                        <li key={stat.label} className="flex items-center gap-3">
+                          <Star className="w-5 h-5 text-primary flex-shrink-0" />
                           <span>{stat.label}</span>
-                          <span>{stat.value}/100</span>
-                        </div>
-                        <Progress value={stat.value} className="h-3 [&>div]:bg-primary" />
-                      </div>
-                    ))}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -176,13 +175,13 @@ export default function Home() {
 
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {CERTIFICATIONS_DATA.entries.map((item, index) => (
-                <PixelCard key={index} className="p-4 flex flex-col items-center text-center">
-                  <item.icon className="w-16 h-16 mb-4 text-accent" />
-                  <h4 className="font-headline text-lg font-bold leading-tight">{item.name}</h4>
-                  <p className="text-sm text-muted-foreground mt-2">{item.issuer}</p>
-                </PixelCard>
-              ))}
+                {CERTIFICATIONS_DATA.entries.map((item, index) => (
+                    <PixelCard key={index} className="p-4 flex flex-col items-center text-center justify-center">
+                        <item.icon className="w-16 h-16 mb-4 text-accent" />
+                        <h4 className="font-headline text-lg font-bold leading-tight">{item.name}</h4>
+                        <p className="text-sm text-muted-foreground mt-1 px-4">{item.issuer}</p>
+                    </PixelCard>
+                ))}
             </div>
           </SectionWrapper>
 

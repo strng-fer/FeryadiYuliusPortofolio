@@ -22,10 +22,10 @@ export const ABOUT_DATA = {
     story: "Data Science student at Sumatera Institute of Technology with a passion for technology, mathematics, data science, and machine learning especially in NLP and Image Processing. Fluent both in English and Bahasa Indonesia. Mastering Python, R, and SQL for data analysis. With strong leadership, communication, critical thinking, and analytical skills, envisions making meaningful contributions to data-driven decision-making and technology.",
     avatar: "https://placehold.co/160x160.png",
     stats: [
-        { label: "NLP & Image Processing", value: 90 },
-        { label: "Python, R, SQL", value: 92 },
-        { label: "Leadership", value: 85 },
-        { label: "Critical Thinking", value: 95 },
+        { label: "Natural Language Processing (NLP)" },
+        { label: "Image Processing & Computer Vision" },
+        { label: "Predictive Modeling" },
+        { label: "Data-Driven Decision Making" },
     ]
 };
 
