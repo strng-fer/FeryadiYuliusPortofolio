@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation } from 'lucide-react';
+import { Github, Linkedin, Twitter, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone } from 'lucide-react';
 
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
@@ -45,6 +45,7 @@ export const SKILLS_DATA = {
         { name: 'MySQL', icon: Database, description: "An open-source relational database management system." },
         { name: 'PostgreSQL', icon: Database, description: "A powerful, open source object-relational database system." },
         { name: 'Hadoop', icon: Database, description: "An open-source framework for distributed storage and processing of large datasets." },
+        { name: 'Android (TFLite/LiteRT)', icon: Smartphone, description: "Developing Android applications integrated with machine learning models using TensorFlow Lite or MNN." },
     ]
 }
 
