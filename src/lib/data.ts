@@ -1,11 +1,11 @@
-import { Github, Linkedin, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone, Phone } from 'lucide-react';
+import { Github, Linkedin, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone, Phone, Mail, MapPin } from 'lucide-react';
 
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' }, // This will be the footer
+  { name: 'Contact', href: '#contact' },
 ];
 
 export const SOCIAL_LINKS = [
@@ -168,7 +168,7 @@ export const EXPERIENCE_DATA = {
     description: "Chronicles of my professional adventures in the realm of data.",
     entries: [
         {
-            date: "June 2025 – Now",
+            date: "June 2025 – August 2025",
             title: "Research Assistant Intern",
             company: "Indonesian National Research and Innovation Agency (BRIN-RI)",
             logo: "/images/logo-brin.png",
@@ -281,5 +281,47 @@ export const CERTIFICATIONS_DATA = {
             issueDate: "November 23, 2023",
             expirationDate: "",
         },
+    ]
+}
+
+export const CONTACT_DATA = {
+    title: "Contact Me",
+    description: "Let's connect and collaborate on exciting data science projects!",
+    contacts: [
+        {
+            name: "WhatsApp",
+            value: "+62 887-0648-7712",
+            href: "https://wa.me/6288706487712",
+            icon: Phone,
+            description: "Send me a message on WhatsApp"
+        },
+        {
+            name: "LinkedIn",
+            value: "Feryadi Yulius",
+            href: "https://www.linkedin.com/in/feryadi-yulius/",
+            icon: Linkedin,
+            description: "Connect with me on LinkedIn"
+        },
+        {
+            name: "GitHub",
+            value: "@strng-fer",
+            href: "https://github.com/strng-fer",
+            icon: Github,
+            description: "Check out my repositories"
+        },
+        {
+            name: "Email",
+            value: "feryadiyulius24@gmail.com",
+            href: "mailto:feryadiyulius24@gmail.com",
+            icon: Mail,
+            description: "Drop me an email"
+        },
+        {
+            name: "Location",
+            value: "Lampung, Indonesia",
+            href: "#",
+            icon: MapPin,
+            description: "Based in Lampung, Indonesia"
+        }
     ]
 }

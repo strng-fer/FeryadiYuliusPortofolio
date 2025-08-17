@@ -18,6 +18,7 @@ import {
   EDUCATION_DATA,
   PUBLICATIONS_DATA,
   CERTIFICATIONS_DATA,
+  CONTACT_DATA,
 } from '@/lib/data';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
@@ -340,6 +341,66 @@ export default function Home() {
                     </DialogContent>
                   </Dialog>
                 ))}
+            </div>
+          </SectionWrapper>
+
+          <SectionWrapper id="contact" title={CONTACT_DATA.title} description={CONTACT_DATA.description}>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                {CONTACT_DATA.contacts.map((contact, index) => (
+                  <PixelCard key={index} className="p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200">
+                    <contact.icon className="w-12 h-12 mb-4 text-accent" />
+                    <h3 className="font-headline text-lg font-bold text-primary mb-2">{contact.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{contact.description}</p>
+                    {contact.href !== '#' ? (
+                      <a 
+                        href={contact.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-semibold hover:text-primary transition-colors duration-200 flex items-center gap-2"
+                      >
+                        <span>{contact.value}</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <span className="font-semibold text-primary">{contact.value}</span>
+                    )}
+                  </PixelCard>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <PixelCard className="p-8 bg-gradient-to-r from-primary/10 to-accent/10">
+                  <h3 className="font-headline text-2xl font-bold text-primary mb-4">
+                    Ready to Collaborate?
+                  </h3>
+                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                    I'm always interested in discussing new opportunities, innovative projects, 
+                    or just having a conversation about data science and technology. 
+                    Let's connect and explore what we can build together!
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a 
+                      href="https://wa.me/6288706487712" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="w-full sm:w-auto">
+                        Get In Touch
+                      </Button>
+                    </a>
+                    <a 
+                      href="mailto:feryadiyulius24@gmail.com"
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="outline" className="w-full sm:w-auto">
+                        Send Email
+                      </Button>
+                    </a>
+                  </div>
+                </PixelCard>
+              </div>
             </div>
           </SectionWrapper>
 
