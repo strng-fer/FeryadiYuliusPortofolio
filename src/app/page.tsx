@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -199,13 +199,21 @@ export default function Home() {
               {EXPERIENCE_DATA.entries.map((item, index) => (
                 <div key={index} className="relative mb-8 pl-8 md:pl-0">
                   <div className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-primary rounded-full -translate-x-1/2 border-4 border-background"></div>
-                  <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}` }>
+                   <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}` }>
                     <PixelCard>
                       <div className="p-6">
-                        <p className="text-sm text-muted-foreground">{item.date}</p>
-                        <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
-                        <h4 className="font-semibold">{item.company}</h4>
-                        <ScrollArea className="h-40 pr-4 mt-2">
+                        <div className="flex items-start gap-4">
+                            <Avatar className="w-12 h-12 pixel-border shrink-0">
+                                <AvatarImage src={item.logo} alt={`${item.company} logo`} className="image-pixelated object-contain" />
+                                <AvatarFallback>{item.company.charAt(0)}</AvatarFallback>
+                            </Avatar>
+                            <div className="flex-grow">
+                                <p className="text-sm text-muted-foreground">{item.date}</p>
+                                <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
+                                <h4 className="font-semibold">{item.company}</h4>
+                            </div>
+                        </div>
+                        <ScrollArea className="h-40 pr-4 mt-4">
                             <p className="text-muted-foreground">{item.description}</p>
                         </ScrollArea>
                       </div>

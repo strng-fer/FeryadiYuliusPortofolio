@@ -139,24 +139,28 @@ export const EXPERIENCE_DATA = {
             date: "June 2025 – Now",
             title: "Research Assistant Intern",
             company: "Indonesian National Research and Innovation Agency (BRIN-RI)",
+            logo: "https://placehold.co/64x64.png",
             description: "Drafted a research paper on deep learning modeling for plankton identification from Belitung Island. Trained and evaluated four deep learning architectures (AlexNet, DenseNet, VGG16, and InceptionV3) on the Belitung plankton dataset, achieving the highest accuracy of 95% with the DenseNet model. Performed manual labeling and segmentation of 86 microscopic plankton images, and applied data augmentation techniques to expand the dataset to over 500 annotated images. Developed and refined an Android-based plankton identification application integrated with a mobile microscope."
         },
         {
             date: "January 2025 – June 2025",
             title: "Statistical for Data Science Practicum Assistant",
             company: "Sumatera Institute of Technology",
+            logo: "https://placehold.co/64x64.png",
             description: "Taught statistical concepts (hypothesis testing, regression) to 60+ students. Assisted in 10 laboratory sessions on R tools. Managing 500+ pre-test data and student assignments. Mentored 1 students group in capstone projects for real-world problems. Evaluating students' learning outcomes."
         },
         {
             date: "September 2024 – December 2024",
             title: "Programming Algorithm Practicum Assistant",
             company: "Sumatera Institute of Technology",
+            logo: "https://placehold.co/64x64.png",
             description: "Delivered practical programming labs to 60+ students to understanding of the Programming Algorithms course. Assisted in 10 laboratory sessions, helping 95% of students successfully complete Python algorithmic projects. Managing 500+ pre-test data and student assignments. Motivating students. Evaluating students' learning outcomes."
         },
         {
             date: "September 2023 – January 2025",
             title: "Basic Math Tutorial Assistant",
             company: "Sumatera Institute of Technology",
+            logo: "https://placehold.co/64x64.png",
             description: "Teaching 10 basic math module to 130+ first-year students across 2 semester. Discussing issues raised by the professor, answering questions from mid-semester and end-of-semester exams. Designed and assigned 10+ self-study task modules per semester, resulting in an 85% completion rate and improved independent problem-solving skills. Increased student enthusiasm through interactive workshops, reflected in a 4.5/5 satisfaction score in post-semester feedback surveys. Evaluate the comprehension and difficulties of first-year students to avoid hindering their learning."
         },
     ]
