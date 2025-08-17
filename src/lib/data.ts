@@ -56,7 +56,7 @@ export const PROJECTS_DATA = {
         {
             title: "Phytoplankton from Belitung Coastal Classification using DeepLearning",
             description: "Cleaned 236 images from a 26-class phytoplankton dataset sourced from Belitung coastal waters. Applied 9 augmentation techniques for oversampling, expanding the dataset to over 10,000 images. Trained CNN models using 13 architecture variants including ResNet, DenseNet, EfficientNet, MobileNet, InceptionV3, and ConvNeXt.",
-            image: "/project-plankton-deep-learning.png",
+            image: "https://placehold.co/600x400.png",
             dataAiHint: "phytoplankton deep learning",
             skills: ["Deep Learning", "CNN", "ResNet", "DenseNet", "EfficientNet", "MobileNet", "InceptionV3", "ConvNeXt"],
             link: "",
@@ -68,7 +68,7 @@ export const PROJECTS_DATA = {
         {
             title: "Build Phytoplankton Automatic Clasification using Android Apps",
             description: "Language: Kotlin, Framework: Android SDK, ML Framework: TensorFlow Lite, Min SDK: 24 (Android 7.0), Target SDK: 36 (Android 16), Database: Firebase",
-            image: "/project-plankton-android.png",
+            image: "https://placehold.co/600x400.png",
             dataAiHint: "android app development",
             skills: ["Android", "Kotlin", "TensorFlow Lite", "Firebase"],
             link: "https://github.com/strng-fer/PlanktonIdentificationApps",
@@ -80,7 +80,7 @@ export const PROJECTS_DATA = {
         {
             title: "Spices Detection With Streamlit",
             description: "Spice Detection is an AI-powered online platform designed to identify 31 varieties of Indonesian spices through image analysis. Developed using Python and implemented with the Streamlit framework, this platform boasts a prediction accuracy of up to 83% and aims to simplify the identification and enrich public knowledge of Indonesia's diverse spices.",
-            image: "/project-spices-detection.webp",
+            image: "/banner-rempah-indonesia-600x315h.webp",
             dataAiHint: "indonesian spices",
             skills: ["Streamlit", "Python", "AI", "Image Analysis"],
             link: "https://deteksi-rempah.streamlit.app/",
@@ -90,9 +90,9 @@ export const PROJECTS_DATA = {
             collaborators: ["-"]
         },
         {
-            title: "Know Your Batik Website With Streamlit",
+            title: "Know Your Batik Website With Steramlit",
             description: "Know Your Batik is a website that allows users to detect types of batik based on uploaded images or photos. To address the lack of public understanding about the variety of batik and to prevent cultural claims by other countries, the Know Your Batik website serves as an innovative solution. This website is designed to help users recognize and understand different types of batik through image processing technology.",
-            image: "/project-know-your-batik.jpg",
+            image: "/Salinan_dari_Apa_itu_Jupyter_Notebook.jpg",
             dataAiHint: "batik pattern",
             skills: ["Streamlit", "Image Processing", "Python"],
             link: "https://knowyourbatik.streamlit.app/",
@@ -104,7 +104,7 @@ export const PROJECTS_DATA = {
         {
             title: "Journal Mancing With Streamlit",
             description: "A final project for a Programming Algorithms course involved creating a fishing log app using Python libraries like Streamlit, Sqlite3, and Pandas. The application, which has been deployed on the Streamlit community and stored in a GitHub repository, functions similarly to a note-taking app on mobile devices but is tailored for fishing activities. This specialized app offers various features to aid anglers in recording and monitoring their fishing endeavors, aiming to enhance their fishing experiences",
-            image: "/project-journal-mancing.png",
+            image: "/Screenshot_2024-10-23_211956.png",
             dataAiHint: "fishing app",
             skills: ["Streamlit", "Python", "SQLite", "Pandas"],
             link: "https://journalmancing.streamlit.app",
@@ -114,9 +114,9 @@ export const PROJECTS_DATA = {
             collaborators: ["Gymnastiar", "Natasya Egalina", "Khusnunisa"]
         },
         {
-            title: "Paper at UPN Jatim Data Science National Seminar",
-            description: "Title: Metode Seleksi Variabel dalam Pemodelan Regresi Linear Data Curah Hujan Provinsi Lampung. Abstract: Understanding the amount of rainfall is crucial for engineering planning... The model with five variables is validated as the best model.",
-            image: "/project-upn-seminar.png",
+            title: "Paper at UPN Jatim Data Science National Seminar Prosiding",
+            description: "Title: Metode Seleksi Variabel dalam Pemodelan Regresi Linear Data Curah Hujan Provinsi Lampung. Abstrac: Understanding the amount of rainfall is crucial for engineering planning, especially for water-related infrastructure such as irrigation systems, dams, urban drainage, and other hydraulic structures. Consequently, accurate modeling and identification of optimal predictor variables are essential to support effective rainfall prediction for design and decision-making purposes. This researchaims to identify the optimal number of variables in a linear regression model using best subset, forward stepwise, and backward stepwise selection methods. The evaluation is based on the highest Adjusted R2value.The analysis results indicate that the optimal number of variables in the linear regression model is five, namely thenumber of rainy days, average wind speed, average air humidity, average air temperature, and average minimum air temperature. The highest Adjusted R2value obtained is 67.1%, and the Bayesian Information Criterion (BIC) value is 5.715773,the smallest compared to other models. Additionally, the Residual Sum of Squares (RSS) value is10383.326, which, although not the smallest, is sufficiently optimal. The Cp value is 4.380471, indicating a good fit.With the smallest BIC value,and optimal RSS and Cp values,the model with five variables is validated as the best model. The methodsof best subset, forward stepwise, and backward stepwiseselection also show consistencyin selecting the predictorvariables. Conversely, variables such asaverage air pressure and average solar irradiationdo not exhibit a significantinfluence in the linear regression model",
+            image: "/Screenshot_2024-10-23_212257.png",
             dataAiHint: "research paper regression",
             skills: ["Linear Regression", "Variable Selection", "R"],
             link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
@@ -128,7 +128,7 @@ export const PROJECTS_DATA = {
         {
             title: "Plankton Classification using ResNet",
             description: "This project develops an automatic plankton classification model using Deep Learning based on the ResNet-101 architecture pre-trained on ImageNet... The implementation of this model holds potential for efficiently supporting marine ecosystem health monitoring, environmental change detection, and biodiversity studies.",
-            image: "/project-plankton-resnet.png",
+            image: "/Screenshot_2025-03-22_223137.png",
             dataAiHint: "plankton microscope",
             skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
             link: "https://github.com/strng-fer/PlanktonDetection/",
@@ -140,7 +140,7 @@ export const PROJECTS_DATA = {
         {
             title: "Gowalla Dataset Exploratory",
             description: "The Gowalla dataset provides us with the opportunity to explore the Social Map and Travel Ecosystem of Gowalla Users... user profile visualizations will help identify the most active users and their favorite frequently visited locations.",
-            image: "/project-gowalla.png",
+            image: "/Screenshot_2025-03-24_131840.png",
             dataAiHint: "social media map",
             skills: ["Data Visualization", "Network Analysis", "Python"],
             link: "https://drive.google.com/drive/folders/1vhED9LFEvF52u0-hflfeULJkM6nDu5xc?usp=sharing",
@@ -152,7 +152,7 @@ export const PROJECTS_DATA = {
         {
             title: "Global CO2 Emissions Dashboard",
             description: "This dashboard presents an analysis of global CO2 emissions through various visualizations. The left panel highlights the top CO2-emitting countries, while the world map in the center illustrates the distribution of emissions per capita... This dashboard is designed to provide insights into emission patterns and their global impact.",
-            image: "/project-co2-dashboard.png",
+            image: "/Screenshot_2025-03-25_103126.png",
             dataAiHint: "co2 emissions dashboard",
             skills: ["Tableau", "Data Visualization", "Dashboard"],
             link: "https://public.tableau.com/views/Book1_17428733383470/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
@@ -174,6 +174,13 @@ export const EXPERIENCE_DATA = {
             company: "Indonesian National Research and Innovation Agency (BRIN-RI)",
             logo: "/logo-brin.png",
             description: "Drafted a research paper on deep learning modeling for plankton identification from Belitung Island. Trained and evaluated four deep learning architectures (AlexNet, DenseNet, VGG16, and InceptionV3) on the Belitung plankton dataset, achieving the highest accuracy of 95% with the DenseNet model. Performed manual labeling and segmentation of 86 microscopic plankton images, and applied data augmentation techniques to expand the dataset to over 500 annotated images. Developed and refined an Android-based plankton identification application integrated with a mobile microscope."
+        },
+        {
+            date: "Feb 2025 - Jun 2025",
+            title: "Grader for Functional Programing",
+            company: "Sumatera Institute of Technology",
+            logo: "/logo-itera.png",
+            description: "Assigned weekly coursework to 50+ students in a structured and timely manner. Evaluated assignments, quizzes, mid-term, and final exams consistently over a 16-week academic period. Supervised examinations to ensure academic integrity and a conducive test environment."
         },
         {
             date: "January 2025 – June 2025",
