@@ -52,11 +52,11 @@ export default function Home() {
             alt="Abstract data visualization background"
             data-ai-hint="data visualization abstract"
             fill
-            className="object-cover"
+            className="object-cover z-0"
           />
           <div className="absolute inset-0 bg-black/60 z-10" />
           <FloatingShapes />
-          <div className="relative z-20 p-4">
+          <div className="relative z-30 p-4">
             <h1 className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white">
               Feryadi Yulius Portofolio
             </h1>
