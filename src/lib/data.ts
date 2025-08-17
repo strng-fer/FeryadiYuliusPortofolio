@@ -165,6 +165,13 @@ export const PUBLICATIONS_DATA = {
     description: "Codified knowledge I've contributed to the great libraries of science.",
     entries: [
         {
+            title: "Implementasi Ekosistem Hadoop untuk Analisis Segmentasi Pelanggan E-commerce di Pulau Sumatera",
+            journal: "UPN Jatim Data Science National Seminar",
+            year: 2025,
+            link: "#",
+            icon: Presentation
+        },
+        {
             title: "Variable Selection Methods in Linear Regression Modeling of Rainfall Data in Lampung Province.",
             journal: "UPN Jatim Data Science National Seminar",
             year: 2024,
