@@ -134,7 +134,9 @@ export default function Home() {
                         <p className="text-sm text-muted-foreground">{item.date}</p>
                         <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
                         <h4 className="font-semibold">{item.company}</h4>
-                        <p className="mt-2 text-muted-foreground">{item.description}</p>
+                        <ScrollArea className="h-36 pr-4 mt-2">
+                            <p className="text-muted-foreground">{item.description}</p>
+                        </ScrollArea>
                       </div>
                     </PixelCard>
                   </div>
@@ -173,12 +175,12 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {CERTIFICATIONS_DATA.entries.map((item, index) => (
-                <PixelCard key={index} className="p-4 flex flex-col items-center justify-center text-center">
-                  <item.icon className="w-16 h-16 mb-3 text-accent" />
-                  <h4 className="font-headline text-md font-bold leading-tight">{item.name}</h4>
-                  <p className="text-xs text-muted-foreground mt-1">{item.issuer}</p>
+                <PixelCard key={index} className="p-6 flex flex-col items-center justify-center text-center">
+                  <item.icon className="w-16 h-16 mb-4 text-accent" />
+                  <h4 className="font-headline text-lg font-bold leading-tight">{item.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-2">{item.issuer}</p>
                 </PixelCard>
               ))}
             </div>
