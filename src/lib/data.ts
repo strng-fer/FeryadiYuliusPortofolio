@@ -54,6 +54,30 @@ export const PROJECTS_DATA = {
     description: "Embark on a journey through my completed quests. Each project is a level I've designed and conquered.",
     projects: [
         {
+            title: "Phytoplankton from Belitung Coastal Classification using DeepLearning",
+            description: "Cleaned 236 images from a 26-class phytoplankton dataset sourced from Belitung coastal waters. Applied 9 augmentation techniques for oversampling, expanding the dataset to over 10,000 images. Trained CNN models using 13 architecture variants including ResNet, DenseNet, EfficientNet, MobileNet, InceptionV3, and ConvNeXt.",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "phytoplankton deep learning",
+            skills: ["Deep Learning", "CNN", "ResNet", "DenseNet", "EfficientNet", "MobileNet", "InceptionV3", "ConvNeXt"],
+            link: "",
+            relatedUrl1: "",
+            relatedUrl2: "",
+            year: "2025",
+            collaborators: ["-"]
+        },
+        {
+            title: "Build Phytoplankton Automatic Clasification using Android Apps",
+            description: "Language: Kotlin, Framework: Android SDK, ML Framework: TensorFlow Lite, Min SDK: 24 (Android 7.0), Target SDK: 36 (Android 16), Database: Firebase",
+            image: "https://placehold.co/600x400.png",
+            dataAiHint: "android app development",
+            skills: ["Android", "Kotlin", "TensorFlow Lite", "Firebase"],
+            link: "https://github.com/strng-fer/PlanktonIdentificationApps",
+            relatedUrl1: "",
+            relatedUrl2: "",
+            year: "2025",
+            collaborators: ["-"]
+        },
+        {
             title: "Spices Detection With Streamlit",
             description: "Spice Detection is an AI-powered online platform designed to identify 31 varieties of Indonesian spices through image analysis. Developed using Python and implemented with the Streamlit framework, this platform boasts a prediction accuracy of up to 83% and aims to simplify the identification and enrich public knowledge of Indonesia's diverse spices.",
             image: "https://placehold.co/600x400.png",
@@ -61,6 +85,7 @@ export const PROJECTS_DATA = {
             skills: ["Streamlit", "Python", "AI", "Image Analysis"],
             link: "https://deteksi-rempah.streamlit.app/",
             relatedUrl1: "https://github.com/strng-fer/deteksirempah",
+            relatedUrl2: "",
             year: "2024",
             collaborators: ["-"]
         },
@@ -72,6 +97,7 @@ export const PROJECTS_DATA = {
             skills: ["Streamlit", "Image Processing", "Python"],
             link: "https://knowyourbatik.streamlit.app/",
             relatedUrl1: "https://github.com/rayths/KNOB",
+            relatedUrl2: "",
             year: "2024",
             collaborators: ["Raid Muhammad Naufal", "Deva Anjani", "Natasya Egalina"]
         },
@@ -83,6 +109,7 @@ export const PROJECTS_DATA = {
             skills: ["Streamlit", "Python", "SQLite", "Pandas"],
             link: "https://journalmancing.streamlit.app",
             relatedUrl1: "https://github.com/alkhrzmy/journeymancing",
+            relatedUrl2: "",
             year: "2023",
             collaborators: ["Gymnastiar", "Natasya Egalina", "Khusnunisa"]
         },
@@ -93,6 +120,8 @@ export const PROJECTS_DATA = {
             dataAiHint: "research paper regression",
             skills: ["Linear Regression", "Variable Selection", "R"],
             link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
+            relatedUrl1: "",
+            relatedUrl2: "",
             year: "2024",
             collaborators: ["Elok Fiola", "Presilia", "Dea Mutia", "Mika Alvionita", "Febri Irawati"]
         },
@@ -115,6 +144,8 @@ export const PROJECTS_DATA = {
             dataAiHint: "social media map",
             skills: ["Data Visualization", "Network Analysis", "Python"],
             link: "https://drive.google.com/drive/folders/1vhED9LFEvF52u0-hflfeULJkM6nDu5xc?usp=sharing",
+            relatedUrl1: "",
+            relatedUrl2: "",
             year: "2024",
             collaborators: ["Hermawan Manurung", "Happy Syahrul Ramadhan"]
         },
@@ -125,6 +156,8 @@ export const PROJECTS_DATA = {
             dataAiHint: "co2 emissions dashboard",
             skills: ["Tableau", "Data Visualization", "Dashboard"],
             link: "https://public.tableau.com/views/Book1_17428733383470/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            relatedUrl1: "",
+            relatedUrl2: "",
             year: "2023",
             collaborators: ["-"]
         },
