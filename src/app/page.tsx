@@ -48,9 +48,8 @@ export default function Home() {
       <main>
         <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
           <Image
-            src="/hero-background.png"
+            src="/images/hero-background.png"
             alt="Abstract data visualization background"
-            data-ai-hint="data visualization abstract"
             fill
             className="object-cover z-0"
           />
