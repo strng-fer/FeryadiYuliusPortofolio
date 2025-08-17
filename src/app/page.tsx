@@ -158,11 +158,25 @@ export default function Home() {
                         <div className="flex flex-wrap gap-2 my-4">
                             {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
                         </div>
-                         <div className="flex items-center gap-2">
-                             <LinkIcon className="w-5 h-5 text-primary" />
-                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">
-                                 View Project
-                             </a>
+                         <div className="flex flex-col items-start gap-2">
+                            {project.link && (
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                    <LinkIcon className="w-5 h-5 text-primary" />
+                                    <span>View Project</span>
+                                </a>
+                            )}
+                            {project.relatedUrl1 && (
+                                <a href={project.relatedUrl1} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                    <LinkIcon className="w-5 h-5 text-primary" />
+                                    <span>Related Link 1</span>
+                                </a>
+                            )}
+                            {project.relatedUrl2 && (
+                                <a href={project.relatedUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                    <LinkIcon className="w-5 h-5 text-primary" />
+                                    <span>Related Link 2</span>
+                                </a>
+                            )}
                           </div>
                         <div className="flex gap-4 mt-auto pt-4">
                             <DialogClose asChild>

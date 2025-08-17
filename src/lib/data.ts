@@ -60,6 +60,7 @@ export const PROJECTS_DATA = {
             dataAiHint: "indonesian spices",
             skills: ["Streamlit", "Python", "AI", "Image Analysis"],
             link: "https://deteksi-rempah.streamlit.app/",
+            relatedUrl1: "https://github.com/strng-fer/deteksirempah",
             year: "2024",
             collaborators: ["-"]
         },
@@ -70,6 +71,7 @@ export const PROJECTS_DATA = {
             dataAiHint: "batik pattern",
             skills: ["Streamlit", "Image Processing", "Python"],
             link: "https://knowyourbatik.streamlit.app/",
+            relatedUrl1: "https://github.com/rayths/KNOB",
             year: "2024",
             collaborators: ["Raid Muhammad Naufal", "Deva Anjani", "Natasya Egalina"]
         },
@@ -79,7 +81,8 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "fishing app",
             skills: ["Streamlit", "Python", "SQLite", "Pandas"],
-            link: "https://github.com/alkhrzmy/journeymancing",
+            link: "https://journalmancing.streamlit.app",
+            relatedUrl1: "https://github.com/alkhrzmy/journeymancing",
             year: "2023",
             collaborators: ["Gymnastiar", "Natasya Egalina", "Khusnunisa"]
         },
@@ -100,6 +103,8 @@ export const PROJECTS_DATA = {
             dataAiHint: "plankton microscope",
             skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
             link: "https://github.com/strng-fer/PlanktonDetection/",
+            relatedUrl1: "https://colab.research.google.com/drive/1zulCIuTuMq0822JGppycx80Sbl7JpCNE?usp=sharing",
+            relatedUrl2: "https://deteksiplankton.my.canva.site/",
             year: "2025",
             collaborators: ["-"]
         },
