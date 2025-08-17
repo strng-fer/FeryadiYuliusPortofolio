@@ -19,6 +19,7 @@ const REPULSION_STRENGTH = 0.5;
 
 export function FloatingShapes() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number>();
   const [shapes, setShapes] = useState<{ id: number; x: number; y: number; icon: React.ElementType; size: string; vx: number; vy: number; }[]>([]);
 
   useEffect(() => {
@@ -41,19 +42,22 @@ export function FloatingShapes() {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || shapes.length === 0) return;
     
     const { width: containerWidth, height: containerHeight } = container.getBoundingClientRect();
     
     const handleMouseMove = (e: MouseEvent) => {
-        const rect = container.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
 
         setShapes(currentShapes =>
             currentShapes.map(shape => {
-                const dx = shape.x - mouseX;
-                const dy = shape.y - mouseY;
+                const rect = container.getBoundingClientRect();
+                const shapeCenterX = rect.left + shape.x;
+                const shapeCenterY = rect.top + shape.y;
+                
+                const dx = shapeCenterX - mouseX;
+                const dy = shapeCenterY - mouseY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 if (distance < INTERACTION_RADIUS) {
@@ -61,8 +65,8 @@ export function FloatingShapes() {
                     const force = (INTERACTION_RADIUS - distance) / INTERACTION_RADIUS * REPULSION_STRENGTH;
                     return {
                         ...shape,
-                        x: shape.x + Math.cos(angle) * force,
-                        y: shape.y + Math.sin(angle) * force,
+                        x: shape.x + Math.cos(angle) * force * 5, // Increased multiplier for visibility
+                        y: shape.y + Math.sin(angle) * force * 5,
                     };
                 }
                 return shape;
@@ -70,14 +74,26 @@ export function FloatingShapes() {
         );
     };
     
-    const animationFrame = requestAnimationFrame(function animate() {
+    const animate = () => {
       setShapes(currentShapes =>
         currentShapes.map(shape => {
           let newX = shape.x + shape.vx;
           let newY = shape.y + shape.vy;
+          
+          let bounced = false;
+          if (newX < 0 || newX > containerWidth) {
+            shape.vx *= -1;
+            bounced = true;
+          }
+          if (newY < 0 || newY > containerHeight) {
+            shape.vy *= -1;
+            bounced = true;
+          }
 
-          if (newX < 0 || newX > containerWidth) shape.vx *= -1;
-          if (newY < 0 || newY > containerHeight) shape.vy *= -1;
+          if (bounced) {
+             newX = shape.x + shape.vx;
+             newY = shape.y + shape.vy;
+          }
 
           return {
             ...shape,
@@ -86,25 +102,28 @@ export function FloatingShapes() {
           };
         })
       );
-      requestAnimationFrame(animate);
-    });
-
-    container.addEventListener('mousemove', handleMouseMove);
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+    
+    animationFrameRef.current = requestAnimationFrame(animate);
+    window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
-      cancelAnimationFrame(animationFrame);
-      container.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [shapes.length]);
 
   return (
-    <div ref={containerRef} className="absolute inset-0 z-0">
+    <div ref={containerRef} className="absolute inset-0 z-20">
       {shapes.map(shape => (
         <motion.div
           key={shape.id}
           className="absolute text-accent/20"
           animate={{ x: shape.x, y: shape.y }}
-          transition={{ type: 'spring', stiffness: 200, damping: 20, mass: 1 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20, mass: 0.5 }}
           style={{ willChange: 'transform' }}
         >
           <shape.icon className={cn(shape.size)} />

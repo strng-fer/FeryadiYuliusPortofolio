@@ -54,9 +54,9 @@ export default function Home() {
             fill
             className="object-cover"
           />
+          <div className="absolute inset-0 bg-black/60 z-10" />
           <FloatingShapes />
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="relative z-10 p-4">
+          <div className="relative z-20 p-4">
             <h1 className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white">
               Feryadi Yulius Portofolio
             </h1>
