@@ -44,7 +44,9 @@ import { FloatingShapes } from '@/components/floating-shapes';
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground font-body">
+    <div className="bg-background text-foreground font-body relative">
+      {/* Global floating shapes that cover entire page */}
+      <FloatingShapes />
       <Header />
       <main>
         <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
@@ -55,7 +57,6 @@ export default function Home() {
             className="object-cover z-0"
           />
           <div className="absolute inset-0 bg-black/60 z-10" />
-          <FloatingShapes />
           <div className="relative z-30 p-4">
             <h1 className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white">
               Feryadi Yulius Portofolio
