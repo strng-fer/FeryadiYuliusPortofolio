@@ -150,6 +150,12 @@ export const EDUCATION_DATA = {
             institution: "Sumatera Institute of Technology",
             date: "September 2022 - Now",
             icon: GraduationCap,
+        },
+        {
+            degree: "Natural Science",
+            institution: "SMA N 1 Lubai Ulu",
+            date: "2019 - 2022",
+            icon: School,
         }
     ]
 }
