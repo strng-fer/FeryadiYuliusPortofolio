@@ -242,7 +242,32 @@ export const CERTIFICATIONS_DATA = {
     title: "Achievements Unlocked",
     description: "Badges of honor earned by conquering specialized challenges.",
     entries: [
-        { name: "Data Scientist Associated", issuer: "Credential ID: DSA0014978540656", icon: Award },
-        { name: "Python Data Associated", issuer: "Credential ID: PDA0015038237495", icon: Award },
+        { 
+            name: "Data Scientist Associate", 
+            issuer: "DataCamp", 
+            icon: Award,
+            url: "https://www.datacamp.com/certificate/DSA0014978540656",
+            credentialId: "DSA0014978540656",
+            issueDate: "October 11, 2024",
+            expirationDate: "October 11, 2026",
+        },
+        { 
+            name: "Python Data Associate", 
+            issuer: "DataCamp", 
+            icon: Award,
+            url: "https://www.datacamp.com/certificate/PDA0015038237495",
+            credentialId: "PDA0015038237495",
+            issueDate: "September 29, 2024",
+            expirationDate: "September 29, 2026",
+        },
+        { 
+            name: "DeepLearning.AI Tensorflow Developer Course", 
+            issuer: "Coursera", 
+            icon: Award,
+            url: "https://www.coursera.org/account/accomplishments/specialization/certificate/PCA9F573KLLT",
+            credentialId: "PCA9F573KLLT",
+            issueDate: "November 23, 2023",
+            expirationDate: "",
+        },
     ]
 }

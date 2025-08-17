@@ -22,7 +22,7 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
-import { ExternalLink, Star, Users, Calendar, Link as LinkIcon } from 'lucide-react';
+import { ExternalLink, Star, Users, Calendar, Link as LinkIcon, ShieldCheck } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Tooltip,
@@ -259,13 +259,47 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
                 {CERTIFICATIONS_DATA.entries.map((item, index) => (
-                    <PixelCard key={index} className="p-4 flex flex-col items-center text-center justify-center">
+                  <Dialog key={index}>
+                    <PixelCard className="p-4 flex flex-col items-center text-center justify-center">
                         <item.icon className="w-16 h-16 mb-4 text-accent" />
                         <h4 className="font-headline text-lg font-bold leading-tight px-4">{item.name}</h4>
                         <p className="text-sm text-muted-foreground mt-1 px-4">{item.issuer}</p>
+                         <DialogTrigger asChild>
+                            <Button variant="link" className="mt-2">View Details</Button>
+                          </DialogTrigger>
                     </PixelCard>
+                    <DialogContent>
+                        <DialogHeader>
+                            <div className='flex justify-center mb-4'>
+                                <item.icon className="w-24 h-24 text-accent" />
+                            </div>
+                          <DialogTitle className="font-headline text-3xl text-primary text-center">{item.name}</DialogTitle>
+                           <DialogDescription className="text-center">
+                            Issued by {item.issuer}
+                          </DialogDescription>
+                        </DialogHeader>
+                         <div className="my-4 space-y-2 text-center">
+                            <p><span className="font-semibold">Issue Date:</span> {item.issueDate}</p>
+                            {item.expirationDate && <p><span className="font-semibold">Expiration Date:</span> {item.expirationDate}</p>}
+                            <p><span className="font-semibold">Credential ID:</span> {item.credentialId}</p>
+                         </div>
+                        
+                        <div className="flex flex-col items-center gap-2 mt-4">
+                            <a href={item.url} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                <ShieldCheck className="w-5 h-5 text-primary" />
+                                <span>Verify Credential</span>
+                            </a>
+                        </div>
+
+                        <div className="flex gap-4 mt-auto pt-4">
+                            <DialogClose asChild>
+                                <Button variant="outline" className="flex-1">Close</Button>
+                            </DialogClose>
+                        </div>
+                    </DialogContent>
+                  </Dialog>
                 ))}
             </div>
           </SectionWrapper>
