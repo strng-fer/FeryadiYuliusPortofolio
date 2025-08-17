@@ -30,6 +30,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog"
 
 export default function Home() {
   return (
@@ -110,23 +119,45 @@ export default function Home() {
               <CarouselContent>
                 {PROJECTS_DATA.projects.map((project, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <PixelCard className="h-full flex flex-col">
-                      <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
-                      <div className="p-6 flex-grow flex flex-col">
-                        <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                        <ScrollArea className="h-40 pr-4 mb-4">
-                           <p className="text-muted-foreground flex-grow">{project.description}</p>
-                        </ScrollArea>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                    <Dialog>
+                      <PixelCard className="h-full flex flex-col">
+                        <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
+                        <div className="p-6 flex-grow flex flex-col">
+                          <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
+                          <ScrollArea className="h-40 pr-4 mb-4">
+                            <p className="text-muted-foreground flex-grow">{project.description}</p>
+                          </ScrollArea>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                          </div>
+                          <DialogTrigger asChild>
+                            <Button>View Details</Button>
+                          </DialogTrigger>
                         </div>
-                        <Button asChild>
-                          <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            View Project <ExternalLink className="ml-2 h-4 w-4" />
-                          </a>
-                        </Button>
-                      </div>
-                    </PixelCard>
+                      </PixelCard>
+                      <DialogContent className="max-w-3xl">
+                        <DialogHeader>
+                          <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm mb-4" data-ai-hint={project.dataAiHint} />
+                          <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
+                        </DialogHeader>
+                        <DialogDescription className="mt-4 text-base">
+                          {project.description}
+                        </DialogDescription>
+                        <div className="flex flex-wrap gap-2 my-4">
+                            {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                        </div>
+                        <div className="flex gap-4 mt-auto">
+                            <Button asChild className="flex-1">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                    View Project <ExternalLink className="ml-2 h-4 w-4" />
+                                </a>
+                            </Button>
+                            <DialogClose asChild>
+                                <Button variant="outline" className="flex-1">Close</Button>
+                            </DialogClose>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -192,7 +223,7 @@ export default function Home() {
                 {CERTIFICATIONS_DATA.entries.map((item, index) => (
                     <PixelCard key={index} className="p-4 flex flex-col items-center text-center justify-center">
                         <item.icon className="w-16 h-16 mb-4 text-accent" />
-                        <h4 className="font-headline text-lg font-bold leading-tight">{item.name}</h4>
+                        <h4 className="font-headline text-lg font-bold leading-tight px-4">{item.name}</h4>
                         <p className="text-sm text-muted-foreground mt-1 px-4">{item.issuer}</p>
                     </PixelCard>
                 ))}
