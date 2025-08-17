@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, Gamepad2 } from 'lucide-react';
+import { Menu, BrainCircuit } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
@@ -22,7 +22,7 @@ export function Header() {
     <header className={cn("sticky top-0 z-50 transition-all duration-300", scrolled ? "bg-background/80 backdrop-blur-sm border-b border-border" : "bg-transparent")}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
         <Link href="#hero" className="flex items-center gap-2">
-          <Gamepad2 className="h-8 w-8 text-primary" />
+          <BrainCircuit className="h-8 w-8 text-primary" />
           <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
         </Link>
         <nav className="hidden md:flex gap-1">
@@ -42,7 +42,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
                 <Link href="#hero" className="flex items-center gap-2 mb-8">
-                    <Gamepad2 className="h-8 w-8 text-primary" />
+                    <BrainCircuit className="h-8 w-8 text-primary" />
                     <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
                 </Link>
               <nav className="flex flex-col gap-4">

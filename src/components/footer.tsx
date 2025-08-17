@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Twitter, Gamepad2 } from 'lucide-react';
+import { Github, Linkedin, Twitter, BrainCircuit } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 
@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-8 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="#hero" className="flex items-center gap-2">
-                <Gamepad2 className="h-8 w-8 text-primary" />
+                <BrainCircuit className="h-8 w-8 text-primary" />
                 <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
             </Link>
             <div className="flex gap-2">
