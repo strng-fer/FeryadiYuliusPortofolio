@@ -176,7 +176,7 @@ export const EXPERIENCE_DATA = {
             description: "Drafted a research paper on deep learning modeling for plankton identification from Belitung Island. Trained and evaluated four deep learning architectures (AlexNet, DenseNet, VGG16, and InceptionV3) on the Belitung plankton dataset, achieving the highest accuracy of 95% with the DenseNet model. Performed manual labeling and segmentation of 86 microscopic plankton images, and applied data augmentation techniques to expand the dataset to over 500 annotated images. Developed and refined an Android-based plankton identification application integrated with a mobile microscope."
         },
         {
-            date: "Feb 2025 - Jun 2025",
+            date: "February 2025 – June 2025",
             title: "Grader for Functional Programing",
             company: "Sumatera Institute of Technology",
             logo: "/logo-itera.png",
