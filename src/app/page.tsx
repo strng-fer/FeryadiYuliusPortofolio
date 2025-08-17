@@ -40,13 +40,10 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog"
-import { FloatingShapes } from '@/components/floating-shapes';
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground font-body relative">
-      {/* Global floating shapes that cover entire page */}
-      <FloatingShapes />
       <Header />
       <main>
         <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
