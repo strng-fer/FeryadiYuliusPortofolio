@@ -47,7 +47,7 @@ export default function Home() {
       <main>
         <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
           <Image
-            src="https://placehold.co/1920x1080.png"
+            src="/hero-background.png"
             alt="Abstract data visualization background"
             data-ai-hint="data visualization abstract"
             fill
@@ -245,15 +245,53 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="publications" title={PUBLICATIONS_DATA.title} description={PUBLICATIONS_DATA.description}>
-            <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+             <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {PUBLICATIONS_DATA.entries.map((item, index) => (
-                <PixelCard key={index} className="flex items-start gap-4 p-4">
-                  <item.icon className="w-10 h-10 mt-1 text-accent flex-shrink-0" />
-                  <div>
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="font-headline text-lg font-bold hover:text-primary transition-colors">{item.title}</a>
-                    <p className="text-sm text-muted-foreground">{item.journal}, {item.year}</p>
-                  </div>
-                </PixelCard>
+                <Dialog key={index}>
+                    <PixelCard className="flex flex-col items-start gap-4 p-4 h-full">
+                    <div className="flex items-start gap-4">
+                        <item.icon className="w-10 h-10 mt-1 text-accent flex-shrink-0" />
+                        <div>
+                        <h3 className="font-headline text-lg font-bold hover:text-primary transition-colors">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.journal}, {item.year}</p>
+                        </div>
+                    </div>
+                    <div className="mt-auto pt-4">
+                        <DialogTrigger asChild>
+                            <Button>View Details</Button>
+                        </DialogTrigger>
+                    </div>
+                    </PixelCard>
+                    <DialogContent className="max-w-3xl">
+                        <DialogHeader>
+                          <DialogTitle className="font-headline text-3xl text-primary">{item.title}</DialogTitle>
+                           <DialogDescription>
+                            {item.journal}, {item.year}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="my-4 space-y-2">
+                          <p><span className="font-semibold">Authors:</span> {item.authors.join(', ')}</p>
+                          {item.doi && <p><span className="font-semibold">DOI:</span> <a href={item.doi} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{item.doi}</a></p>}
+                        </div>
+                        <ScrollArea className="h-48 pr-4 mb-4">
+                          <h4 className="font-headline text-lg font-bold mb-2">Abstract</h4>
+                          <p className="text-base text-muted-foreground">{item.abstract}</p>
+                        </ScrollArea>
+                        
+                        <div className="flex flex-col items-start gap-2 mt-4">
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                <ExternalLink className="w-5 h-5 text-primary" />
+                                <span>View Publication</span>
+                            </a>
+                        </div>
+
+                        <div className="flex gap-4 mt-auto pt-4">
+                            <DialogClose asChild>
+                                <Button variant="outline" className="flex-1">Close</Button>
+                            </DialogClose>
+                        </div>
+                    </DialogContent>
+                </Dialog>
               ))}
             </div>
           </SectionWrapper>
