@@ -228,11 +228,16 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {EDUCATION_DATA.entries.map((item, index) => (
                 <PixelCard key={index}>
-                  <div className="p-6">
-                    <item.icon className="w-12 h-12 mb-3 text-accent" />
-                    <h3 className="font-headline text-xl font-bold">{item.degree}</h3>
-                    <p className="font-semibold text-primary">{item.institution}</p>
-                    <p className="text-sm text-muted-foreground">{item.date}</p>
+                  <div className="p-6 flex items-start gap-4">
+                    <Avatar className="w-16 h-16 pixel-border shrink-0">
+                        <AvatarImage src={item.logo} alt={`${item.institution} logo`} className="image-pixelated object-contain" />
+                        <AvatarFallback>{item.institution.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div className="flex-grow">
+                        <h3 className="font-headline text-xl font-bold">{item.degree}</h3>
+                        <p className="font-semibold text-primary">{item.institution}</p>
+                        <p className="text-sm text-muted-foreground">{item.date}</p>
+                    </div>
                   </div>
                 </PixelCard>
               ))}

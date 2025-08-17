@@ -173,13 +173,13 @@ export const EDUCATION_DATA = {
             degree: "Data Science (CGPA: 3.43/4.00)",
             institution: "Sumatera Institute of Technology",
             date: "September 2022 - Now",
-            icon: GraduationCap,
+            logo: "https://placehold.co/64x64.png",
         },
         {
             degree: "Natural Science",
             institution: "SMA N 1 Lubai Ulu",
             date: "2019 - 2022",
-            icon: School,
+            logo: "https://placehold.co/64x64.png",
         }
     ]
 }
