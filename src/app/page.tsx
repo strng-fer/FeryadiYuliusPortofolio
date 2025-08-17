@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import {
   Carousel,
   CarouselContent,
@@ -25,6 +24,12 @@ import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
 import { ExternalLink, Star } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export default function Home() {
   return (
@@ -81,14 +86,23 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="skills" title={SKILLS_DATA.title} description={SKILLS_DATA.description}>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {SKILLS_DATA.skills.map(skill => (
-                <PixelCard key={skill.name} className="p-4 flex flex-col items-center justify-center text-center">
-                  <skill.icon className="w-12 h-12 mb-3 text-accent" />
-                  <h4 className="font-headline text-lg font-bold">{skill.name}</h4>
-                </PixelCard>
-              ))}
-            </div>
+            <TooltipProvider>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {SKILLS_DATA.skills.map(skill => (
+                  <Tooltip key={skill.name}>
+                    <TooltipTrigger asChild>
+                      <PixelCard className="p-4 flex flex-col items-center justify-center text-center cursor-help">
+                        <skill.icon className="w-12 h-12 mb-3 text-accent" />
+                        <h4 className="font-headline text-lg font-bold">{skill.name}</h4>
+                      </PixelCard>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{skill.description}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            </TooltipProvider>
           </SectionWrapper>
 
           <SectionWrapper id="projects" title={PROJECTS_DATA.title} description={PROJECTS_DATA.description}>
