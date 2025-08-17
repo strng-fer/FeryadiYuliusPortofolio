@@ -23,7 +23,7 @@ export function Footer() {
             </div>
         </div>
         <div className="mt-6 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Feryadi Yulius Portofolio. All rights reserved. A retro-themed portfolio adventure.</p>
+            <p>&copy; {new Date().getFullYear()} Feryadi Yulius Portofolio. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -40,8 +42,11 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog"
+import { RetroNotificationBadge } from '@/components/ui/retro-notification-badge';
+import { useViewedItems } from '@/hooks/use-viewed-items';
 
 export default function Home() {
+  const { isViewed, markAsViewed, isLoaded } = useViewedItems();
   return (
     <div className="bg-background text-foreground font-body relative">
       <Header />
@@ -117,10 +122,19 @@ export default function Home() {
           <SectionWrapper id="projects" title={PROJECTS_DATA.title} description={PROJECTS_DATA.description}>
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
               <CarouselContent>
-                {PROJECTS_DATA.projects.map((project, index) => (
+                {PROJECTS_DATA.projects.map((project, index) => {
+                  const projectId = `project-${index}`;
+                  const isProjectViewed = isViewed(projectId);
+                  
+                  return (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <Dialog>
-                      <PixelCard className="h-full flex flex-col">
+                      <PixelCard className="h-full flex flex-col relative">
+                        {/* Retro notification badge for unviewed projects */}
+                        <RetroNotificationBadge 
+                          isVisible={isLoaded && !isProjectViewed} 
+                          className="top-2 right-2"
+                        />
                         <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
                         <div className="p-6 flex-grow flex flex-col">
                           <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
@@ -131,7 +145,7 @@ export default function Home() {
                             {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
                           </div>
                           <DialogTrigger asChild>
-                            <Button>View Details</Button>
+                            <Button onClick={() => markAsViewed(projectId)}>View Details</Button>
                           </DialogTrigger>
                         </div>
                       </PixelCard>
@@ -186,7 +200,8 @@ export default function Home() {
                       </DialogContent>
                     </Dialog>
                   </CarouselItem>
-                ))}
+                  );
+                })}
               </CarouselContent>
               <CarouselPrevious className="hidden md:flex" />
               <CarouselNext className="hidden md:flex" />
@@ -246,9 +261,18 @@ export default function Home() {
 
           <SectionWrapper id="publications" title={PUBLICATIONS_DATA.title} description={PUBLICATIONS_DATA.description}>
              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-              {PUBLICATIONS_DATA.entries.map((item, index) => (
+              {PUBLICATIONS_DATA.entries.map((item, index) => {
+                const publicationId = `publication-${index}`;
+                const isPublicationViewed = isViewed(publicationId);
+                
+                return (
                 <Dialog key={index}>
-                    <PixelCard className="flex flex-col items-start gap-4 p-4 h-full">
+                    <PixelCard className="flex flex-col items-start gap-4 p-4 h-full relative">
+                    {/* Retro notification badge for unviewed publications */}
+                    <RetroNotificationBadge 
+                      isVisible={isLoaded && !isPublicationViewed} 
+                      className="top-2 right-2"
+                    />
                     <div className="flex items-start gap-4">
                         <item.icon className="w-10 h-10 mt-1 text-accent flex-shrink-0" />
                         <div>
@@ -258,7 +282,7 @@ export default function Home() {
                     </div>
                     <div className="mt-auto pt-4">
                         <DialogTrigger asChild>
-                            <Button>View Details</Button>
+                            <Button onClick={() => markAsViewed(publicationId)}>View Details</Button>
                         </DialogTrigger>
                     </div>
                     </PixelCard>
@@ -292,20 +316,36 @@ export default function Home() {
                         </div>
                     </DialogContent>
                 </Dialog>
-              ))}
+                );
+              })}
             </div>
           </SectionWrapper>
 
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                {CERTIFICATIONS_DATA.entries.map((item, index) => (
+                {CERTIFICATIONS_DATA.entries.map((item, index) => {
+                  const certificationId = `certification-${index}`;
+                  const isCertificationViewed = isViewed(certificationId);
+                  
+                  return (
                   <Dialog key={index}>
-                    <PixelCard className="p-4 flex flex-col items-center text-center justify-center">
+                    <PixelCard className="p-4 flex flex-col items-center text-center justify-center relative">
+                        {/* Retro notification badge for unviewed certifications */}
+                        <RetroNotificationBadge 
+                          isVisible={isLoaded && !isCertificationViewed} 
+                          className="top-2 right-2"
+                        />
                         <item.icon className="w-16 h-16 mb-4 text-accent" />
                         <h4 className="font-headline text-lg font-bold leading-tight px-4">{item.name}</h4>
                         <p className="text-sm text-muted-foreground mt-1 px-4">{item.issuer}</p>
                          <DialogTrigger asChild>
-                            <Button variant="link" className="mt-2">View Details</Button>
+                            <Button 
+                              variant="link" 
+                              className="mt-2"
+                              onClick={() => markAsViewed(certificationId)}
+                            >
+                              View Details
+                            </Button>
                           </DialogTrigger>
                     </PixelCard>
                     <DialogContent>
@@ -338,7 +378,8 @@ export default function Home() {
                         </div>
                     </DialogContent>
                   </Dialog>
-                ))}
+                  );
+                })}
             </div>
           </SectionWrapper>
 

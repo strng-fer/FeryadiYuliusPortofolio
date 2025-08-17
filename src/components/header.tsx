@@ -6,9 +6,12 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { Menu, BrainCircuit } from 'lucide-react';
 import { NAV_LINKS } from '@/lib/data';
 import { cn } from '@/lib/utils';
+import { RetroNavBadge } from '@/components/ui/retro-nav-badge';
+import { useViewedItems } from '@/hooks/use-viewed-items';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { hasNewItems, isLoaded } = useViewedItems();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +20,25 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Define which sections have viewable items
+  const getSectionNewItems = (sectionName: string) => {
+    if (!isLoaded) return false;
+    
+    switch(sectionName.toLowerCase()) {
+      case 'projects':
+        // Assuming we have project items with IDs 0-8 based on PROJECTS_DATA
+        return hasNewItems(Array.from({length: 9}, (_, i) => `project-${i}`));
+      case 'publications':
+        // Publications items  
+        return hasNewItems(['publication-0', 'publication-1']);
+      case 'certifications':
+        // Certifications items
+        return hasNewItems(['certification-0', 'certification-1', 'certification-2']);
+      default:
+        return false;
+    }
+  };
 
   return (
     <header className={cn("sticky top-0 z-50 transition-all duration-300", scrolled ? "bg-background/80 backdrop-blur-sm border-b border-border" : "bg-transparent")}>
@@ -27,8 +49,14 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex gap-1">
           {NAV_LINKS.map((link) => (
-            <Button key={link.name} asChild variant="ghost" className="font-headline">
-              <Link href={link.href}>{link.name}</Link>
+            <Button key={link.name} asChild variant="ghost" className="font-headline relative">
+              <Link href={link.href}>
+                {link.name}
+                <RetroNavBadge 
+                  isVisible={getSectionNewItems(link.name)}
+                  className="top-1 right-1"
+                />
+              </Link>
             </Button>
           ))}
         </nav>
@@ -48,8 +76,12 @@ export function Header() {
               <nav className="flex flex-col gap-4">
                 {NAV_LINKS.map((link) => (
                   <SheetClose key={link.name} asChild>
-                    <Link href={link.href} className="text-xl font-headline hover:text-primary transition-colors">
+                    <Link href={link.href} className="text-xl font-headline hover:text-primary transition-colors relative inline-block">
                       {link.name}
+                      <RetroNavBadge 
+                        isVisible={getSectionNewItems(link.name)}
+                        className="top-0 -right-2"
+                      />
                     </Link>
                   </SheetClose>
                 ))}
