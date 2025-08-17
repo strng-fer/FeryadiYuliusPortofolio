@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="#hero" className="flex items-center gap-2">
                 <Gamepad2 className="h-8 w-8 text-primary" />
-                <span className="font-headline text-2xl font-bold">PixelFolio</span>
+                <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
             </Link>
             <div className="flex gap-2">
                 {SOCIAL_LINKS.map((social) => (
@@ -23,7 +23,7 @@ export function Footer() {
             </div>
         </div>
         <div className="mt-6 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} PixelFolio. All rights reserved. A retro-themed portfolio adventure.</p>
+            <p>&copy; {new Date().getFullYear()} Feryadi Yulius Portofolio. All rights reserved. A retro-themed portfolio adventure.</p>
         </div>
       </div>
     </footer>

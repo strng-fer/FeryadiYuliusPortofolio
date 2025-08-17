@@ -23,7 +23,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-8">
         <Link href="#hero" className="flex items-center gap-2">
           <Gamepad2 className="h-8 w-8 text-primary" />
-          <span className="font-headline text-2xl font-bold">PixelFolio</span>
+          <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
         </Link>
         <nav className="hidden md:flex gap-1">
           {NAV_LINKS.map((link) => (
@@ -43,7 +43,7 @@ export function Header() {
             <SheetContent side="right">
                 <Link href="#hero" className="flex items-center gap-2 mb-8">
                     <Gamepad2 className="h-8 w-8 text-primary" />
-                    <span className="font-headline text-2xl font-bold">PixelFolio</span>
+                    <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
                 </Link>
               <nav className="flex flex-col gap-4">
                 {NAV_LINKS.map((link) => (

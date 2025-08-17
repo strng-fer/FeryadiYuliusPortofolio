@@ -42,7 +42,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 p-4">
             <h1 className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white">
-              PixelFolio
+              Feryadi Yulius Portofolio
             </h1>
             <p className="mt-4 text-xl md:text-2xl text-accent font-headline">
               A Data Science Adventure
@@ -101,7 +101,7 @@ export default function Home() {
                       <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
                       <div className="p-6 flex-grow flex flex-col">
                         <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                        <ScrollArea className="h-32 pr-4 mb-4">
+                        <ScrollArea className="h-40 pr-4 mb-4">
                            <p className="text-muted-foreground flex-grow">{project.description}</p>
                         </ScrollArea>
                         <div className="flex flex-wrap gap-2 mb-4">
@@ -128,13 +128,13 @@ export default function Home() {
               {EXPERIENCE_DATA.entries.map((item, index) => (
                 <div key={index} className="relative mb-8 pl-8 md:pl-0">
                   <div className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-primary rounded-full -translate-x-1/2 border-4 border-background"></div>
-                  <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12'}` }>
+                  <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}` }>
                     <PixelCard>
                       <div className="p-6">
                         <p className="text-sm text-muted-foreground">{item.date}</p>
                         <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
                         <h4 className="font-semibold">{item.company}</h4>
-                        <ScrollArea className="h-36 pr-4 mt-2">
+                        <ScrollArea className="h-40 pr-4 mt-2">
                             <p className="text-muted-foreground">{item.description}</p>
                         </ScrollArea>
                       </div>
@@ -177,7 +177,7 @@ export default function Home() {
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {CERTIFICATIONS_DATA.entries.map((item, index) => (
-                <PixelCard key={index} className="p-6 flex flex-col items-center justify-center text-center">
+                <PixelCard key={index} className="p-4 flex flex-col items-center text-center">
                   <item.icon className="w-16 h-16 mb-4 text-accent" />
                   <h4 className="font-headline text-lg font-bold leading-tight">{item.name}</h4>
                   <p className="text-sm text-muted-foreground mt-2">{item.issuer}</p>
