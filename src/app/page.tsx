@@ -39,6 +39,7 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog"
+import { FloatingShapes } from '@/components/floating-shapes';
 
 export default function Home() {
   return (
@@ -53,6 +54,7 @@ export default function Home() {
             fill
             className="object-cover"
           />
+          <FloatingShapes />
           <div className="absolute inset-0 bg-black/60" />
           <div className="relative z-10 p-4">
             <h1 className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white">
