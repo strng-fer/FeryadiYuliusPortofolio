@@ -22,7 +22,7 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink, Star, Users, Calendar, Link as LinkIcon } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Tooltip,
@@ -124,7 +124,7 @@ export default function Home() {
                         <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
                         <div className="p-6 flex-grow flex flex-col">
                           <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
-                          <ScrollArea className="h-40 pr-4 mb-4">
+                          <ScrollArea className="h-24 pr-4 mb-4">
                             <p className="text-muted-foreground flex-grow">{project.description}</p>
                           </ScrollArea>
                           <div className="flex flex-wrap gap-2 mb-4">
@@ -140,18 +140,31 @@ export default function Home() {
                           <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm mb-4" data-ai-hint={project.dataAiHint} />
                           <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
                         </DialogHeader>
-                        <DialogDescription className="mt-4 text-base">
-                          {project.description}
-                        </DialogDescription>
+                        <div className="grid grid-cols-2 gap-x-8 gap-y-4 my-4">
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-5 h-5 text-primary" />
+                            <span className="font-semibold">Year: {project.year}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                             <Users className="w-5 h-5 text-primary" />
+                             <span className="font-semibold">Collaborators: {project.collaborators.join(', ')}</span>
+                          </div>
+                        </div>
+                        <ScrollArea className="h-40 pr-4 mb-4">
+                            <DialogDescription className="text-base">
+                            {project.description}
+                            </DialogDescription>
+                        </ScrollArea>
                         <div className="flex flex-wrap gap-2 my-4">
                             {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
                         </div>
-                        <div className="flex gap-4 mt-auto">
-                            <Button asChild className="flex-1">
-                                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                    View Project <ExternalLink className="ml-2 h-4 w-4" />
-                                </a>
-                            </Button>
+                         <div className="flex items-center gap-2">
+                             <LinkIcon className="w-5 h-5 text-primary" />
+                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">
+                                 View Project
+                             </a>
+                          </div>
+                        <div className="flex gap-4 mt-auto pt-4">
                             <DialogClose asChild>
                                 <Button variant="outline" className="flex-1">Close</Button>
                             </DialogClose>

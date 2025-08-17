@@ -59,7 +59,9 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "fashion chatbot",
             skills: ["NVIDIA", "RAG", "FAISS", "LLM"],
-            link: "#"
+            link: "#",
+            year: "2025",
+            collaborators: ["-"]
         },
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
@@ -67,7 +69,9 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "rice fields infographic",
             skills: ["Infographic", "Data Visualization"],
-            link: "#"
+            link: "#",
+            year: "2025",
+            collaborators: ["-"]
         },
         {
             title: "Toy Store KPI Analysis with PowerBI Dashboard",
@@ -75,7 +79,9 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "business dashboard toys",
             skills: ["PowerBI", "Dashboard", "KPI Analysis"],
-            link: "#"
+            link: "#",
+            year: "2025",
+            collaborators: ["-"]
         },
         {
             title: "Plankton Classification using ResNet",
@@ -83,7 +89,9 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "plankton microscope",
             skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
-            link: "#"
+            link: "#",
+            year: "2025",
+            collaborators: ["-"]
         },
         {
             title: "Spices Detection With Streamlit",
@@ -91,7 +99,9 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "indonesian spices",
             skills: ["Streamlit", "Python", "AI", "Image Analysis"],
-            link: "#"
+            link: "#",
+            year: "2024",
+            collaborators: ["-"]
         },
         {
             title: "Know Your Batik Website With Streamlit",
@@ -99,15 +109,19 @@ export const PROJECTS_DATA = {
             image: "https://placehold.co/600x400.png",
             dataAiHint: "batik pattern",
             skills: ["Streamlit", "Image Processing", "Python"],
-            link: "#"
+            link: "#",
+            year: "2024",
+            collaborators: ["-"]
         },
         {
             title: "Journal Mancing With Streamlit",
             description: "A final project for a Programming Algorithms course involved creating a fishing log app using Python libraries like Streamlit, Sqlite3, and Pandas. The application functions similarly to a note-taking app on mobile devices but is tailored for fishing activities.",
             image: "https://placehold.co/600x400.png",
             dataAiHint: "fishing app",
-            skills: ["Streamlit", "Python", "SQLite", "Pandas"],
-            link: "#"
+            skills: ["Streamlit",, "Python", "SQLite", "Pandas"],
+            link: "#",
+            year: "2023",
+            collaborators: ["-"]
         },
     ]
 }
