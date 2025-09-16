@@ -317,6 +317,13 @@ export const CONTACT_DATA = {
             description: "Drop me an email"
         },
         {
+            name: "University Email",
+            value: "feryadi.122450087@student.itera.ac.id",
+            href: "mailto:feryadi.122450087@student.itera.ac.id",
+            icon: Mail,
+            description: "Contact me through my university email"
+        },
+        {
             name: "Location",
             value: "Lampung, Indonesia",
             href: "#",

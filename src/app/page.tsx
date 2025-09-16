@@ -46,6 +46,7 @@ import {
 import { RetroNotificationBadge } from '@/components/ui/retro-notification-badge';
 import { useViewedItems } from '@/hooks/use-viewed-items';
 import { AnimatedSection, heroVariants, itemVariants, cardVariants, textVariants } from '@/components/animated-section';
+import { FloatingRobotButton } from '@/components/floating-robot-button';
 
 export default function Home() {
   const { isViewed, markAsViewed, isLoaded } = useViewedItems();
@@ -724,7 +725,7 @@ export default function Home() {
                       transition: { duration: 0.2 }
                     }}
                   >
-                    <PixelCard className="p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200" delay={index * 0.1}>
+                    <PixelCard className="p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-200 min-h-[200px]" delay={index * 0.1}>
                       <motion.div
                         initial={{ scale: 0, rotate: -90 }}
                         whileInView={{ 
@@ -739,24 +740,28 @@ export default function Home() {
                         }}
                         viewport={{ once: true }}
                       >
-                        <contact.icon className="w-12 h-12 mb-4 text-accent" />
+                        <contact.icon className="w-12 h-12 mb-4 text-accent flex-shrink-0" />
                       </motion.div>
-                      <motion.div className="text-center" variants={textVariants}>
-                        <h3 className="font-headline text-lg font-bold text-primary mb-2">{contact.name}</h3>
-                        <p className="text-sm text-muted-foreground mb-4">{contact.description}</p>
-                        {contact.href !== '#' ? (
-                          <a 
-                            href={contact.href} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="font-semibold hover:text-primary transition-colors duration-200 flex items-center gap-2 justify-center"
-                          >
-                            <span>{contact.value}</span>
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        ) : (
-                          <span className="font-semibold text-primary">{contact.value}</span>
-                        )}
+                      <motion.div className="text-center flex-1 flex flex-col justify-between w-full" variants={textVariants}>
+                        <div>
+                          <h3 className="font-headline text-lg font-bold text-primary mb-2">{contact.name}</h3>
+                          <p className="text-sm text-muted-foreground mb-4">{contact.description}</p>
+                        </div>
+                        <div className="mt-auto">
+                          {contact.href !== '#' ? (
+                            <a 
+                              href={contact.href} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="font-semibold hover:text-primary transition-colors duration-200 flex items-center gap-2 justify-center break-all text-sm"
+                            >
+                              <span className="break-all leading-tight">{contact.value}</span>
+                              <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                            </a>
+                          ) : (
+                            <span className="font-semibold text-primary break-all text-sm leading-tight">{contact.value}</span>
+                          )}
+                        </div>
                       </motion.div>
                     </PixelCard>
                   </motion.div>
@@ -831,6 +836,9 @@ export default function Home() {
         </div>
       </main>
       <Footer />
+      
+      {/* Floating Robot Button */}
+      <FloatingRobotButton />
     </div>
   );
 }
