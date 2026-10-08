@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Feryadi Yulius Portofolio',
-  description: 'A Data Science Adventure',
+  title: 'Feryadi Yulius | Data Science Student',
+  description: 'Portfolio of Feryadi Yulius, an undergraduate Data Science student focused on teaching, research, and practical data products.',
 };
 
 export default function RootLayout({

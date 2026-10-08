@@ -243,3 +243,14 @@ npm run lint       # ESLint checking
 ---
 
 *This portfolio represents Feryadi Yulius's journey in data science, featuring his academic projects, research publications, and professional experience with a unique pixel art aesthetic that reflects his creative approach to technology.*
+
+<!-- antislop:start -->
+## antislop
+For UI, copy, people, mobile layout, or code comments work, read `.github/antislop.md` (core) and then the available skill for the task:
+- UI / visual: `.github/skills/antislop-ui/SKILL.md`
+- Copy & text: `.github/skills/antislop-copywriting/SKILL.md`
+- People: `.github/skills/antislop-human/SKILL.md`
+- Mobile / responsive: `.github/skills/antislop-layoutmobile/SKILL.md`
+- Code comments: `.github/skills/antislop-code/SKILL.md`
+Before starting, follow the core's "Two Usage Modes" section in strict order: explicit session instruction first, then global preference, then ask. For a resolved mode, say `antislop active: <mode> (session override).` or `antislop active: <mode> (global preference).` once before presenting findings or making edits, using the actual mode and source.
+<!-- antislop:end -->

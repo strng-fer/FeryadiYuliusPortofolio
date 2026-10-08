@@ -271,7 +271,6 @@ export const FloatingRobotButton: React.FC<FloatingRobotButtonProps> = ({ classN
                 ease: "easeInOut"
               }}
               className="absolute inset-0 bg-yellow-300/30"
-              style={{ filter: 'blur(4px)' }}
             />
           </motion.div>
         </motion.div>

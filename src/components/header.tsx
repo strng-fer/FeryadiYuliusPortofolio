@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Menu, BrainCircuit } from 'lucide-react';
-import { NAV_LINKS } from '@/lib/data';
+import { NAV_LINKS, PROJECTS_DATA, PUBLICATIONS_DATA, CERTIFICATIONS_DATA } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { RetroNavBadge } from '@/components/ui/retro-nav-badge';
 import { useViewedItems } from '@/hooks/use-viewed-items';
@@ -58,13 +58,12 @@ export function Header() {
     switch(sectionName.toLowerCase()) {
       case 'projects':
         // Assuming we have project items with IDs 0-8 based on PROJECTS_DATA
-        return hasNewItems(Array.from({length: 9}, (_, i) => `project-${i}`));
+        return hasNewItems(PROJECTS_DATA.projects.map((_, i) => `project-${i}`));
       case 'publications':
         // Publications items  
-        return hasNewItems(['publication-0', 'publication-1']);
-      case 'certifications':
-        // Certifications items
-        return hasNewItems(['certification-0', 'certification-1', 'certification-2']);
+        return hasNewItems(PUBLICATIONS_DATA.entries.map((_, i) => `publication-${i}`));
+      case 'certification':
+        return hasNewItems(CERTIFICATIONS_DATA.entries.map((_, i) => `certification-${i}`));
       default:
         return false;
     }
@@ -82,7 +81,7 @@ export function Header() {
         <motion.div variants={itemVariants}>
           <Link href="#hero" className="flex items-center gap-2">
             <BrainCircuit className="h-8 w-8 text-primary" />
-            <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
+            <span className="font-headline text-xl font-bold tracking-tight">FY<span className="text-primary">.</span></span>
           </Link>
         </motion.div>
 
@@ -132,6 +131,10 @@ export function Header() {
               </motion.div>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetTitle className="sr-only">Site navigation</SheetTitle>
+              <SheetDescription className="sr-only">
+                Navigate to the portfolio sections.
+              </SheetDescription>
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -139,7 +142,7 @@ export function Header() {
               >
                 <Link href="#hero" className="flex items-center gap-2 mb-8">
                   <BrainCircuit className="h-8 w-8 text-primary" />
-                  <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
+                  <span className="font-headline text-xl font-bold tracking-tight">FY<span className="text-primary">.</span></span>
                 </Link>
               </motion.div>
               <nav className="flex flex-col gap-4">

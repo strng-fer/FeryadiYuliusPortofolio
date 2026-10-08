@@ -18,6 +18,7 @@ import {
   PROJECTS_DATA,
   SKILLS_DATA,
   EXPERIENCE_DATA,
+  OTHER_EXPERIENCE_DATA,
   EDUCATION_DATA,
   PUBLICATIONS_DATA,
   CERTIFICATIONS_DATA,
@@ -26,7 +27,7 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
-import { ExternalLink, Star, Users, Calendar, Link as LinkIcon, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Star, Users, Calendar, Link as LinkIcon, Award, Play, Download, ArrowDownRight } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Tooltip,
@@ -51,20 +52,20 @@ import { FloatingRobotButton } from '@/components/floating-robot-button';
 export default function Home() {
   const { isViewed, markAsViewed, isLoaded } = useViewedItems();
   return (
-    <div className="bg-background text-foreground font-body relative">
+    <div className="bg-background text-foreground font-body relative overflow-hidden">
       <Header />
       <main>
-        {/* Hero Section with Dramatic Animation */}
-        <section id="hero" className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+        <section id="hero" className="relative min-h-[680px] flex items-center overflow-hidden border-b border-border">
           <Image
             src="/images/hero-background.png"
             alt="Abstract data visualization background"
             fill
-            className="object-cover z-0"
+            priority
+            className="object-cover object-center z-0 opacity-40"
           />
-          <div className="absolute inset-0 bg-black/60 z-10" />
-          <motion.div 
-            className="relative z-30 p-4"
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30 z-10" />
+          <motion.div
+            className="container relative z-30 px-6 py-28 md:py-36"
             initial="hidden"
             animate="visible"
             variants={{
@@ -78,20 +79,21 @@ export default function Home() {
               }
             }}
           >
-            <motion.h1 
-              className="font-headline text-6xl md:text-8xl font-bold text-shadow-pixel text-white"
+            <motion.p className="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-accent" variants={textVariants}>
+              Data science · teaching · research
+            </motion.p>
+            <motion.h1
+              className="max-w-4xl font-headline text-5xl font-bold leading-[0.95] text-foreground md:text-8xl"
               variants={{
                 hidden: { 
                   opacity: 0, 
                   scale: 0.5,
-                  y: 100,
-                  filter: "blur(10px)"
+                  y: 100
                 },
                 visible: { 
                   opacity: 1, 
                   scale: 1,
                   y: 0,
-                  filter: "blur(0px)",
                   transition: {
                     type: "spring",
                     stiffness: 100,
@@ -101,36 +103,30 @@ export default function Home() {
                 }
               }}
             >
-              Feryadi Yulius Portofolio
+              Feryadi Yulius
             </motion.h1>
-            <motion.p 
-              className="mt-4 text-xl md:text-2xl text-accent font-headline"
-              variants={{
-                hidden: { 
-                  opacity: 0, 
-                  y: 50,
-                  scale: 0.8
-                },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  scale: 1,
-                  transition: {
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 12,
-                    duration: 1
-                  }
-                }
-              }}
-            >
-              A Data Science Adventure
+            <motion.p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted-foreground md:text-2xl" variants={textVariants}>
+              Data Scientist & AI Engineer building practical solutions with machine learning, computer vision, and language models.
             </motion.p>
+            <motion.div className="mt-9 flex flex-wrap gap-3" variants={itemVariants}>
+              <Button asChild size="lg">
+                <a href="#projects">Explore selected work <ArrowDownRight /></a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="/CV - Feryadi Yulius.pdf" target="_blank" rel="noopener noreferrer">
+                  View CV <Download />
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground" variants={itemVariants}>
+              <span>Based in Bandar Lampung</span>
+              <span>Available for teaching & collaboration</span>
+            </motion.div>
           </motion.div>
         </section>
         
         <div className="container mx-auto px-4 md:px-8">
-          <SectionWrapper id="about" title={ABOUT_DATA.title}>
+          <SectionWrapper id="about" title={ABOUT_DATA.title} description="A short introduction to the person behind the projects.">
             <motion.div variants={cardVariants}>
               <PixelCard className="max-w-5xl mx-auto">
                 <div className="p-6 md:p-8 grid md:grid-cols-3 gap-8 items-center">
@@ -145,7 +141,7 @@ export default function Home() {
                     <motion.p className="text-muted-foreground mb-4" variants={textVariants}>{ABOUT_DATA.subtitle}</motion.p>
                     <motion.p className="mb-6" variants={textVariants}>{ABOUT_DATA.story}</motion.p>
                     <motion.div variants={itemVariants}>
-                      <h4 className="font-headline text-xl mb-3">Key Strengths</h4>
+                      <h4 className="font-headline text-xl mb-3">What I bring</h4>
                       <ul className="space-y-2">
                         {ABOUT_DATA.stats.map((stat, index) => (
                           <motion.li 
@@ -249,6 +245,9 @@ export default function Home() {
                   {PROJECTS_DATA.projects.map((project, index) => {
                     const projectId = `project-${index}`;
                     const isProjectViewed = isViewed(projectId);
+                    const videoDemo = 'videoDemo' in project && typeof project.videoDemo === 'string'
+                      ? project.videoDemo
+                      : undefined;
                     
                     return (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -289,15 +288,31 @@ export default function Home() {
                           <div className="flex flex-wrap gap-2 mb-4">
                             {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
                           </div>
-                          <DialogTrigger asChild>
-                            <Button onClick={() => markAsViewed(projectId)}>View Details</Button>
-                          </DialogTrigger>
+                          <div className="mb-4">
+                            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">Focus</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.focus.slice(0, 3).map(item => <Badge key={item} variant="outline">{item}</Badge>)}
+                            </div>
+                          </div>
+                          <div className="mt-auto flex flex-wrap gap-2">
+                            <DialogTrigger asChild>
+                              <Button onClick={() => markAsViewed(projectId)}>View details</Button>
+                            </DialogTrigger>
+                            {videoDemo && (
+                              <Button asChild variant="outline">
+                                <a href={videoDemo} target="_blank" rel="noopener noreferrer">
+                                  <Play /> Video demo
+                                </a>
+                              </Button>
+                            )}
+                          </div>
                         </div>
                       </PixelCard>
                       <DialogContent className="max-w-3xl">
                         <DialogHeader>
                           <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm mb-4" data-ai-hint={project.dataAiHint} />
                           <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
+                          <DialogDescription className="sr-only">{project.description}</DialogDescription>
                         </DialogHeader>
                         <div className="grid grid-cols-2 gap-x-8 gap-y-4 my-4">
                           <div className="flex items-center gap-2">
@@ -310,12 +325,31 @@ export default function Home() {
                           </div>
                         </div>
                         <ScrollArea className="h-40 pr-4 mb-4">
-                            <DialogDescription className="text-base">
+                            <p className="text-base text-muted-foreground">
                             {project.description}
-                            </DialogDescription>
+                            </p>
                         </ScrollArea>
-                        <div className="flex flex-wrap gap-2 my-4">
-                            {project.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
+                        <div className="grid gap-6 my-4 md:grid-cols-2">
+                          <div>
+                            <h4 className="font-headline text-lg font-bold mb-2">Key Features</h4>
+                            <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                              {project.keyFeatures.map(feature => <li key={feature}>{feature}</li>)}
+                            </ul>
+                          </div>
+                          <div className="space-y-5">
+                            <div>
+                              <h4 className="font-headline text-lg font-bold mb-2">Tech Stack</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {project.techStack.map(item => <Badge key={item} variant="secondary">{item}</Badge>)}
+                              </div>
+                            </div>
+                            <div>
+                              <h4 className="font-headline text-lg font-bold mb-2">Focus</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {project.focus.map(item => <Badge key={item} variant="outline">{item}</Badge>)}
+                              </div>
+                            </div>
+                          </div>
                         </div>
                          <div className="flex flex-col items-start gap-2">
                             {project.link && (
@@ -330,10 +364,10 @@ export default function Home() {
                                     <span>Related Link 1</span>
                                 </a>
                             )}
-                            {project.relatedUrl2 && (
-                                <a href={project.relatedUrl2} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
-                                    <LinkIcon className="w-5 h-5 text-primary" />
-                                    <span>Related Link 2</span>
+                            {videoDemo && (
+                                <a href={videoDemo} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
+                                    <Play className="w-5 h-5 text-primary" />
+                                    <span>Watch video demo</span>
                                 </a>
                             )}
                           </div>
@@ -420,6 +454,35 @@ export default function Home() {
                         <ScrollArea className="h-40 pr-4 mt-4">
                           <p className="text-muted-foreground">{item.description}</p>
                         </ScrollArea>
+                      </div>
+                    </PixelCard>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </SectionWrapper>
+
+          <SectionWrapper id="other-experience" title={OTHER_EXPERIENCE_DATA.title} description={OTHER_EXPERIENCE_DATA.description}>
+            <motion.div className="relative max-w-3xl mx-auto" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-50px" }}>
+              <div className="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-border -translate-x-1/2"></div>
+              {OTHER_EXPERIENCE_DATA.entries.map((item, index) => (
+                <motion.div key={item.title + item.company} className="relative mb-8 pl-8 md:pl-0" initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }}>
+                  <div className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-accent rounded-full -translate-x-1/2 border-4 border-background"></div>
+                  <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}`}>
+                    <PixelCard delay={index * 0.1}>
+                      <div className="p-6">
+                        <div className="flex items-start gap-4">
+                          <Avatar className="w-12 h-12 pixel-border shrink-0 bg-white">
+                            <AvatarImage src={item.logo} alt={`${item.company} logo`} className="image-pixelated object-contain" />
+                            <AvatarFallback>{item.company.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                          <div className="flex-grow">
+                            <p className="text-sm text-muted-foreground">{item.date}</p>
+                            <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
+                            <h4 className="font-semibold">{item.company}</h4>
+                          </div>
+                        </div>
+                        <p className="text-muted-foreground mt-4">{item.description}</p>
                       </div>
                     </PixelCard>
                   </div>
@@ -587,108 +650,23 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="certifications" title={CERTIFICATIONS_DATA.title} description={CERTIFICATIONS_DATA.description}>
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.15,
-                    delayChildren: 0.1
-                  }
-                }
-              }}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              {CERTIFICATIONS_DATA.entries.map((item, index) => {
-                const certificationId = `certification-${index}`;
-                const isCertificationViewed = isViewed(certificationId);
-                
-                return (
-                <motion.div
-                  key={index}
-                  variants={cardVariants}
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -8,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <Dialog>
-                    <PixelCard className="p-4 flex flex-col items-center text-center justify-center relative" delay={index * 0.1}>
-                      {/* Retro notification badge for unviewed certifications */}
-                      <RetroNotificationBadge 
-                        isVisible={isLoaded && !isCertificationViewed} 
-                        className="top-2 right-2"
-                      />
-                      <motion.div
-                        initial={{ scale: 0, rotate: 180 }}
-                        whileInView={{ 
-                          scale: 1, 
-                          rotate: 0,
-                          transition: {
-                            delay: index * 0.15 + 0.3,
-                            type: "spring",
-                            stiffness: 150,
-                            damping: 12
-                          }
-                        }}
-                        viewport={{ once: true }}
-                      >
-                        <item.icon className="w-16 h-16 mb-4 text-accent" />
-                      </motion.div>
-                      <motion.div variants={textVariants}>
-                        <h4 className="font-headline text-lg font-bold leading-tight px-4">{item.name}</h4>
-                        <p className="text-sm text-muted-foreground mt-1 px-4">{item.issuer}</p>
-                      </motion.div>
-                      <motion.div variants={itemVariants}>
-                        <DialogTrigger asChild>
-                          <Button 
-                            variant="link" 
-                            className="mt-2"
-                            onClick={() => markAsViewed(certificationId)}
-                          >
-                            View Details
-                          </Button>
-                        </DialogTrigger>
-                      </motion.div>
-                    </PixelCard>
-                    <DialogContent>
-                        <DialogHeader>
-                            <div className='flex justify-center mb-4'>
-                                <item.icon className="w-24 h-24 text-accent" />
-                            </div>
-                          <DialogTitle className="font-headline text-3xl text-primary text-center">{item.name}</DialogTitle>
-                           <DialogDescription className="text-center">
-                            Issued by {item.issuer}
-                          </DialogDescription>
-                        </DialogHeader>
-                         <div className="my-4 space-y-2 text-center">
-                            <p><span className="font-semibold">Issue Date:</span> {item.issueDate}</p>
-                            {item.expirationDate && <p><span className="font-semibold">Expiration Date:</span> {item.expirationDate}</p>}
-                            <p><span className="font-semibold">Credential ID:</span> {item.credentialId}</p>
-                         </div>
-                        
-                        <div className="flex flex-col items-center gap-2 mt-4">
-                            <a href={item.url} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
-                                <ShieldCheck className="w-5 h-5 text-primary" />
-                                <span>Verify Credential</span>
-                            </a>
-                        </div>
-
-                        <div className="flex gap-4 mt-auto pt-4">
-                            <DialogClose asChild>
-                                <Button variant="outline" className="flex-1">Close</Button>
-                            </DialogClose>
-                        </div>
-                    </DialogContent>
-                  </Dialog>
-                </motion.div>
-                );
-              })}
+            <motion.div className="grid gap-4 md:grid-cols-2 max-w-4xl mx-auto" variants={cardVariants}>
+              {CERTIFICATIONS_DATA.entries.map((item, index) => (
+                <PixelCard key={item.credentialId} className="p-6" delay={index * 0.1}>
+                  <div className="flex items-start gap-4">
+                    <Award className="h-10 w-10 shrink-0 text-accent" />
+                    <div className="flex-1">
+                      <h3 className="font-headline text-xl font-bold text-primary">{item.name}</h3>
+                      <p className="mt-1 text-muted-foreground">{item.issuer}</p>
+                      <p className="mt-3 text-sm">Credential ID: {item.credentialId}</p>
+                      <p className="text-sm text-muted-foreground">{item.issueDate} – {item.expirationDate}</p>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-primary hover:underline">
+                        Verify credential
+                      </a>
+                    </div>
+                  </div>
+                </PixelCard>
+              ))}
             </motion.div>
           </SectionWrapper>
 

@@ -27,22 +27,22 @@ export function SectionWrapper({ id, title, description, children, className }: 
   return (
     <motion.section 
       id={id} 
-      className={cn("py-16 md:py-24", className)}
+      className={cn("py-20 md:py-28", className)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       variants={containerVariants}
     >
-      <motion.div className="text-center mb-12" variants={textVariants}>
+      <motion.div className="mb-10 max-w-3xl" variants={textVariants}>
         <motion.h2 
-          className="font-headline text-4xl md:text-5xl font-bold text-primary text-shadow-pixel"
+          className="font-headline text-4xl font-bold tracking-tight text-primary md:text-6xl"
           variants={textVariants}
         >
           {title}
         </motion.h2>
         {description && (
           <motion.p 
-            className="text-lg md:text-xl text-muted-foreground mt-4 max-w-3xl mx-auto"
+            className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg"
             variants={textVariants}
           >
             {description}

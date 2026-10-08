@@ -1,217 +1,309 @@
-import { Github, Linkedin, BrainCircuit, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, Microscope, School, Scroll, GraduationCap, FileText, Presentation, Smartphone, Phone, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, FileText, Presentation, Smartphone, Phone, Mail, MapPin } from 'lucide-react';
 
 export const NAV_LINKS = [
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Work', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Writing', href: '#publications' },
+  { name: 'Certification', href: '#certifications' },
   { name: 'Contact', href: '#contact' },
 ];
 
 export const SOCIAL_LINKS = [
     { name: 'GitHub', url: 'https://github.com/strng-fer', icon: Github },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/feryadi-yulius/', icon: Linkedin },
-    { name: 'Phone', url: 'https://wa.me/6288706487712', icon: Phone }
+    { name: 'WhatsApp', url: 'https://wa.me/6285174484303', icon: Phone }
 ];
 
 export const ABOUT_DATA = {
-    title: "Character Profile",
+    title: "Profile",
     name: "Feryadi Yulius",
-    subtitle: "Undergraduated Data Science Student",
-    story: "Data Science student at Sumatera Institute of Technology with a passion for technology, mathematics, data science, and machine learning especially in NLP and Image Processing. Fluent both in English and Bahasa Indonesia. Mastering Python, R, and SQL for data analysis. With strong leadership, communication, critical thinking, and analytical skills, envisions making meaningful contributions to data-driven decision-making and technology.",
+    subtitle: "Data Scientist & AI Engineer",
+    story: "Graduated Data Science student from Sumatera Institute of Technology (ITERA), focused on machine learning, deep learning, computer vision, natural language processing, business intelligence, and operations research. I build practical data products and explain technical ideas clearly.",
     avatar: "/images/feryadi-yulius-avatar.webp",
     stats: [
-        { label: "Natural Language Processing (NLP)" },
-        { label: "Image Processing & Computer Vision" },
-        { label: "Predictive Modeling" },
-        { label: "Data-Driven Decision Making" },
+        { label: "Machine learning and deep learning" },
+        { label: "Computer vision and NLP" },
+        { label: "Business intelligence and data visualization" },
+        { label: "Operations research and process optimization" },
     ]
 };
 
 export const SKILLS_DATA = {
-    title: "Skills Inventory",
-    description: "My digital toolkit. Each skill is a well-honed weapon in my data science arsenal.",
+    title: "Tools I Work With",
+    description: "A practical toolkit for teaching, research, analysis, and building data-driven products.",
     skills: [
         { name: 'Python', icon: Code, description: "A versatile programming language for data analysis, machine learning, and web development." },
         { name: 'R', icon: Code, description: "A language and environment for statistical computing and graphics." },
-        { name: 'SQL', icon: Database, description: "Structured Query Language for managing and querying relational databases." },
-        { name: 'PowerBI', icon: BarChart, description: "A business analytics service by Microsoft for creating interactive visualizations and business intelligence dashboards." },
-        { name: 'Tableau', icon: BarChart, description: "A powerful data visualization tool used for business intelligence." },
+        { name: 'Google Colaboratory', icon: Cpu, description: "A hosted notebook environment for running Python data science and machine learning workflows." },
+        { name: 'Power BI', icon: BarChart, description: "A business intelligence platform for interactive dashboards and KPI analysis." },
         { name: 'Streamlit', icon: Rocket, description: "An open-source Python library that makes it easy to create and share custom web apps for machine learning and data science." },
-        { name: 'MS Excel', icon: FileText, description: "A spreadsheet program for data analysis, calculations, and visualization." },
-        { name: 'Google Colab', icon: Cpu, description: "A free cloud-based Jupyter notebook environment for writing and executing Python code." },
-        { name: 'Jupyter Notebook', icon: BookOpen, description: "An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text." },
-        { name: 'MySQL', icon: Database, description: "An open-source relational database management system." },
-        { name: 'PostgreSQL', icon: Database, description: "A powerful, open source object-relational database system." },
-        { name: 'Hadoop', icon: Database, description: "An open-source framework for distributed storage and processing of large datasets." },
-        { name: 'Android (TFLite/LiteRT)', icon: Smartphone, description: "Developing Android applications integrated with machine learning models using TensorFlow Lite or MNN." },
+        { name: 'Git & GitHub', icon: Code, description: "Version control and collaboration tools for managing data science and software projects." },
+        { name: 'Machine Learning', icon: Database, description: "Modeling workflows for prediction, classification, and evaluation." },
+        { name: 'Deep Learning', icon: Cpu, description: "Neural network methods for image, text, and other complex data." },
+        { name: 'Computer Vision', icon: Smartphone, description: "Image and video analysis for detection, classification, and monitoring." },
+        { name: 'NLP', icon: BookOpen, description: "Natural language processing for text embeddings, similarity, and generative applications." },
+        { name: 'Operations Research', icon: BarChart, description: "Quantitative modeling for process analysis and optimization." },
     ]
 }
 
 export const PROJECTS_DATA = {
-    title: "Project Levels",
-    description: "Embark on a journey through my completed quests. Each project is a level I've designed and conquered.",
+    title: "Selected Work",
+    description: "Research and applied projects across computer vision, deep learning, NLP, business intelligence, and operations research.",
     projects: [
         {
-            title: "Phytoplankton from Belitung Coastal Classification using DeepLearning",
-            description: "Cleaned 236 images from a 26-class phytoplankton dataset sourced from Belitung coastal waters. Applied 9 augmentation techniques for oversampling, expanding the dataset to over 10,000 images. Trained CNN models using 13 architecture variants including ResNet, DenseNet, EfficientNet, MobileNet, InceptionV3, and ConvNeXt.",
+            title: "Pineapple Detection & Monitoring System",
+            description: "A computer vision project for detecting and monitoring pineapple plants and fruits from images and videos. The system explores object detection, confidence visualization, and a pipeline for future tracking and counting in precision agriculture.",
             image: "/images/classification.png",
-            dataAiHint: "phytoplankton deep learning",
-            skills: ["Deep Learning", "CNN", "ResNet", "DenseNet", "EfficientNet", "MobileNet", "InceptionV3", "ConvNeXt"],
-            link: "https://www.canva.com/design/DAGvYFV9D_E/o2FQAv_C0GI54Lk6ga856g/view?utm_content=DAGvYFV9D_E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h728aad55ea",
-            relatedUrl1: "",
-            relatedUrl2: "",
-            year: "2025",
-            collaborators: ["Raid Muhammad Naufal", "Dr. Esa Prakasa, M.T"]
+            dataAiHint: "pineapple detection",
+            skills: ["Python", "PyTorch", "YOLO", "OpenCV", "Computer Vision"],
+            keyFeatures: [
+                "Pineapple object detection using deep learning",
+                "Image and video inference",
+                "Bounding box visualization and confidence scores",
+                "Pipeline preparation for object tracking and counting",
+                "Computer vision exploration for precision agriculture",
+            ],
+            techStack: ["Python", "PyTorch", "YOLO", "OpenCV", "Computer Vision"],
+            focus: ["Object Detection", "Deep Learning", "Computer Vision", "Precision Agriculture"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
         },
         {
-            title: "Build Phytoplankton Automatic Clasification using Android Apps",
-            description: "Language: Kotlin, Framework: Android SDK, ML Framework: TensorFlow Lite, Min SDK: 24 (Android 7.0), Target SDK: 36 (Android 16), Database: Firebase",
+            title: "Evaluation Faster R-CNN & YOLO for Belitung Coastal Waters",
+            description: "Bachelor thesis evaluating Faster R-CNN and YOLO for object detection on coastal water imagery. The work compares accuracy and inference speed through preprocessing, augmentation, fine-tuning, and evaluation using mAP, precision, recall, and F1-score.",
             image: "/images/planktoscan-androidapps.png",
-            dataAiHint: "android app development",
-            skills: ["Android", "Kotlin", "TensorFlow Lite", "Firebase"],
-            link: "https://github.com/strng-fer/PlanktonIdentificationApps",
-            relatedUrl1: "https://www.canva.com/design/DAGvYFV9D_E/o2FQAv_C0GI54Lk6ga856g/view?utm_content=DAGvYFV9D_E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h728aad55ea",
-            relatedUrl2: "",
-            year: "2025",
-            collaborators: ["Raid Muhammad Naufal", "Dr. Esa Prakasa, M.T"]
+            dataAiHint: "coastal object detection",
+            skills: ["Python", "Faster R-CNN", "YOLO", "PyTorch", "Model Evaluation"],
+            keyFeatures: [
+                "Comparative evaluation of Faster R-CNN and YOLO",
+                "Preprocessing, augmentation, and model fine-tuning",
+                "Accuracy and inference-speed comparison",
+                "Evaluation with mAP, precision, recall, and F1-score",
+            ],
+            techStack: ["Python", "PyTorch", "Faster R-CNN", "YOLO", "Data Augmentation"],
+            focus: ["Object Detection", "Deep Learning", "Model Evaluation", "Coastal Monitoring"],
+            year: "Bachelor thesis",
+            collaborators: ["Feryadi Yulius"]
         },
         {
-            title: "Spices Detection With Streamlit",
-            description: "Spice Detection is an AI-powered online platform designed to identify 31 varieties of Indonesian spices through image analysis. Developed using Python and implemented with the Streamlit framework, this platform boasts a prediction accuracy of up to 83% and aims to simplify the identification and enrich public knowledge of Indonesia's diverse spices.",
+            title: "Pothole Detection — Road Infrastructure Monitoring",
+            description: "A YOLOv8 computer vision model for real-time pothole detection and spatial localization to support road maintenance planning. The project achieved Precision 0.831 and mAP@50 0.774.",
+            image: "/images/Screenshot_2025-03-25_103126.png",
+            dataAiHint: "pothole detection",
+            skills: ["Python", "YOLOv8", "OpenCV", "Infrastructure Monitoring"],
+            keyFeatures: [
+                "Real-time pothole detection with YOLOv8",
+                "Spatial localization for road infrastructure monitoring",
+                "Precision of 0.831 and mAP@50 of 0.774",
+                "Computer vision support for road maintenance planning",
+            ],
+            techStack: ["Python", "YOLOv8", "OpenCV", "Computer Vision"],
+            focus: ["Object Detection", "Deep Learning", "Infrastructure Monitoring", "Model Evaluation"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Phytoplankton Classification from Belitung Coastal Waters",
+            description: "Processed 236 images across 26 phytoplankton classes, expanded the dataset to over 10,000 images using nine augmentation techniques, and evaluated 13 CNN architecture variants. The work was deployed as a website and Android app, PlanktoScan, with BRIN copyright registration.",
+            image: "/images/classification.png",
+            dataAiHint: "phytoplankton classification",
+            skills: ["Python", "CNN", "Android", "Web Development", "Deep Learning"],
+            keyFeatures: [
+                "Classification of 26 phytoplankton classes",
+                "Dataset expansion from 236 images to more than 10,000 images",
+                "Evaluation of 13 CNN architecture variants",
+                "Web and Android deployment through PlanktoScan",
+                "Copyright registration with BRIN",
+            ],
+            techStack: ["Python", "CNN", "Deep Learning", "Android", "Web Development"],
+            focus: ["Image Classification", "Deep Learning", "Computer Vision", "Marine Research"],
+            link: "https://github.com/strng-fer/PlanktonIdentificationApps",
+            year: "2025",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Queue System Analysis for Car Refueling Lanes",
+            description: "A quantitative study of vehicle queues at gas stations near Institut Teknologi Sumatera using M/M/1 and M/M/s queuing theory. The analysis identified peak congestion at ρ = 1.14 and recommended adding one server during rush hours.",
+            image: "/images/Screenshot_2025-03-24_131840.png",
+            dataAiHint: "queue analysis",
+            skills: ["Quantitative Analysis", "Queuing Theory", "Statistical Analysis", "Process Optimization"],
+            keyFeatures: [
+                "Analysis of vehicle queues at gas stations near ITERA",
+                "M/M/1 and M/M/s queuing model comparison",
+                "Identification of peak congestion at ρ = 1.14",
+                "Recommendation to add one server during rush hours",
+            ],
+            techStack: ["Statistical Analysis", "Queuing Theory", "Quantitative Analysis", "Process Optimization"],
+            focus: ["Operations Research", "Queueing Theory", "Process Analysis", "Optimization"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Outfit Recommendation Chatbot using NVIDIA",
+            description: "A personalized outfit recommendation system using Retrieval-Augmented Generation with NVIDIA Llama-3.1 Nemotron Nano 8B. It uses FAISS similarity search and prompt engineering to create context-aware stylist responses.",
+            image: "/images/Salinan_dari_Apa_itu_Jupyter_Notebook.jpg",
+            dataAiHint: "outfit recommendation chatbot",
+            skills: ["Python", "Llama-3.1", "RAG", "FAISS", "NVIDIA API", "NLP"],
+            keyFeatures: [
+                "Context-aware outfit recommendations",
+                "Retrieval-Augmented Generation workflow",
+                "FAISS similarity search for relevant fashion context",
+                "Prompt engineering for stylist-style responses",
+            ],
+            techStack: ["Python", "Llama-3.1 Nemotron", "RAG", "FAISS", "NVIDIA API"],
+            focus: ["Generative AI", "Natural Language Processing", "Recommendation Systems", "Semantic Search"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Unsupervised LinkedIn Company Profile Embedding",
+            description: "An LSTM autoencoder that generates text embeddings from company profiles for similarity search. The work evaluates semantic similarity through embedding analysis and PCA/t-SNE visualization.",
+            image: "/images/Screenshot_2025-03-22_223137.png",
+            dataAiHint: "company profile embeddings",
+            skills: ["Python", "LSTM", "Autoencoder", "NLP", "Similarity Search"],
+            keyFeatures: [
+                "Unsupervised learning for company profile representation",
+                "LSTM autoencoder-based text embeddings",
+                "Similarity search across company profiles",
+                "PCA and t-SNE embedding visualization",
+            ],
+            techStack: ["Python", "LSTM", "Autoencoder", "NLP", "PCA", "t-SNE"],
+            focus: ["Unsupervised Learning", "NLP", "Text Embeddings", "Similarity Search"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Infographic: Exploring Rice Production in Indonesia",
+            description: "An infographic titled “From Fields to Distribution” that uses harvest area, average grain prices, and total production data to highlight geographical inequalities in Indonesian food security. Submitted to the 2025 Gammafest IPB Statistical Visualization Competition.",
+            image: "/images/Screenshot_2025-03-25_103126.png",
+            dataAiHint: "rice production infographic",
+            skills: ["Data Visualization", "Graphic Design", "Statistical Analysis", "Storytelling"],
+            keyFeatures: [
+                "Visualization of harvest area, grain prices, and production",
+                "Geographical comparison of Indonesian rice production",
+                "Data storytelling for food security insights",
+                "Submission to the 2025 Gammafest IPB competition",
+            ],
+            techStack: ["Data Visualization", "Statistical Analysis", "Graphic Design", "Data Storytelling"],
+            focus: ["Data Visualization", "Statistical Analysis", "Food Security", "Communication"],
+            year: "2025",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Toy Store KPI Analysis with Power BI Dashboard",
+            description: "A business intelligence dashboard for Maven Toys that tracks total orders, revenue, profit, product-category trends, and revenue growth for interactive management analysis.",
+            image: "/images/Screenshot_2025-03-24_131840.png",
+            dataAiHint: "toy store dashboard",
+            skills: ["Power BI", "Data Analytics", "KPI Dashboarding"],
+            keyFeatures: [
+                "Interactive tracking of orders, revenue, and profit",
+                "Product-category performance analysis",
+                "Revenue growth monitoring",
+                "Management-ready KPI dashboard",
+            ],
+            techStack: ["Power BI", "Data Analytics", "KPI Dashboarding"],
+            focus: ["Business Intelligence", "Data Analytics", "KPI Monitoring", "Data Visualization"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Spices Detection with Streamlit",
+            description: "An AI-powered platform that identifies 31 varieties of Indonesian spices through image analysis. The Streamlit app reaches up to 83% prediction accuracy and supports cultural and culinary education.",
             image: "/images/banner-rempah-indonesia-600x315h.webp",
             dataAiHint: "indonesian spices",
-            skills: ["Streamlit", "Python", "AI", "Image Analysis"],
+            skills: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
+            keyFeatures: [
+                "Image-based identification of 31 Indonesian spice varieties",
+                "Interactive Streamlit inference interface",
+                "Prediction accuracy of up to 83%",
+                "Application for cultural and culinary education",
+            ],
+            techStack: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
+            focus: ["Image Classification", "Deep Learning", "Computer Vision", "Cultural Education"],
             link: "https://deteksi-rempah.streamlit.app/",
             relatedUrl1: "https://github.com/strng-fer/deteksirempah",
-            relatedUrl2: "",
-            year: "November 2024",
-            collaborators: ["-"]
+            year: "2024",
+            collaborators: ["Feryadi Yulius"]
         },
         {
-            title: "Know Your Batik Website With Steramlit",
-            description: "Know Your Batik is a website that allows users to detect types of batik based on uploaded images or photos. To address the lack of public understanding about the variety of batik and to prevent cultural claims by other countries, the Know Your Batik website serves as an innovative solution. This website is designed to help users recognize and understand different types of batik through image processing technology.",
+            title: "Know Your Batik Website with Streamlit",
+            description: "An interactive website that detects batik types from uploaded images. It applies image processing for pattern recognition and supports digital cultural preservation and public education.",
             image: "/images/Salinan_dari_Apa_itu_Jupyter_Notebook.jpg",
             dataAiHint: "batik pattern",
-            skills: ["Streamlit", "Image Processing", "Python"],
+            skills: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
+            keyFeatures: [
+                "Image upload and batik pattern detection",
+                "Image processing for cultural pattern recognition",
+                "Interactive Streamlit website",
+                "Digital cultural preservation and public education",
+            ],
+            techStack: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
+            focus: ["Image Classification", "Computer Vision", "Cultural Preservation", "Public Education"],
             link: "https://knowyourbatik.streamlit.app/",
             relatedUrl1: "https://github.com/rayths/KNOB",
-            relatedUrl2: "",
-            year: "Oktober 2024",
-            collaborators: ["Raid Muhammad Naufal", "Deva Anjani", "Natasya Egalina"]
-        },
-        {
-            title: "Journal Mancing With Streamlit",
-            description: "A final project for a Programming Algorithms course involved creating a fishing log app using Python libraries like Streamlit, Sqlite3, and Pandas. The application, which has been deployed on the Streamlit community and stored in a GitHub repository, functions similarly to a note-taking app on mobile devices but is tailored for fishing activities. This specialized app offers various features to aid anglers in recording and monitoring their fishing endeavors, aiming to enhance their fishing experiences",
-            image: "/images/Screenshot_2024-10-23_211956.png",
-            dataAiHint: "fishing app",
-            skills: ["Streamlit", "Python", "SQLite", "Pandas"],
-            link: "https://journalmancing.streamlit.app",
-            relatedUrl1: "https://github.com/alkhrzmy/journeymancing",
-            relatedUrl2: "",
-            year: "November 2023",
-            collaborators: ["Gymnastiar", "Natasya Egalina", "Khusnunisa"]
-        },
-        {
-            title: "Paper at UPN Jatim Data Science National Seminar Prosiding",
-            description: "Title: Metode Seleksi Variabel dalam Pemodelan Regresi Linear Data Curah Hujan Provinsi Lampung. Abstrac: Understanding the amount of rainfall is crucial for engineering planning, especially for water-related infrastructure such as irrigation systems, dams, urban drainage, and other hydraulic structures. Consequently, accurate modeling and identification of optimal predictor variables are essential to support effective rainfall prediction for design and decision-making purposes. This researchaims to identify the optimal number of variables in a linear regression model using best subset, forward stepwise, and backward stepwise selection methods. The evaluation is based on the highest Adjusted R2value.The analysis results indicate that the optimal number of variables in the linear regression model is five, namely thenumber of rainy days, average wind speed, average air humidity, average air temperature, and average minimum air temperature. The highest Adjusted R2value obtained is 67.1%, and the Bayesian Information Criterion (BIC) value is 5.715773,the smallest compared to other models. Additionally, the Residual Sum of Squares (RSS) value is10383.326, which, although not the smallest, is sufficiently optimal. The Cp value is 4.380471, indicating a good fit.With the smallest BIC value,and optimal RSS and Cp values,the model with five variables is validated as the best model. The methodsof best subset, forward stepwise, and backward stepwiseselection also show consistencyin selecting the predictorvariables. Conversely, variables such asaverage air pressure and average solar irradiationdo not exhibit a significantinfluence in the linear regression model",
-            image: "/images/Screenshot_2024-10-23_212257.png",
-            dataAiHint: "research paper regression",
-            skills: ["Linear Regression", "Variable Selection", "R"],
-            link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
-            relatedUrl1: "",
-            relatedUrl2: "",
-            year: "September 2024",
-            collaborators: ["Elok Fiola", "Presilia", "Dea Mutia", "Mika Alvionita", "Febri Irawati"]
-        },
-        {
-            title: "Plankton Classification using ResNet",
-            description: "This project develops an automatic plankton classification model using Deep Learning based on the ResNet-101 architecture pre-trained on ImageNet... The implementation of this model holds potential for efficiently supporting marine ecosystem health monitoring, environmental change detection, and biodiversity studies.",
-            image: "/images/Screenshot_2025-03-22_223137.png",
-            dataAiHint: "plankton microscope",
-            skills: ["Deep Learning", "ResNet", "ImageNet", "Python"],
-            link: "https://github.com/strng-fer/PlanktonDetection/",
-            relatedUrl1: "https://colab.research.google.com/drive/1zulCIuTuMq0822JGppycx80Sbl7JpCNE?usp=sharing",
-            relatedUrl2: "https://deteksiplankton.my.canva.site/",
-            year: "2025",
-            collaborators: ["-"]
-        },
-        {
-            title: "Gowalla Dataset Exploratory",
-            description: "The Gowalla dataset provides us with the opportunity to explore the Social Map and Travel Ecosystem of Gowalla Users... user profile visualizations will help identify the most active users and their favorite frequently visited locations.",
-            image: "/images/Screenshot_2025-03-24_131840.png",
-            dataAiHint: "social media map",
-            skills: ["Data Visualization", "Network Analysis", "Python"],
-            link: "https://drive.google.com/drive/folders/1vhED9LFEvF52u0-hflfeULJkM6nDu5xc?usp=sharing",
-            relatedUrl1: "",
-            relatedUrl2: "",
-            year: "December, 2024",
-            collaborators: ["Hermawan Manurung", "Happy Syahrul Ramadhan"]
-        },
-        {
-            title: "Global CO2 Emissions Dashboard",
-            description: "This dashboard presents an analysis of global CO2 emissions through various visualizations. The left panel highlights the top CO2-emitting countries, while the world map in the center illustrates the distribution of emissions per capita... This dashboard is designed to provide insights into emission patterns and their global impact.",
-            image: "/images/Screenshot_2025-03-25_103126.png",
-            dataAiHint: "co2 emissions dashboard",
-            skills: ["Tableau", "Data Visualization", "Dashboard"],
-            link: "https://public.tableau.com/views/Book1_17428733383470/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            relatedUrl1: "",
-            relatedUrl2: "",
-            year: "Juli 2023",
-            collaborators: ["-"]
+            year: "2024",
+            collaborators: ["Feryadi Yulius"]
         },
     ]
 }
 
 export const EXPERIENCE_DATA = {
-    title: "Career Quest",
-    description: "Chronicles of my professional adventures in the realm of data.",
+    title: "Experience",
+    description: "Research and development experience in applied data science and AI.",
     entries: [
         {
             date: "June 2025 – August 2025",
             title: "Research Assistant Intern",
-            company: "Indonesian National Research and Innovation Agency (BRIN-RI)",
+            company: "Badan Riset dan Inovasi Nasional (BRIN)",
             logo: "/images/logo-brin.png",
-            description: "Drafted a research paper on deep learning modeling for plankton identification from Belitung Island. Trained and evaluated four deep learning architectures (AlexNet, DenseNet, VGG16, and InceptionV3) on the Belitung plankton dataset, achieving the highest accuracy of 95% with the DenseNet model. Performed manual labeling and segmentation of 86 microscopic plankton images, and applied data augmentation techniques to expand the dataset to over 500 annotated images. Developed and refined an Android-based plankton identification application integrated with a mobile microscope."
+            description: "Conducted research and development activities under the Indonesian National Research and Innovation Agency, supporting applied computational work in data processing, analysis, and AI."
+        },
+    ]
+}
+
+export const OTHER_EXPERIENCE_DATA = {
+    title: "Other Experience",
+    description: "Teaching, tutoring, and academic support roles.",
+    entries: [
+        {
+            date: "January 2026 – present",
+            title: "Part-time Programming Teacher",
+            company: "Timedoor Academy · Bandar Lampung",
+            logo: "/images/logo-itera.png",
+            description: "Teach programming logic and coding for students aged 5–18 through age-appropriate lessons, hands-on activities, and guided practice across AI, coding, IoT, and robotics."
         },
         {
-            date: "February 2025 – June 2025",
-            title: "Grader for Functional Programing",
-            company: "Sumatera Institute of Technology",
+            date: "June 2026 – present",
+            title: "Part-time Teacher",
+            company: "Ruangguru · Bandar Lampung",
             logo: "/images/logo-sainsdata.png",
-            description: "Assigned weekly coursework to 50+ students in a structured and timely manner. Evaluated assignments, quizzes, mid-term, and final exams consistently over a 16-week academic period. Supervised examinations to ensure academic integrity and a conducive test environment."
+            description: "Teach TIU for CASN preparation, focusing on verbal reasoning, numerical logic, analytical thinking, and test-taking strategies."
         },
         {
-            date: "January 2025 – June 2025",
-            title: "Statistical for Data Science Practicum Assistant",
-            company: "Sumatera Institute of Technology",
-            logo: "/images/logo-sainsdata.png",
-            description: "Taught statistical concepts (hypothesis testing, regression) to 60+ students. Assisted in 10 laboratory sessions on R tools. Managing 500+ pre-test data and student assignments. Mentored 1 students group in capstone projects for real-world problems. Evaluating students' learning outcomes."
+            date: "November 2025 – January 2026",
+            title: "Part-time Teacher",
+            company: "Bimbel Ruang Juara",
+            logo: "/images/logo-sman1lubaiulu.png",
+            description: "Provided one-on-one tutoring in basic literacy and numeracy for early learners using personalized teaching methods."
         },
         {
-            date: "September 2024 – December 2024",
-            title: "Programming Algorithm Practicum Assistant",
-            company: "Sumatera Institute of Technology",
-            logo: "/images/logo-sainsdata.png",
-            description: "Delivered practical programming labs to 60+ students to understanding of the Programming Algorithms course. Assisted in 10 laboratory sessions, helping 95% of students successfully complete Python algorithmic projects. Managing 500+ pre-test data and student assignments. Motivating students. Evaluating students' learning outcomes."
-        },
-        {
-            date: "September 2023 – January 2025",
-            title: "Basic Math Tutorial Assistant",
+            date: "September 2023 – June 2026",
+            title: "Tutorial & Practicum Assistant",
             company: "Sumatera Institute of Technology",
             logo: "/images/logo-itera.png",
-            description: "Teaching 10 basic math module to 130+ first-year students across 2 semester. Discussing issues raised by the professor, answering questions from mid-semester and end-of-semester exams. Designed and assigned 10+ self-study task modules per semester, resulting in an 85% completion rate and improved independent problem-solving skills. Increased student enthusiasm through interactive workshops, reflected in a 4.5/5 satisfaction score in post-semester feedback surveys. Evaluate the comprehension and difficulties of first-year students to avoid hindering their learning."
+            description: "Supported undergraduate tutorials and practicums through academic mentoring, practicum supervision, grading, and assessment across mathematics, statistics, optimization, data mining, programming, and algorithms."
         },
     ]
 }
 
 export const EDUCATION_DATA = {
-    title: "Educational Lore",
+    title: "Education",
     entries: [
         {
-            degree: "Data Science (CGPA: 3.43/4.00)",
+            degree: "Data Science (CGPA: 3.52/4.00)",
             institution: "Sumatera Institute of Technology",
-            date: "September 2022 - Now",
+            date: "2022 – 2026",
             logo: "/images/logo-itera.png",
         },
         {
@@ -224,9 +316,19 @@ export const EDUCATION_DATA = {
 }
 
 export const PUBLICATIONS_DATA = {
-    title: "Ancient Scrolls",
-    description: "Codified knowledge I've contributed to the great libraries of science.",
+    title: "Research & Intellectual Property",
+    description: "Applied work connected to data science, big data, and computational biology.",
     entries: [
+        {
+            title: "PlanktoScan – Computer Program (BRIN)",
+            journal: "Intellectual Property",
+            year: 2025,
+            link: "https://github.com/strng-fer/PlanktonIdentificationApps",
+            icon: FileText,
+            authors: ["Feryadi Yulius"],
+            doi: "",
+            abstract: "A computer program and Android prototype for plankton identification, developed during research activities with BRIN."
+        },
         {
             title: "Implementasi Ekosistem Hadoop untuk Analisis Segmentasi Pelanggan E-commerce di Pulau Sumatera",
             journal: "UPN Jatim Data Science National Seminar",
@@ -246,43 +348,42 @@ export const PUBLICATIONS_DATA = {
             authors: ["Elok Fiola", "Feryadi Yulius", "Presilia Presilia", "Dea Mutia Risani", "Mika Alvionita", "Febri Dwi Irawati"],
             doi: "https://doi.org/10.33005/senada.v4i1.213",
             abstract: "Penelitian ini dilakukan dengan tujuan untuk untuk mengseleksi jumlah variabel dalam model regresi linear berganda dengan menggunakan metode best subset, forward stepwise, dan backward stepwise. Evaluasi model dilakukan berdasarkan nilai Adjusted R2 tertinggi, nilai Bayesian Information Criterion (BIC) terendah. Hasil analisis menunjukkan bahwa seleksi jumlah variabel pada model regresi linear berganda yaitu jumlah hari hujan, rata-rata kecepatan angin, rata-rata kelembaban udara, rata-rata suhu udara, dan rata-rata suhu udara minimum. Nilai adjusted R2 tertinggi yang diperoleh adalah 67.1%, serta nilai Bayesian Information Criterion (BIC), yaitu senilai -5.715773. Ketiga metode best subset, forward stepwise, dan backward stepwise menunjukkan konsistensi dalam memilih variabel prediktor yang dimasukkan."
-        }
+        },
+        {
+            title: "Juara 3 – INNOVEST 2026",
+            journal: "Politeknik Negeri Jember · Clash of Champions",
+            year: 2026,
+            link: "",
+            icon: Award,
+            authors: ["Feryadi Yulius"],
+            doi: "",
+            abstract: "Third-place award at INNOVEST 2026, held at Politeknik Negeri Jember, with the theme “Clash of Champions”."
+        },
     ]
 }
 
 export const CERTIFICATIONS_DATA = {
-    title: "Achievements Unlocked",
-    description: "Badges of honor earned by conquering specialized challenges.",
+    title: "Professional Certifications",
+    description: "Verified DataCamp credentials and their validity periods.",
     entries: [
-        { 
-            name: "Data Scientist Associate", 
-            issuer: "DataCamp", 
-            icon: Award,
+        {
+            name: "Associate Data Scientist",
+            issuer: "DataCamp",
             url: "https://www.datacamp.com/certificate/DSA0014978540656",
             credentialId: "DSA0014978540656",
-            issueDate: "October 11, 2024",
-            expirationDate: "October 11, 2026",
+            issueDate: "October 2024",
+            expirationDate: "October 2026",
         },
-        { 
-            name: "Python Data Associate", 
-            issuer: "DataCamp", 
-            icon: Award,
+        {
+            name: "Python Data Associate",
+            issuer: "DataCamp",
             url: "https://www.datacamp.com/certificate/PDA0015038237495",
             credentialId: "PDA0015038237495",
-            issueDate: "September 29, 2024",
-            expirationDate: "September 29, 2026",
+            issueDate: "September 2024",
+            expirationDate: "September 2026",
         },
-        { 
-            name: "DeepLearning.AI Tensorflow Developer Course", 
-            issuer: "Coursera", 
-            icon: Award,
-            url: "https://www.coursera.org/account/accomplishments/specialization/certificate/PCA9F573KLLT",
-            credentialId: "PCA9F573KLLT",
-            issueDate: "November 23, 2023",
-            expirationDate: "",
-        },
-    ]
-}
+    ],
+};
 
 export const CONTACT_DATA = {
     title: "Contact Me",
@@ -290,8 +391,8 @@ export const CONTACT_DATA = {
     contacts: [
         {
             name: "WhatsApp",
-            value: "+62 887-0648-7712",
-            href: "https://wa.me/6288706487712",
+            value: "+62 851-7448-4303",
+            href: "https://wa.me/6285174484303",
             icon: Phone,
             description: "Send me a message on WhatsApp"
         },
@@ -325,7 +426,7 @@ export const CONTACT_DATA = {
         },
         {
             name: "Location",
-            value: "Lampung, Indonesia",
+            value: "Bandar Lampung, Lampung",
             href: "#",
             icon: MapPin,
             description: "Based in Lampung, Indonesia"

@@ -53,7 +53,7 @@ export function Footer() {
           <motion.div variants={itemVariants}>
             <Link href="#hero" className="flex items-center gap-2">
               <BrainCircuit className="h-8 w-8 text-primary" />
-              <span className="font-headline text-2xl font-bold">Feryadi Yulius Portofolio</span>
+              <span className="font-headline text-xl font-bold tracking-tight">FY<span className="text-primary">.</span></span>
             </Link>
           </motion.div>
 
@@ -99,7 +99,7 @@ export function Footer() {
           className="mt-6 pt-6 border-t border-border text-center text-sm text-muted-foreground"
           variants={itemVariants}
         >
-          <p>&copy; {new Date().getFullYear()} Feryadi Yulius Portofolio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Feryadi Yulius. All rights reserved.</p>
         </motion.div>
       </div>
     </motion.footer>
