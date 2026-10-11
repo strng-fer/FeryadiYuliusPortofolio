@@ -9,6 +9,7 @@ import { NAV_LINKS, PROJECTS_DATA, PUBLICATIONS_DATA, CERTIFICATIONS_DATA } from
 import { cn } from '@/lib/utils';
 import { RetroNavBadge } from '@/components/ui/retro-nav-badge';
 import { useViewedItems } from '@/hooks/use-viewed-items';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,38 +87,44 @@ export function Header() {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <motion.nav className="hidden md:flex gap-1" variants={itemVariants}>
-          {NAV_LINKS.map((link, index) => (
-            <motion.div
-              key={link.name}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ 
-                opacity: 1, 
-                y: 0,
-                transition: {
-                  delay: 0.4 + (index * 0.1),
-                  type: "spring",
-                  stiffness: 150,
-                  damping: 12
-                }
-              }}
-              whileHover={{ y: -2, transition: { duration: 0.2 } }}
-            >
-              <Button asChild variant="ghost" className="font-headline relative">
-                <Link href={link.href}>
-                  {link.name}
-                  <RetroNavBadge 
-                    isVisible={getSectionNewItems(link.name)}
-                    className="top-1 right-1"
-                  />
-                </Link>
-              </Button>
-            </motion.div>
-          ))}
-        </motion.nav>
+        <div className="hidden md:flex items-center gap-3">
+          <motion.nav className="flex gap-1" variants={itemVariants}>
+            {NAV_LINKS.map((link, index) => (
+              <motion.div
+                key={link.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0,
+                  transition: {
+                    delay: 0.4 + (index * 0.1),
+                    type: "spring",
+                    stiffness: 150,
+                    damping: 12
+                  }
+                }}
+                whileHover={{ y: -2, transition: { duration: 0.2 } }}
+              >
+                <Button asChild variant="ghost" className="font-headline relative">
+                  <Link href={link.href}>
+                    {link.name}
+                    <RetroNavBadge 
+                      isVisible={getSectionNewItems(link.name)}
+                      className="top-1 right-1"
+                    />
+                  </Link>
+                </Button>
+              </motion.div>
+            ))}
+          </motion.nav>
+          <motion.div variants={itemVariants}>
+            <ThemeToggle />
+          </motion.div>
+        </div>
 
         {/* Mobile Menu */}
-        <motion.div className="md:hidden" variants={itemVariants}>
+        <motion.div className="flex items-center gap-2 md:hidden" variants={itemVariants}>
+          <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
               <motion.div
