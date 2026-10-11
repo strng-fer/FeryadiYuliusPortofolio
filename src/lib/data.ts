@@ -1,12 +1,12 @@
 import { Github, Linkedin, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, FileText, Presentation, Smartphone, Phone, Mail, MapPin } from 'lucide-react';
 
 export const NAV_LINKS = [
-  { name: 'About', href: '#about' },
-  { name: 'Work', href: '#projects' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Writing', href: '#publications' },
-  { name: 'Certification', href: '#certifications' },
-  { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '#about' },
+    { name: 'Work', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Writing', href: '#publications' },
+    { name: 'Certification', href: '#certifications' },
+    { name: 'Contact', href: '#contact' },
 ];
 
 export const SOCIAL_LINKS = [
@@ -54,7 +54,7 @@ export const PROJECTS_DATA = {
         {
             title: "Pineapple Detection & Monitoring System",
             description: "A computer vision project for detecting and monitoring pineapple plants and fruits from images and videos. The system explores object detection, confidence visualization, and a pipeline for future tracking and counting in precision agriculture.",
-            image: "/images/classification.png",
+            image: "/images/pineapple.png",
             dataAiHint: "pineapple detection",
             skills: ["Python", "PyTorch", "YOLO", "OpenCV", "Computer Vision"],
             keyFeatures: [
@@ -72,7 +72,7 @@ export const PROJECTS_DATA = {
         {
             title: "Evaluation Faster R-CNN & YOLO for Belitung Coastal Waters",
             description: "Bachelor thesis evaluating Faster R-CNN and YOLO for object detection on coastal water imagery. The work compares accuracy and inference speed through preprocessing, augmentation, fine-tuning, and evaluation using mAP, precision, recall, and F1-score.",
-            image: "/images/planktoscan-androidapps.png",
+            image: "/images/frcnn.png",
             dataAiHint: "coastal object detection",
             skills: ["Python", "Faster R-CNN", "YOLO", "PyTorch", "Model Evaluation"],
             keyFeatures: [
@@ -89,7 +89,7 @@ export const PROJECTS_DATA = {
         {
             title: "Pothole Detection — Road Infrastructure Monitoring",
             description: "A YOLOv8 computer vision model for real-time pothole detection and spatial localization to support road maintenance planning. The project achieved Precision 0.831 and mAP@50 0.774.",
-            image: "/images/Screenshot_2025-03-25_103126.png",
+            image: "/images/pothole.png",
             dataAiHint: "pothole detection",
             skills: ["Python", "YOLOv8", "OpenCV", "Infrastructure Monitoring"],
             keyFeatures: [
@@ -125,7 +125,7 @@ export const PROJECTS_DATA = {
         {
             title: "Queue System Analysis for Car Refueling Lanes",
             description: "A quantitative study of vehicle queues at gas stations near Institut Teknologi Sumatera using M/M/1 and M/M/s queuing theory. The analysis identified peak congestion at ρ = 1.14 and recommended adding one server during rush hours.",
-            image: "/images/Screenshot_2025-03-24_131840.png",
+            image: "/images/queueanalisis.png",
             dataAiHint: "queue analysis",
             skills: ["Quantitative Analysis", "Queuing Theory", "Statistical Analysis", "Process Optimization"],
             keyFeatures: [
@@ -142,7 +142,7 @@ export const PROJECTS_DATA = {
         {
             title: "Outfit Recommendation Chatbot using NVIDIA",
             description: "A personalized outfit recommendation system using Retrieval-Augmented Generation with NVIDIA Llama-3.1 Nemotron Nano 8B. It uses FAISS similarity search and prompt engineering to create context-aware stylist responses.",
-            image: "/images/Salinan_dari_Apa_itu_Jupyter_Notebook.jpg",
+            image: "/images/queuesystem.png",
             dataAiHint: "outfit recommendation chatbot",
             skills: ["Python", "Llama-3.1", "RAG", "FAISS", "NVIDIA API", "NLP"],
             keyFeatures: [
@@ -159,7 +159,7 @@ export const PROJECTS_DATA = {
         {
             title: "Unsupervised LinkedIn Company Profile Embedding",
             description: "An LSTM autoencoder that generates text embeddings from company profiles for similarity search. The work evaluates semantic similarity through embedding analysis and PCA/t-SNE visualization.",
-            image: "/images/Screenshot_2025-03-22_223137.png",
+            image: "/images/outfitrecomendation.png",
             dataAiHint: "company profile embeddings",
             skills: ["Python", "LSTM", "Autoencoder", "NLP", "Similarity Search"],
             keyFeatures: [
@@ -176,7 +176,7 @@ export const PROJECTS_DATA = {
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
             description: "An infographic titled “From Fields to Distribution” that uses harvest area, average grain prices, and total production data to highlight geographical inequalities in Indonesian food security. Submitted to the 2025 Gammafest IPB Statistical Visualization Competition.",
-            image: "/images/Screenshot_2025-03-25_103126.png",
+            image: "/images/riceproduction.png",
             dataAiHint: "rice production infographic",
             skills: ["Data Visualization", "Graphic Design", "Statistical Analysis", "Storytelling"],
             keyFeatures: [
@@ -193,7 +193,7 @@ export const PROJECTS_DATA = {
         {
             title: "Toy Store KPI Analysis with Power BI Dashboard",
             description: "A business intelligence dashboard for Maven Toys that tracks total orders, revenue, profit, product-category trends, and revenue growth for interactive management analysis.",
-            image: "/images/Screenshot_2025-03-24_131840.png",
+            image: "/images/toy.png",
             dataAiHint: "toy store dashboard",
             skills: ["Power BI", "Data Analytics", "KPI Dashboarding"],
             keyFeatures: [
@@ -210,7 +210,7 @@ export const PROJECTS_DATA = {
         {
             title: "Spices Detection with Streamlit",
             description: "An AI-powered platform that identifies 31 varieties of Indonesian spices through image analysis. The Streamlit app reaches up to 83% prediction accuracy and supports cultural and culinary education.",
-            image: "/images/banner-rempah-indonesia-600x315h.webp",
+            image: "/images/spices.png",
             dataAiHint: "indonesian spices",
             skills: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
             keyFeatures: [
@@ -229,7 +229,7 @@ export const PROJECTS_DATA = {
         {
             title: "Know Your Batik Website with Streamlit",
             description: "An interactive website that detects batik types from uploaded images. It applies image processing for pattern recognition and supports digital cultural preservation and public education.",
-            image: "/images/Salinan_dari_Apa_itu_Jupyter_Notebook.jpg",
+            image: "/images/batik.png",
             dataAiHint: "batik pattern",
             skills: ["Python", "Deep Learning", "Streamlit", "Computer Vision"],
             keyFeatures: [
@@ -270,14 +270,14 @@ export const OTHER_EXPERIENCE_DATA = {
             date: "January 2026 – present",
             title: "Part-time Programming Teacher",
             company: "Timedoor Academy · Bandar Lampung",
-            logo: "/images/logo-itera.png",
+            logo: "/images/timedoorlogo.jpg",
             description: "Teach programming logic and coding for students aged 5–18 through age-appropriate lessons, hands-on activities, and guided practice across AI, coding, IoT, and robotics."
         },
         {
             date: "June 2026 – present",
             title: "Part-time Teacher",
             company: "Ruangguru · Bandar Lampung",
-            logo: "/images/logo-sainsdata.png",
+            logo: "/images/ruangguru.jpg",
             description: "Teach TIU for CASN preparation, focusing on verbal reasoning, numerical logic, analytical thinking, and test-taking strategies."
         },
         {
@@ -323,7 +323,7 @@ export const PUBLICATIONS_DATA = {
             title: "PlanktoScan – Computer Program (BRIN)",
             journal: "Intellectual Property",
             year: 2025,
-            link: "https://github.com/strng-fer/PlanktonIdentificationApps",
+            link: "https://brin.go.id/news/130492/dukung-pelestarian-ekosistem-laut-brin-kembangkan-planktoscan-untuk-kenali-fitoplankton",
             icon: FileText,
             authors: ["Feryadi Yulius"],
             doi: "",
