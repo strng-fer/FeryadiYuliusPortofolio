@@ -1,4 +1,4 @@
-import { Github, Linkedin, Code, Database, Rocket, BookOpen, Award, BarChart, Cpu, FileText, Presentation, Smartphone, Phone, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Phone, Mail, MapPin, Award, FileText, Presentation } from 'lucide-react';
 
 export const NAV_LINKS = [
     { name: 'About', href: '#about' },
@@ -29,23 +29,121 @@ export const ABOUT_DATA = {
     ]
 };
 
-export const SKILLS_DATA = {
-    title: "Tools I Work With",
-    description: "A practical toolkit for teaching, research, analysis, and building data-driven products.",
-    skills: [
-        { name: 'Python', icon: Code, description: "A versatile programming language for data analysis, machine learning, and web development." },
-        { name: 'R', icon: Code, description: "A language and environment for statistical computing and graphics." },
-        { name: 'Google Colaboratory', icon: Cpu, description: "A hosted notebook environment for running Python data science and machine learning workflows." },
-        { name: 'Power BI', icon: BarChart, description: "A business intelligence platform for interactive dashboards and KPI analysis." },
-        { name: 'Streamlit', icon: Rocket, description: "An open-source Python library that makes it easy to create and share custom web apps for machine learning and data science." },
-        { name: 'Git & GitHub', icon: Code, description: "Version control and collaboration tools for managing data science and software projects." },
-        { name: 'Machine Learning', icon: Database, description: "Modeling workflows for prediction, classification, and evaluation." },
-        { name: 'Deep Learning', icon: Cpu, description: "Neural network methods for image, text, and other complex data." },
-        { name: 'Computer Vision', icon: Smartphone, description: "Image and video analysis for detection, classification, and monitoring." },
-        { name: 'NLP', icon: BookOpen, description: "Natural language processing for text embeddings, similarity, and generative applications." },
-        { name: 'Operations Research', icon: BarChart, description: "Quantitative modeling for process analysis and optimization." },
-    ]
+export interface SkillItem {
+    name: string;
+    logo: string;
+    secondaryLogo?: string;
+    category: string;
+    description: string;
 }
+
+export const SKILLS_DATA: {
+    title: string;
+    description: string;
+    skills: SkillItem[];
+} = {
+    title: "Tools I Work With",
+    description: "A practical toolkit of software, frameworks, and developer platforms for data science, AI engineering, and research.",
+    skills: [
+        {
+            name: 'Python',
+            logo: '/logos/python.svg',
+            category: 'Core Language',
+            description: "Core programming language for end-to-end data analysis, machine learning modeling, computer vision, and backend development."
+        },
+        {
+            name: 'PyTorch',
+            logo: '/logos/pytorch.svg',
+            category: 'Deep Learning',
+            description: "Leading open-source deep learning framework for constructing and training neural networks, CNNs, and computer vision pipelines."
+        },
+        {
+            name: 'Google Colab',
+            logo: '/logos/colab.svg',
+            category: 'Cloud Notebook',
+            description: "Hosted Jupyter notebook service with free GPU/TPU acceleration for rapid prototyping and compute-intensive model training."
+        },
+        {
+            name: 'Google Antigravity',
+            logo: '/logos/antigravity.svg',
+            category: 'Agentic AI IDE',
+            description: "Google's next-generation agentic AI development platform and IDE for autonomous coding, orchestration, and agent workflows."
+        },
+        {
+            name: 'VS Code',
+            logo: '/logos/vscode.svg',
+            category: 'Code Editor',
+            description: "Primary development environment configured with Python extensions, debugging utilities, and integrated Git workflows."
+        },
+        {
+            name: 'Jupyter',
+            logo: '/logos/jupyter.svg',
+            category: 'Data Science Notebook',
+            description: "Interactive computational notebooks for exploratory data analysis, statistical visualization, and reproducible research."
+        },
+        {
+            name: 'Ultralytics YOLO',
+            logo: '/logos/yolo.svg',
+            category: 'Computer Vision',
+            description: "State-of-the-art real-time object detection and segmentation framework powering precision agriculture and infrastructure monitoring."
+        },
+        {
+            name: 'OpenCV',
+            logo: '/logos/opencv.svg',
+            category: 'Computer Vision',
+            description: "Comprehensive computer vision library for image manipulation, video capture, bounding boxes, and visual preprocessing."
+        },
+        {
+            name: 'Hugging Face',
+            logo: '/logos/huggingface.svg',
+            category: 'AI & NLP Hub',
+            description: "The AI community platform for state-of-the-art Transformer models, embeddings, datasets, and natural language pipelines."
+        },
+        {
+            name: 'Streamlit',
+            logo: '/logos/streamlit.svg',
+            category: 'App Framework',
+            description: "Fast Python web app framework to build and deploy interactive user interfaces for machine learning and data products."
+        },
+        {
+            name: 'Power BI',
+            logo: '/logos/powerbi.svg',
+            category: 'Business Intelligence',
+            description: "Enterprise business intelligence platform for creating interactive executive dashboards, automated reporting, and KPI tracking."
+        },
+        {
+            name: 'Git & GitHub',
+            logo: '/logos/git.svg',
+            secondaryLogo: '/logos/github.svg',
+            category: 'Version Control',
+            description: "Distributed version control system and cloud platform for managing codebases, collaboration, and open-source projects."
+        },
+        {
+            name: 'Notion',
+            logo: '/logos/notion.svg',
+            category: 'Productivity & Wiki',
+            description: "Connected workspace for structuring research notes, thesis literature reviews, sprint planning, and knowledge management."
+        },
+        {
+            name: 'Docker',
+            logo: '/logos/docker.svg',
+            category: 'Containerization',
+            description: "Containerization platform ensuring isolated, reproducible environments and smooth deployment of AI/ML services."
+        },
+        {
+            name: 'Kaggle',
+            logo: '/logos/kaggle.svg',
+            category: 'Data Platform',
+            description: "Platform for predictive modeling competitions, benchmark dataset exploration, and community data science notebooks."
+        },
+        {
+            name: 'R',
+            logo: '/logos/r.svg',
+            category: 'Statistical Computing',
+            description: "Statistical programming environment for rigorous hypothesis testing, econometric modeling, and publication graphics."
+        },
+    ]
+};
 
 export const PROJECTS_DATA = {
     title: "Selected Work",

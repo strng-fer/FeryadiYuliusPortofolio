@@ -175,14 +175,14 @@ export default function Home() {
           <SectionWrapper id="skills" title={SKILLS_DATA.title} description={SKILLS_DATA.description}>
             <TooltipProvider>
               <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5"
                 variants={{
                   hidden: { opacity: 0 },
                   visible: {
                     opacity: 1,
                     transition: {
-                      staggerChildren: 0.1,
-                      delayChildren: 0.2
+                      staggerChildren: 0.05,
+                      delayChildren: 0.1
                     }
                   }
                 }}
@@ -194,30 +194,72 @@ export default function Home() {
                   <Tooltip key={skill.name}>
                     <TooltipTrigger asChild>
                       <PixelCard 
-                        className="p-4 flex flex-col items-center justify-center text-center cursor-help"
-                        delay={index * 0.1}
+                        className="p-4 sm:p-5 flex flex-col items-center justify-between text-center cursor-help group relative overflow-hidden transition-all duration-300 hover:border-accent/60 h-full min-h-[175px]"
+                        delay={index * 0.04}
                       >
+                        {/* Hover accent ambient glow */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
                         <motion.div
-                          initial={{ scale: 0, rotate: -180 }}
+                          initial={{ scale: 0, rotate: -20 }}
                           whileInView={{ 
                             scale: 1, 
                             rotate: 0,
                             transition: {
-                              delay: 0.3 + (index * 0.1),
+                              delay: 0.15 + (index * 0.03),
                               type: "spring",
-                              stiffness: 150,
-                              damping: 12
+                              stiffness: 160,
+                              damping: 14
                             }
                           }}
                           viewport={{ once: true }}
+                          whileHover={{ scale: 1.15, rotate: [0, -3, 3, 0], transition: { duration: 0.3 } }}
+                          className="w-16 h-16 sm:w-20 sm:h-20 mb-3 rounded-2xl flex items-center justify-center p-3 bg-muted/40 dark:bg-muted/20 border border-border/50 group-hover:border-accent/40 group-hover:shadow-lg group-hover:shadow-accent/10 transition-all duration-300"
                         >
-                          <skill.icon className="w-12 h-12 mb-3 text-accent" />
+                          {skill.secondaryLogo ? (
+                            <div className="flex items-center justify-center -space-x-2">
+                              <Image 
+                                src={skill.logo} 
+                                alt={skill.name} 
+                                width={38} 
+                                height={38} 
+                                unoptimized
+                                className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                              />
+                              <Image 
+                                src={skill.secondaryLogo} 
+                                alt={skill.name} 
+                                width={38} 
+                                height={38} 
+                                unoptimized
+                                className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105 dark:invert"
+                              />
+                            </div>
+                          ) : (
+                            <Image 
+                              src={skill.logo} 
+                              alt={skill.name} 
+                              width={48} 
+                              height={48} 
+                              unoptimized
+                              className={`w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110 ${skill.name === 'Notion' ? 'drop-shadow-md' : ''}`}
+                            />
+                          )}
                         </motion.div>
-                        <h4 className="font-headline text-lg font-bold">{skill.name}</h4>
+
+                        <div className="w-full flex flex-col items-center">
+                          <h4 className="font-headline text-base sm:text-lg font-bold group-hover:text-accent transition-colors duration-200 line-clamp-1">
+                            {skill.name}
+                          </h4>
+                          <span className="inline-block mt-1 text-[11px] sm:text-xs font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                            {skill.category}
+                          </span>
+                        </div>
                       </PixelCard>
                     </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{skill.description}</p>
+                    <TooltipContent side="top" className="max-w-xs text-center p-3">
+                      <p className="font-semibold text-xs text-accent mb-1">{skill.name} • {skill.category}</p>
+                      <p className="text-xs leading-relaxed text-muted-foreground">{skill.description}</p>
                     </TooltipContent>
                   </Tooltip>
                 ))}
