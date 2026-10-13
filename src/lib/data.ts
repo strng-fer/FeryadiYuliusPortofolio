@@ -465,6 +465,15 @@ export const CERTIFICATIONS_DATA = {
     description: "Verified DataCamp credentials and their validity periods.",
     entries: [
         {
+            name: "AI Engineer for Data Scientists Associate certificate",
+            issuer: "DataCamp",
+            url: "https://www.datacamp.com/certificate/AEDS0018618770217",
+            credentialId: "AEDS0018618770217",
+            issueDate: "October 2026",
+            expirationDate: "October 2028",
+        },
+
+        {
             name: "Associate Data Scientist",
             issuer: "DataCamp",
             url: "https://www.datacamp.com/certificate/DSA0014978540656",
