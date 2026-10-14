@@ -418,6 +418,16 @@ export const PUBLICATIONS_DATA = {
     description: "Applied work connected to data science, big data, and computational biology.",
     entries: [
         {
+            title: "Peramalan Harga Reksa Dana di Indonesia dengan Pendekatan Linear dan Hibrida",
+            journal: "Journal SESSION: Politeknik Negeri Banyuwangi,",
+            year: 2026,
+            link: "https://jurnal.poliwangi.ac.id/index.php/session/article/view/434",
+            icon: FileText,
+            authors: ["Gymnastiar Al Khoarizmy", "Feryadi Yulius", "Elok Fiola"],
+            doi: "https://doi.org/10.57203/session.v5i1.2026.28-36",
+            abstract: "Pasca pandemi COVID-19, pasar modal Indonesia menunjukkan dinamika yang kompleks, mendorong peningkatan minat investasi pada instrumen seperti reksa dana. Prediksi harga untuk aset semacam ini secara historis sering mengandalkan model-model yang kompleks, namun efektivitasnya pada data dengan karakteristik autokorelasi yang sangat tinggi masih menjadi pertanyaan. Penelitian ini bertujuan untuk mengevaluasi pendekatan pemodelan yang paling efisien dalam konteks tersebut dengan mengintegrasikan serangkaian faktor fundamental dan teknikal. Menggunakan teknik regresi linear regularisasi (ElasticNet) yang diperkuat dengan fitur lag danPrincipal Component Analysis (PCA), serta model hibrida canggih yang mengombinasikan ElasticNet dengan Long Short-Term Memory (LSTM) untuk memodelkan residual, studi ini mengevaluasi efektivitas dari kedua pendekatan. Hasil menunjukkan bahwa model linear tunggal mampu mencapai akurasi prediksi yang sangat tinggi (R2 > 0.96), yang didominasi oleh kuatnya sinyal autokorelasi. Lebih lanjut, penambahan model LSTM untuk menangkap pola non-linear pada residual terbukti tidak memberikan peningkatan kinerja yang signifikan secara statistik, sebuah temuan yang divalidasi oleh Uji Diebold-Mariano. Dengan demikian, studi ini menyoroti pentingnya pemilihan model yang sesuai dengan karakteristik data, di mana untuk peramalan time-series dengan persistensi tinggi, pendekatan linear yang lebih sederhana dan dapat diinterpretasikan terbukti lebih efisien dan praktis. "
+        },
+        {
             title: "PlanktoScan – Computer Program (BRIN)",
             journal: "Intellectual Property",
             year: 2025,
@@ -428,16 +438,6 @@ export const PUBLICATIONS_DATA = {
             abstract: "A computer program and Android prototype for plankton identification, developed during research activities with BRIN."
         },
         {
-            title: "Implementasi Ekosistem Hadoop untuk Analisis Segmentasi Pelanggan E-commerce di Pulau Sumatera",
-            journal: "UPN Jatim Data Science National Seminar",
-            year: 2025,
-            link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
-            icon: Presentation,
-            authors: ["Nabila Zakiyah Zahra", "Ardika Satria", "Feryadi Yulius", "Khoirul Mizan Abdullah", "Kharisa Harvanny", "Luluk Muthoharoh", "Vidia Vidia"],
-            doi: "https://doi.org/10.33005/senada.v5i1.465",
-            abstract: "Studi ini mengembangkan solusi big data berbasis ekosistem Hadoop untuk analisis segmentasi pelanggan e-commerce di wilayah Sumatera. Pendekatan arsitektur medallion tiga lapis (bronze, silver, gold) diimplementasikan dengan memanfaatkan teknologi Sqoop untuk integrasi data, Spark SQL untuk transformasi, dan MLlib untuk pemodelan prediktif. Pada lapisan bronze, data mentah disimpan dalam format Parquet di HDFS, kemudian diproses di lapisan silver melalui tahap pembersihan data dan ekstraksi fitur RFM (Recency, Frequency, Monetary Value). Pada lapisan gold, algoritma K-Means dioptimalkan menggunakan kombinasi Metode Elbow dan Silhouette Score untuk menentukan jumlah cluster optimal, menghasilkan empat segmen pelanggan yang berbeda. Visualisasi hasil segmentasi dikembangkan menggunakan Apache Superset, menyediakan dashboard interaktif untuk analisis bisnis. Seluruh alur kerja diotomatisasi melalui Apache Oozie, dengan dukungan Apache Atlas untuk manajemen metadata dan integrasi Apache Ambari serta ZooKeeper untuk pemantauan kluster secara real-time. Temuan penelitian membuktikan kemampuan sistem dalam mengatasi tantangan pengolahan data e-commerce skala besar di Sumatera, sekaligus menyediakan landasan yang kuat untuk pengembangan strategi pemasaran berbasis data yang lebih efektif dan terukur."
-        },
-        {
             title: "Metode Seleksi Variabel dalam Pemodelan Regresi Linear Data Curah Hujan Provinsi Lampung",
             journal: "UPN Jatim Data Science National Seminar",
             year: 2024,
@@ -446,6 +446,16 @@ export const PUBLICATIONS_DATA = {
             authors: ["Elok Fiola", "Feryadi Yulius", "Presilia Presilia", "Dea Mutia Risani", "Mika Alvionita", "Febri Dwi Irawati"],
             doi: "https://doi.org/10.33005/senada.v4i1.213",
             abstract: "Penelitian ini dilakukan dengan tujuan untuk untuk mengseleksi jumlah variabel dalam model regresi linear berganda dengan menggunakan metode best subset, forward stepwise, dan backward stepwise. Evaluasi model dilakukan berdasarkan nilai Adjusted R2 tertinggi, nilai Bayesian Information Criterion (BIC) terendah. Hasil analisis menunjukkan bahwa seleksi jumlah variabel pada model regresi linear berganda yaitu jumlah hari hujan, rata-rata kecepatan angin, rata-rata kelembaban udara, rata-rata suhu udara, dan rata-rata suhu udara minimum. Nilai adjusted R2 tertinggi yang diperoleh adalah 67.1%, serta nilai Bayesian Information Criterion (BIC), yaitu senilai -5.715773. Ketiga metode best subset, forward stepwise, dan backward stepwise menunjukkan konsistensi dalam memilih variabel prediktor yang dimasukkan."
+        },
+        {
+            title: "Implementasi Ekosistem Hadoop untuk Analisis Segmentasi Pelanggan E-commerce di Pulau Sumatera",
+            journal: "UPN Jatim Data Science National Seminar",
+            year: 2025,
+            link: "https://prosiding-senada.upnjatim.ac.id/index.php/senada/article/view/213",
+            icon: Presentation,
+            authors: ["Nabila Zakiyah Zahra", "Ardika Satria", "Feryadi Yulius", "Khoirul Mizan Abdullah", "Kharisa Harvanny", "Luluk Muthoharoh", "Vidia Vidia"],
+            doi: "https://doi.org/10.33005/senada.v5i1.465",
+            abstract: "Studi ini mengembangkan solusi big data berbasis ekosistem Hadoop untuk analisis segmentasi pelanggan e-commerce di wilayah Sumatera. Pendekatan arsitektur medallion tiga lapis (bronze, silver, gold) diimplementasikan dengan memanfaatkan teknologi Sqoop untuk integrasi data, Spark SQL untuk transformasi, dan MLlib untuk pemodelan prediktif. Pada lapisan bronze, data mentah disimpan dalam format Parquet di HDFS, kemudian diproses di lapisan silver melalui tahap pembersihan data dan ekstraksi fitur RFM (Recency, Frequency, Monetary Value). Pada lapisan gold, algoritma K-Means dioptimalkan menggunakan kombinasi Metode Elbow dan Silhouette Score untuk menentukan jumlah cluster optimal, menghasilkan empat segmen pelanggan yang berbeda. Visualisasi hasil segmentasi dikembangkan menggunakan Apache Superset, menyediakan dashboard interaktif untuk analisis bisnis. Seluruh alur kerja diotomatisasi melalui Apache Oozie, dengan dukungan Apache Atlas untuk manajemen metadata dan integrasi Apache Ambari serta ZooKeeper untuk pemantauan kluster secara real-time. Temuan penelitian membuktikan kemampuan sistem dalam mengatasi tantangan pengolahan data e-commerce skala besar di Sumatera, sekaligus menyediakan landasan yang kuat untuk pengembangan strategi pemasaran berbasis data yang lebih efektif dan terukur."
         },
         {
             title: "Juara 3 – INNOVEST 2026",
