@@ -145,7 +145,29 @@ export const SKILLS_DATA: {
     ]
 };
 
-export const PROJECTS_DATA = {
+export interface ProjectItem {
+    title: string;
+    description: string;
+    image: string;
+    dataAiHint?: string;
+    skills: string[];
+    keyFeatures: string[];
+    techStack: string[];
+    focus: string[];
+    year: string;
+    collaborators: string[];
+    link?: string;
+    relatedUrl1?: string;
+    videoDemo?: string;
+    collaboration?: string;
+    collaborationLogo?: string;
+}
+
+export const PROJECTS_DATA: {
+    title: string;
+    description: string;
+    projects: ProjectItem[];
+} = {
     title: "Selected Work",
     description: "Research and applied projects across computer vision, deep learning, NLP, business intelligence, and operations research.",
     projects: [
@@ -182,7 +204,7 @@ export const PROJECTS_DATA = {
             techStack: ["Python", "PyTorch", "Faster R-CNN", "YOLO", "Data Augmentation"],
             focus: ["Object Detection", "Deep Learning", "Model Evaluation", "Coastal Monitoring"],
             year: "Bachelor thesis",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"]
         },
         {
             title: "Pothole Detection — Road Infrastructure Monitoring",
@@ -218,7 +240,9 @@ export const PROJECTS_DATA = {
             focus: ["Image Classification", "Deep Learning", "Computer Vision", "Marine Research"],
             link: "https://github.com/strng-fer/PlanktonIdentificationApps",
             year: "2025",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius", "Badan Riset dan Inovasi Nasional (BRIN)"],
+            collaboration: "Badan Riset dan Inovasi Nasional (BRIN)",
+            collaborationLogo: "/images/logo-brin.png"
         },
         {
             title: "Queue System Analysis for Car Refueling Lanes",

@@ -321,8 +321,42 @@ export default function Home() {
                           isVisible={isLoaded && !isProjectViewed} 
                           className="top-2 right-2"
                         />
-                        <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
+                        <div className="relative overflow-hidden rounded-t-sm">
+                          <Image src={project.image} alt={project.title} width={600} height={400} className="w-full h-48 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
+                          {project.collaborationLogo && (
+                            <div className="absolute top-2 left-2 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background/95 dark:bg-zinc-950/90 backdrop-blur-md border border-border shadow-md">
+                              <div className="w-5 h-5 rounded-xs bg-white flex items-center justify-center p-0.5 shrink-0 shadow-2xs">
+                                <Image
+                                  src={project.collaborationLogo}
+                                  alt={project.collaboration || "Collaboration Partner"}
+                                  width={20}
+                                  height={20}
+                                  className="object-contain w-full h-full"
+                                />
+                              </div>
+                              <span className="text-[11px] font-bold text-foreground tracking-tight">
+                                Collab with BRIN
+                              </span>
+                            </div>
+                          )}
+                        </div>
                         <div className="p-6 flex-grow flex flex-col">
+                          {project.collaboration && (
+                            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/25 mb-2.5 w-fit">
+                              {project.collaborationLogo && (
+                                <div className="w-4 h-4 rounded-xs bg-white flex items-center justify-center p-0.5 shrink-0 shadow-2xs">
+                                  <Image
+                                    src={project.collaborationLogo}
+                                    alt={project.collaboration}
+                                    width={14}
+                                    height={14}
+                                    className="object-contain w-full h-full"
+                                  />
+                                </div>
+                              )}
+                              <span>In Collaboration with BRIN</span>
+                            </div>
+                          )}
                           <h3 className="font-headline text-2xl font-bold text-primary mb-2">{project.title}</h3>
                           <ScrollArea className="h-24 pr-4 mb-4">
                             <p className="text-muted-foreground flex-grow">{project.description}</p>
@@ -352,10 +386,53 @@ export default function Home() {
                       </PixelCard>
                       <DialogContent className="max-w-3xl">
                         <DialogHeader>
-                          <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm mb-4" data-ai-hint={project.dataAiHint} />
+                          <div className="relative overflow-hidden rounded-t-sm mb-4">
+                            <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
+                            {project.collaborationLogo && (
+                              <div className="absolute top-3 left-3 z-10 flex items-center gap-2 px-3 py-1.5 rounded-md bg-background/95 dark:bg-zinc-950/90 backdrop-blur-md border border-border shadow-md">
+                                <div className="w-6 h-6 rounded-xs bg-white flex items-center justify-center p-0.5 shrink-0 shadow-2xs">
+                                  <Image
+                                    src={project.collaborationLogo}
+                                    alt={project.collaboration || "Collaboration Partner"}
+                                    width={24}
+                                    height={24}
+                                    className="object-contain w-full h-full"
+                                  />
+                                </div>
+                                <span className="text-xs font-bold text-foreground">
+                                  In Collaboration with BRIN
+                                </span>
+                              </div>
+                            )}
+                          </div>
                           <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
                           <DialogDescription className="sr-only">{project.description}</DialogDescription>
                         </DialogHeader>
+
+                        {project.collaboration && (
+                          <div className="flex items-center gap-3 p-3 rounded-lg border border-red-500/25 bg-red-500/5 my-2">
+                            {project.collaborationLogo && (
+                              <div className="w-11 h-11 rounded-md bg-white border border-border p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                                <Image 
+                                  src={project.collaborationLogo} 
+                                  alt={project.collaboration} 
+                                  width={40} 
+                                  height={40} 
+                                  className="object-contain max-h-full max-w-full"
+                                />
+                              </div>
+                            )}
+                            <div>
+                              <span className="text-[11px] uppercase tracking-wider font-bold text-red-600 dark:text-red-400 block">
+                                Research Collaboration Partner
+                              </span>
+                              <span className="text-base font-bold text-foreground">
+                                {project.collaboration}
+                              </span>
+                            </div>
+                          </div>
+                        )}
+
                         <div className="grid grid-cols-2 gap-x-8 gap-y-4 my-4">
                           <div className="flex items-center gap-2">
                             <Calendar className="w-5 h-5 text-primary" />
