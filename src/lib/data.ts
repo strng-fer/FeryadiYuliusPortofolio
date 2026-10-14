@@ -204,7 +204,9 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "PyTorch", "Faster R-CNN", "YOLO", "Data Augmentation"],
             focus: ["Object Detection", "Deep Learning", "Model Evaluation", "Coastal Monitoring"],
             year: "Bachelor thesis",
-            collaborators: ["Feryadi Yulius", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"]
+            collaborators: ["Feryadi Yulius", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"],
+            collaboration: "Badan Riset dan Inovasi Nasional (BRIN) ",
+            collaborationLogo: "/images/logo-brin.png"
         },
         {
             title: "Pothole Detection — Road Infrastructure Monitoring",
@@ -240,7 +242,7 @@ export const PROJECTS_DATA: {
             focus: ["Image Classification", "Deep Learning", "Computer Vision", "Marine Research"],
             link: "https://github.com/strng-fer/PlanktonIdentificationApps",
             year: "2025",
-            collaborators: ["Feryadi Yulius", "Badan Riset dan Inovasi Nasional (BRIN)"],
+            collaborators: ["Feryadi Yulius", "Raid Muhammad Naufal", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"],
             collaboration: "Badan Riset dan Inovasi Nasional (BRIN)",
             collaborationLogo: "/images/logo-brin.png"
         },
@@ -259,7 +261,7 @@ export const PROJECTS_DATA: {
             techStack: ["Statistical Analysis", "Queuing Theory", "Quantitative Analysis", "Process Optimization"],
             focus: ["Operations Research", "Queueing Theory", "Process Analysis", "Optimization"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius", "Elok Fiola"]
         },
         {
             title: "Outfit Recommendation Chatbot using NVIDIA",
@@ -293,7 +295,7 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "LSTM", "Autoencoder", "NLP", "PCA", "t-SNE"],
             focus: ["Unsupervised Learning", "NLP", "Text Embeddings", "Similarity Search"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"]
         },
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
@@ -310,7 +312,7 @@ export const PROJECTS_DATA: {
             techStack: ["Data Visualization", "Statistical Analysis", "Graphic Design", "Data Storytelling"],
             focus: ["Data Visualization", "Statistical Analysis", "Food Security", "Communication"],
             year: "2025",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius", "Hermawan Manurung", "Nurul Alfajar Gumel"]
         },
         {
             title: "Toy Store KPI Analysis with Power BI Dashboard",
