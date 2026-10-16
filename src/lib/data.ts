@@ -208,7 +208,8 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "PyTorch", "YOLO", "OpenCV", "Computer Vision"],
             focus: ["Object Detection", "Deep Learning", "Computer Vision", "Precision Agriculture"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius"],
+            link: "https://github.com/strng-fer/pineappleDetection"
         },
         {
             title: "Evaluation Faster R-CNN & YOLO for Belitung Coastal Waters",
@@ -228,7 +229,8 @@ export const PROJECTS_DATA: {
             year: "Bachelor thesis",
             collaborators: ["Feryadi Yulius", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"],
             collaboration: "Badan Riset dan Inovasi Nasional (BRIN)",
-            collaborationLogo: "/images/logo-brin.png"
+            collaborationLogo: "/images/logo-brin.png",
+            link: "https://repository.itera.ac.id/depan/submission/SB2610070013"
         },
         {
             title: "Pothole Detection — Road Infrastructure Monitoring",
@@ -245,7 +247,8 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "YOLOv8", "OpenCV", "Computer Vision"],
             focus: ["Object Detection", "Deep Learning", "Infrastructure Monitoring", "Model Evaluation"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius"],
+            link: "https://github.com/strng-fer/MlopsAgakPusing"
         },
         {
             title: "Phytoplankton Classification from Belitung Coastal Waters",
@@ -266,7 +269,8 @@ export const PROJECTS_DATA: {
             year: "2025",
             collaborators: ["Feryadi Yulius", "Raid Muhammad Naufal", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"],
             collaboration: "Badan Riset dan Inovasi Nasional (BRIN)",
-            collaborationLogo: "/images/logo-brin.png"
+            collaborationLogo: "/images/logo-brin.png",
+            videoDemo: "https://www.brin.go.id/en/news/130492/supporting-marine-ecosystem-conservation-brin-develops-planktoscan-to-identify-phytoplankton"
         },
         {
             title: "Queue System Analysis for Car Refueling Lanes",
@@ -300,7 +304,8 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "Llama-3.1 Nemotron", "RAG", "FAISS", "NVIDIA API"],
             focus: ["Generative AI", "Natural Language Processing", "Recommendation Systems", "Semantic Search"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius"]
+            collaborators: ["Feryadi Yulius"],
+            link: "https://github.com/strng-fer/Outfit-Receomendations"
         },
         {
             title: "Unsupervised LinkedIn Company Profile Embedding",
@@ -317,7 +322,8 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "LSTM", "Autoencoder", "NLP", "PCA", "t-SNE"],
             focus: ["Unsupervised Learning", "NLP", "Text Embeddings", "Similarity Search"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"]
+            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"],
+
         },
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
