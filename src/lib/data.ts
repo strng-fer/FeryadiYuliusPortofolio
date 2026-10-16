@@ -172,6 +172,27 @@ export const PROJECTS_DATA: {
     description: "Research and applied projects across computer vision, deep learning, NLP, business intelligence, and operations research.",
     projects: [
         {
+            title: "Nutrition Facts AI — Extraction & Reconstruction",
+            description: "Aplikasi AI cerdas untuk mengekstrak Informasi Nilai Gizi (Nutrition Facts) dari gambar kemasan produk makanan atau minuman. Sistem ini secara otomatis memproses gambar mentah menjadi data JSON terstruktur yang siap digunakan, berjalan secara lokal menggunakan FastAPI yang melayani antarmuka web interaktif (Web UI) sekaligus REST API.",
+            image: "/images/Nutrition_Fact.png",
+            dataAiHint: "nutrition facts analyzer",
+            skills: ["Python", "FastAPI", "YOLOv8", "Roboflow", "PaddleOCR", "EasyOCR", "Google Gemini Flash", "OpenCV", "Pillow"],
+            keyFeatures: [
+                "Deteksi Area: Menggunakan model YOLOv8 (via Roboflow) untuk mengidentifikasi dan menandai bounding box tabel nutrisi pada kemasan",
+                "Crop & Normalisasi Citra: Menggunakan OpenCV dan Pillow untuk memotong area tabel secara otomatis dan melakukan preprocessing (grayscale, upscale, threshold) agar mudah dibaca",
+                "Pembacaan Teks (OCR): Menggunakan PaddleOCR sebagai mesin utama dan EasyOCR sebagai fallback untuk mengekstrak karakter teks dari gambar",
+                "Rekonstruksi Data (LLM): Menggunakan Google Gemini Flash untuk memperbaiki typo hasil OCR dan menyusunnya ulang ke dalam format JSON yang terstandarisasi",
+                "Web UI Interaktif & REST API: Berjalan secara lokal menggunakan FastAPI yang menyediakan antarmuka web ramah pengguna sekaligus REST API untuk integrasi sistem",
+                "Kode Sumber & Instalasi: Dokumentasi lengkap dan repositori terbuka untuk memudahkan pengujian dan deployment mandiri"
+            ],
+            techStack: ["Python", "FastAPI", "YOLOv8", "Roboflow", "PaddleOCR", "EasyOCR", "Google Gemini Flash", "OpenCV", "Pillow"],
+            focus: ["Computer Vision", "Object Detection", "Optical Character Recognition (OCR)", "LLM Data Reconstruction", "Multimodal AI", "Information Extraction"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"],
+            link: "https://github.com/strng-fer/nutrition-facts-analyzer",
+            videoDemo: "https://youtu.be/s_bRi3-MFhY"
+        },
+        {
             title: "Pineapple Detection & Monitoring System",
             description: "A computer vision project for detecting and monitoring pineapple plants and fruits from images and videos. The system explores object detection, confidence visualization, and a pipeline for future tracking and counting in precision agriculture.",
             image: "/images/pineapple.png",
@@ -191,21 +212,22 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Evaluation Faster R-CNN & YOLO for Belitung Coastal Waters",
-            description: "Bachelor thesis evaluating Faster R-CNN and YOLO for object detection on coastal water imagery. The work compares accuracy and inference speed through preprocessing, augmentation, fine-tuning, and evaluation using mAP, precision, recall, and F1-score.",
+            description: "Bachelor thesis conducted in research collaboration with Badan Riset dan Inovasi Nasional (BRIN), evaluating Faster R-CNN and YOLO for object detection on coastal water imagery. The work compares accuracy and inference speed through preprocessing, augmentation, fine-tuning, and evaluation using mAP, precision, recall, and F1-score.",
             image: "/images/frcnn.png",
             dataAiHint: "coastal object detection",
             skills: ["Python", "Faster R-CNN", "YOLO", "PyTorch", "Model Evaluation"],
             keyFeatures: [
-                "Comparative evaluation of Faster R-CNN and YOLO",
+                "Research collaboration with Badan Riset dan Inovasi Nasional (BRIN)",
+                "Comparative evaluation of Faster R-CNN and YOLO for coastal water imagery",
                 "Preprocessing, augmentation, and model fine-tuning",
                 "Accuracy and inference-speed comparison",
                 "Evaluation with mAP, precision, recall, and F1-score",
             ],
             techStack: ["Python", "PyTorch", "Faster R-CNN", "YOLO", "Data Augmentation"],
-            focus: ["Object Detection", "Deep Learning", "Model Evaluation", "Coastal Monitoring"],
+            focus: ["Object Detection", "Deep Learning", "Model Evaluation", "Coastal Monitoring", "BRIN Research Collaboration"],
             year: "Bachelor thesis",
             collaborators: ["Feryadi Yulius", "Ahmad Luky Ramdani, S.Kom, M.Kom", "Prof. Dr. Esa Prakasa, S.T, M.T"],
-            collaboration: "Badan Riset dan Inovasi Nasional (BRIN) ",
+            collaboration: "Badan Riset dan Inovasi Nasional (BRIN)",
             collaborationLogo: "/images/logo-brin.png"
         },
         {
