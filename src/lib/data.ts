@@ -145,10 +145,45 @@ export const SKILLS_DATA: {
     ]
 };
 
+export type ProjectCategory = 'data-science' | 'data-analytics';
+
+export interface ProjectCategoryInfo {
+    id: 'all' | ProjectCategory;
+    label: string;
+    badge: string;
+    tagline: string;
+    description: string;
+}
+
+export const PROJECT_CATEGORIES: ProjectCategoryInfo[] = [
+    {
+        id: 'all',
+        label: 'All Projects',
+        badge: 'All Domains',
+        tagline: 'Complete Portfolio',
+        description: 'Explore all selected work spanning computer vision, machine learning, NLP, and business intelligence.'
+    },
+    {
+        id: 'data-science',
+        label: 'Data Science & AI',
+        badge: 'AI / ML / DL / CV / NLP',
+        tagline: 'AI / ML / DL · Computer Vision · NLP',
+        description: 'Deep neural networks, real-time object detection (YOLO), OCR pipelines, embeddings & multimodal LLM systems.'
+    },
+    {
+        id: 'data-analytics',
+        label: 'Data Analytics & BI',
+        badge: 'Power BI · Tableau · Excel · Stats',
+        tagline: 'Power BI · Tableau · Excel · Operations Research',
+        description: 'Executive KPI dashboards, quantitative queuing models, statistical inference & data storytelling.'
+    }
+];
+
 export interface ProjectItem {
     title: string;
     description: string;
     image: string;
+    category: ProjectCategory;
     dataAiHint?: string;
     skills: string[];
     keyFeatures: string[];
@@ -173,6 +208,7 @@ export const PROJECTS_DATA: {
     projects: [
         {
             title: "Nutrition Facts AI — Extraction & Reconstruction",
+            category: "data-science",
             description: "Aplikasi AI cerdas untuk mengekstrak Informasi Nilai Gizi (Nutrition Facts) dari gambar kemasan produk makanan atau minuman. Sistem ini secara otomatis memproses gambar mentah menjadi data JSON terstruktur yang siap digunakan, berjalan secara lokal menggunakan FastAPI yang melayani antarmuka web interaktif (Web UI) sekaligus REST API.",
             image: "/images/Nutrition_Fact.png",
             dataAiHint: "nutrition facts analyzer",
@@ -194,6 +230,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Pineapple Detection & Monitoring System",
+            category: "data-science",
             description: "A computer vision project for detecting and monitoring pineapple plants and fruits from images and videos. The system explores object detection, confidence visualization, and a pipeline for future tracking and counting in precision agriculture.",
             image: "/images/pineapple.png",
             dataAiHint: "pineapple detection",
@@ -213,6 +250,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Evaluation Faster R-CNN & YOLO for Belitung Coastal Waters",
+            category: "data-science",
             description: "Bachelor thesis conducted in research collaboration with Badan Riset dan Inovasi Nasional (BRIN), evaluating Faster R-CNN and YOLO for object detection on coastal water imagery. The work compares accuracy and inference speed through preprocessing, augmentation, fine-tuning, and evaluation using mAP, precision, recall, and F1-score.",
             image: "/images/frcnn.png",
             dataAiHint: "coastal object detection",
@@ -234,6 +272,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Pothole Detection — Road Infrastructure Monitoring",
+            category: "data-science",
             description: "A YOLOv8 computer vision model for real-time pothole detection and spatial localization to support road maintenance planning. The project achieved Precision 0.831 and mAP@50 0.774.",
             image: "/images/pothole.png",
             dataAiHint: "pothole detection",
@@ -252,6 +291,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Phytoplankton Classification from Belitung Coastal Waters",
+            category: "data-science",
             description: "Processed 236 images across 26 phytoplankton classes, expanded the dataset to over 10,000 images using nine augmentation techniques, and evaluated 13 CNN architecture variants. The work was deployed as a website and Android app, PlanktoScan, with BRIN copyright registration.",
             image: "/images/classification.png",
             dataAiHint: "phytoplankton classification",
@@ -274,6 +314,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Queue System Analysis for Car Refueling Lanes",
+            category: "data-analytics",
             description: "A quantitative study of vehicle queues at gas stations near Institut Teknologi Sumatera using M/M/1 and M/M/s queuing theory. The analysis identified peak congestion at ρ = 1.14 and recommended adding one server during rush hours.",
             image: "/images/queueanalisis.png",
             dataAiHint: "queue analysis",
@@ -291,6 +332,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Outfit Recommendation Chatbot using NVIDIA",
+            category: "data-science",
             description: "A personalized outfit recommendation system using Retrieval-Augmented Generation with NVIDIA Llama-3.1 Nemotron Nano 8B. It uses FAISS similarity search and prompt engineering to create context-aware stylist responses.",
             image: "/images/queuesystem.png",
             dataAiHint: "outfit recommendation chatbot",
@@ -309,6 +351,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Unsupervised LinkedIn Company Profile Embedding",
+            category: "data-science",
             description: "An LSTM autoencoder that generates text embeddings from company profiles for similarity search. The work evaluates semantic similarity through embedding analysis and PCA/t-SNE visualization.",
             image: "/images/outfitrecomendation.png",
             dataAiHint: "company profile embeddings",
@@ -322,11 +365,11 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "LSTM", "Autoencoder", "NLP", "PCA", "t-SNE"],
             focus: ["Unsupervised Learning", "NLP", "Text Embeddings", "Similarity Search"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"],
-
+            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"]
         },
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
+            category: "data-analytics",
             description: "An infographic titled “From Fields to Distribution” that uses harvest area, average grain prices, and total production data to highlight geographical inequalities in Indonesian food security. Submitted to the 2025 Gammafest IPB Statistical Visualization Competition.",
             image: "/images/riceproduction.png",
             dataAiHint: "rice production infographic",
@@ -344,6 +387,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Toy Store KPI Analysis with Power BI Dashboard",
+            category: "data-analytics",
             description: "A business intelligence dashboard for Maven Toys that tracks total orders, revenue, profit, product-category trends, and revenue growth for interactive management analysis.",
             image: "/images/toy.png",
             dataAiHint: "toy store dashboard",
@@ -361,6 +405,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Spices Detection with Streamlit",
+            category: "data-science",
             description: "An AI-powered platform that identifies 31 varieties of Indonesian spices through image analysis. The Streamlit app reaches up to 83% prediction accuracy and supports cultural and culinary education.",
             image: "/images/spices.png",
             dataAiHint: "indonesian spices",
@@ -380,6 +425,7 @@ export const PROJECTS_DATA: {
         },
         {
             title: "Know Your Batik Website with Streamlit",
+            category: "data-science",
             description: "An interactive website that detects batik types from uploaded images. It applies image processing for pattern recognition and supports digital cultural preservation and public education.",
             image: "/images/batik.png",
             dataAiHint: "batik pattern",
