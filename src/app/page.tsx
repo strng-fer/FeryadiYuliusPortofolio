@@ -370,19 +370,26 @@ export default function Home() {
                           </div>
                         </div>
                       </PixelCard>
-                      <DialogContent className="max-w-3xl">
-                        <DialogHeader>
-                          <div className="relative overflow-hidden rounded-t-sm mb-4">
-                            <Image src={project.image} alt={project.title} width={800} height={400} className="w-full h-64 object-cover image-pixelated rounded-t-sm" data-ai-hint={project.dataAiHint} />
+                      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6">
+                        <DialogHeader className="space-y-3">
+                          <div className="relative overflow-hidden rounded-md">
+                            <Image 
+                              src={project.image} 
+                              alt={project.title} 
+                              width={800} 
+                              height={400} 
+                              className="w-full h-44 sm:h-52 md:h-60 object-cover image-pixelated rounded-md" 
+                              data-ai-hint={project.dataAiHint} 
+                            />
                             {project.collaboration && (
-                              <div className="absolute top-3 left-3 z-10 flex items-center gap-2 px-3 py-1.5 rounded-md bg-background/95 dark:bg-zinc-950/90 backdrop-blur-md border border-border shadow-md">
+                              <div className="absolute top-2.5 left-2.5 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-background/95 dark:bg-zinc-950/90 backdrop-blur-md border border-border shadow-md">
                                 {project.collaborationLogo && (
-                                  <div className="w-6 h-6 rounded-xs bg-white flex items-center justify-center p-0.5 shrink-0 shadow-2xs">
+                                  <div className="w-5 h-5 rounded-xs bg-white flex items-center justify-center p-0.5 shrink-0 shadow-2xs">
                                     <Image
                                       src={project.collaborationLogo}
                                       alt={project.collaboration || "Collaboration Partner"}
-                                      width={24}
-                                      height={24}
+                                      width={20}
+                                      height={20}
                                       className="object-contain w-full h-full"
                                     />
                                   </div>
@@ -393,95 +400,125 @@ export default function Home() {
                               </div>
                             )}
                           </div>
-                          <DialogTitle className="font-headline text-3xl text-primary">{project.title}</DialogTitle>
+                          <DialogTitle className="font-headline text-xl sm:text-2xl md:text-3xl text-primary font-bold leading-tight">
+                            {project.title}
+                          </DialogTitle>
                           <DialogDescription className="sr-only">{project.description}</DialogDescription>
                         </DialogHeader>
 
                         {project.collaboration && (
-                          <div className="flex items-center gap-3 p-3 rounded-lg border border-red-500/25 bg-red-500/5 my-2">
+                          <div className="flex items-center gap-3 p-2.5 sm:p-3 rounded-lg border border-red-500/25 bg-red-500/5 my-1">
                             {project.collaborationLogo && (
-                              <div className="w-11 h-11 rounded-md bg-white border border-border p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-white border border-border p-1 flex items-center justify-center shrink-0 shadow-xs">
                                 <Image 
                                   src={project.collaborationLogo} 
                                   alt={project.collaboration} 
-                                  width={40} 
-                                  height={40} 
+                                  width={36} 
+                                  height={36} 
                                   className="object-contain max-h-full max-w-full"
                                 />
                               </div>
                             )}
                             <div>
-                              <span className="text-[11px] uppercase tracking-wider font-bold text-red-600 dark:text-red-400 block">
+                              <span className="text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-red-600 dark:text-red-400 block">
                                 Research Collaboration Partner
                               </span>
-                              <span className="text-base font-bold text-foreground">
+                              <span className="text-xs sm:text-sm font-bold text-foreground">
                                 {project.collaboration}
                               </span>
                             </div>
                           </div>
                         )}
 
-                        <div className="grid grid-cols-2 gap-x-8 gap-y-4 my-4">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-5 h-5 text-primary" />
-                            <span className="font-semibold">Year: {project.year}</span>
+                        <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 my-2 text-xs sm:text-sm">
+                          <div className="flex items-center gap-2 text-muted-foreground shrink-0">
+                            <Calendar className="w-4 h-4 text-primary shrink-0" />
+                            <span><strong className="text-foreground">Year:</strong> {project.year}</span>
                           </div>
-                          <div className="flex items-center gap-2">
-                             <Users className="w-5 h-5 text-primary" />
-                             <span className="font-semibold">Collaborators: {project.collaborators.join(', ')}</span>
+                          <div className="flex items-start gap-2 text-muted-foreground flex-1">
+                            <Users className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                            <div className="leading-snug">
+                              <strong className="text-foreground">Collaborators:</strong>{" "}
+                              <span className="text-foreground/90 font-normal">
+                                {project.collaborators.join(', ')}
+                              </span>
+                            </div>
                           </div>
                         </div>
-                        <ScrollArea className="h-40 pr-4 mb-4">
-                            <p className="text-base text-muted-foreground">
-                            {project.description}
-                            </p>
-                        </ScrollArea>
-                        <div className="grid gap-6 my-4 md:grid-cols-2">
+
+                        <div className="my-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                          <p>{project.description}</p>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2 my-2 p-3 sm:p-4 rounded-lg bg-muted/20 border border-border/60">
                           <div>
-                            <h4 className="font-headline text-lg font-bold mb-2">Key Features</h4>
-                            <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
-                              {project.keyFeatures.map(feature => <li key={feature}>{feature}</li>)}
+                            <h4 className="font-headline text-sm sm:text-base font-bold mb-2 text-foreground">Key Features</h4>
+                            <ul className="space-y-1.5 text-xs sm:text-sm text-muted-foreground">
+                              {project.keyFeatures.map((feature, fIdx) => (
+                                <li key={fIdx} className="flex items-start gap-2">
+                                  <span className="text-primary select-none shrink-0 mt-0.5">•</span>
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
                             </ul>
                           </div>
-                          <div className="space-y-5">
+                          <div className="space-y-4">
                             <div>
-                              <h4 className="font-headline text-lg font-bold mb-2">Tech Stack</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {project.techStack.map(item => <Badge key={item} variant="secondary">{item}</Badge>)}
+                              <h4 className="font-headline text-sm sm:text-base font-bold mb-2 text-foreground">Tech Stack</h4>
+                              <div className="flex flex-wrap gap-1.5">
+                                {project.techStack.map(item => (
+                                  <Badge key={item} variant="secondary" className="text-[11px] sm:text-xs">
+                                    {item}
+                                  </Badge>
+                                ))}
                               </div>
                             </div>
                             <div>
-                              <h4 className="font-headline text-lg font-bold mb-2">Focus</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {project.focus.map(item => <Badge key={item} variant="outline">{item}</Badge>)}
+                              <h4 className="font-headline text-sm sm:text-base font-bold mb-2 text-foreground">Focus</h4>
+                              <div className="flex flex-wrap gap-1.5">
+                                {project.focus.map(item => (
+                                  <Badge key={item} variant="outline" className="text-[11px] sm:text-xs">
+                                    {item}
+                                  </Badge>
+                                ))}
                               </div>
                             </div>
                           </div>
                         </div>
-                         <div className="flex flex-col items-start gap-2.5 my-2">
-                            {project.link && (
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2 text-primary">
-                                    <LinkIcon className="w-5 h-5 shrink-0" />
-                                    <span>{project.link.includes('github.com') ? 'Kode Sumber & Panduan Instalasi (GitHub)' : 'View Project'}</span>
-                                </a>
-                            )}
-                            {project.relatedUrl1 && (
-                                <a href={project.relatedUrl1} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2 text-primary">
-                                    <LinkIcon className="w-5 h-5 shrink-0" />
-                                    <span>{project.relatedUrl1.includes('github.com') ? 'View Source Code (GitHub)' : project.relatedUrl1.includes('youtu') ? 'Watch Video Demo (YouTube)' : 'Related Link'}</span>
-                                </a>
-                            )}
-                            {videoDemo && (
-                                <a href={videoDemo} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2 text-primary">
-                                    <Play className="w-5 h-5 shrink-0" />
-                                    <span>Watch Video Demo (YouTube)</span>
-                                </a>
-                            )}
-                          </div>
-                        <div className="flex gap-4 mt-auto pt-4">
-                            <DialogClose asChild>
-                                <Button variant="outline" className="flex-1">Close</Button>
-                            </DialogClose>
+
+                        <div className="flex flex-wrap items-center gap-2 my-2">
+                          {project.link && (
+                            <Button asChild size="sm" variant="outline" className="gap-2 text-xs font-semibold h-8 sm:h-9">
+                              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                <LinkIcon className="w-3.5 h-3.5 text-primary shrink-0" />
+                                <span>{project.link.includes('github.com') ? 'Kode Sumber & Panduan (GitHub)' : 'View Project'}</span>
+                              </a>
+                            </Button>
+                          )}
+                          {project.relatedUrl1 && (
+                            <Button asChild size="sm" variant="outline" className="gap-2 text-xs font-semibold h-8 sm:h-9">
+                              <a href={project.relatedUrl1} target="_blank" rel="noopener noreferrer">
+                                <LinkIcon className="w-3.5 h-3.5 text-primary shrink-0" />
+                                <span>{project.relatedUrl1.includes('github.com') ? 'View Source Code (GitHub)' : project.relatedUrl1.includes('youtu') ? 'Watch Video Demo (YouTube)' : 'Related Link'}</span>
+                              </a>
+                            </Button>
+                          )}
+                          {videoDemo && (
+                            <Button asChild size="sm" variant="default" className="gap-2 text-xs font-semibold h-8 sm:h-9 bg-red-600 hover:bg-red-700 text-white border-0 shadow-xs">
+                              <a href={videoDemo} target="_blank" rel="noopener noreferrer">
+                                <Play className="w-3.5 h-3.5 fill-current shrink-0" />
+                                <span>Watch Video Demo (YouTube)</span>
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+
+                        <div className="sticky bottom-0 pt-3 pb-1 -mx-4 -mb-4 sm:-mx-6 sm:-mb-6 px-4 sm:px-6 bg-gradient-to-t from-background via-background/95 to-transparent flex justify-end mt-2 z-10">
+                          <DialogClose asChild>
+                            <Button variant="outline" size="sm" className="w-full sm:w-auto px-6">
+                              Close
+                            </Button>
+                          </DialogClose>
                         </div>
                       </DialogContent>
                     </Dialog>
@@ -720,33 +757,33 @@ export default function Home() {
                         </DialogTrigger>
                       </motion.div>
                     </PixelCard>
-                    <DialogContent className="max-w-3xl">
+                    <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-4 sm:p-6">
                         <DialogHeader>
-                          <DialogTitle className="font-headline text-3xl text-primary">{item.title}</DialogTitle>
-                           <DialogDescription>
+                          <DialogTitle className="font-headline text-xl sm:text-2xl md:text-3xl text-primary font-bold leading-tight">{item.title}</DialogTitle>
+                           <DialogDescription className="text-xs sm:text-sm mt-1">
                             {item.journal}, {item.year}
                           </DialogDescription>
                         </DialogHeader>
-                        <div className="my-4 space-y-2">
-                          <p><span className="font-semibold">Authors:</span> {item.authors.join(', ')}</p>
-                          {item.doi && <p><span className="font-semibold">DOI:</span> <a href={item.doi} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{item.doi}</a></p>}
+                        <div className="my-2 space-y-1.5 text-xs sm:text-sm">
+                          <p><span className="font-semibold text-foreground">Authors:</span> <span className="text-muted-foreground">{item.authors.join(', ')}</span></p>
+                          {item.doi && <p><span className="font-semibold text-foreground">DOI:</span> <a href={item.doi} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{item.doi}</a></p>}
                         </div>
-                        <ScrollArea className="h-48 pr-4 mb-4">
-                          <h4 className="font-headline text-lg font-bold mb-2">Abstract</h4>
-                          <p className="text-base text-muted-foreground">{item.abstract}</p>
-                        </ScrollArea>
+                        <div className="my-2 p-3 sm:p-4 rounded-lg bg-muted/20 border border-border/60">
+                          <h4 className="font-headline text-sm sm:text-base font-bold mb-1.5 text-foreground">Abstract</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.abstract}</p>
+                        </div>
                         
-                        <div className="flex flex-col items-start gap-2 mt-4">
-                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2">
-                                <ExternalLink className="w-5 h-5 text-primary" />
-                                <span>View Publication</span>
-                            </a>
+                        <div className="flex flex-col items-start gap-2 my-2">
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline flex items-center gap-2 text-primary text-xs sm:text-sm">
+                            <ExternalLink className="w-4 h-4 shrink-0" />
+                            <span>View Publication</span>
+                          </a>
                         </div>
 
-                        <div className="flex gap-4 mt-auto pt-4">
-                            <DialogClose asChild>
-                                <Button variant="outline" className="flex-1">Close</Button>
-                            </DialogClose>
+                        <div className="sticky bottom-0 pt-3 pb-1 -mx-4 -mb-4 sm:-mx-6 sm:-mb-6 px-4 sm:px-6 bg-gradient-to-t from-background via-background/95 to-transparent flex justify-end mt-2 z-10">
+                          <DialogClose asChild>
+                            <Button variant="outline" size="sm" className="w-full sm:w-auto px-6">Close</Button>
+                          </DialogClose>
                         </div>
                     </DialogContent>
                   </Dialog>
