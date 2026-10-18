@@ -365,7 +365,9 @@ export const PROJECTS_DATA: {
             techStack: ["Python", "LSTM", "Autoencoder", "NLP", "PCA", "t-SNE"],
             focus: ["Unsupervised Learning", "NLP", "Text Embeddings", "Similarity Search"],
             year: "Current project",
-            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"]
+            collaborators: ["Feryadi Yulius", "Mizran Yusuf Rabanni", "Diana"],
+            link: "https://github.com/strng-fer/TubesDeployStreamlit",
+            videoDemo: "https://youtu.be/vkkKK3qM0o0"
         },
         {
             title: "Infographic: Exploring Rice Production in Indonesia",
