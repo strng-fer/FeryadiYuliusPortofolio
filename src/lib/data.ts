@@ -385,7 +385,8 @@ export const PROJECTS_DATA: {
             techStack: ["Data Visualization", "Statistical Analysis", "Graphic Design", "Data Storytelling"],
             focus: ["Data Visualization", "Statistical Analysis", "Food Security", "Communication"],
             year: "2025",
-            collaborators: ["Feryadi Yulius", "Hermawan Manurung", "Nurul Alfajar Gumel"]
+            collaborators: ["Feryadi Yulius", "Hermawan Manurung", "Nurul Alfajar Gumel"],
+            link: "https://www.linkedin.com/in/feryadi-yulius/overlay/Project/1310830274/treasury/?profileId=ACoAADUehr0BkLX40ZplO3rssLqv8GMFPvs6JSs"
         },
         {
             title: "Toy Store KPI Analysis with Power BI Dashboard",
@@ -444,6 +445,26 @@ export const PROJECTS_DATA: {
             relatedUrl1: "https://github.com/rayths/KNOB",
             year: "2024",
             collaborators: ["Feryadi Yulius"]
+        },
+        {
+            title: "Gowalla Dataset Exploratory",
+            category: "data-analytics",
+            description: "The Gowalla dataset provides us with the opportunity to explore the \"Social Map and Travel Ecosystem of Gowalla Users\" prior to June 1, 2011. This dataset offers a comprehensive overview of user behavior, location preferences, and social patterns on the Gowalla platform. By analyzing this data, we can map the geographic distribution of check-ins, identify peak user activity times, analyze friendship networks, and study user profiles. Interactive maps will display popular locations, such as restaurants or entertainment venues, across different regions. Heatmaps and histograms will help us identify busy check-in times. Social network analysis will reveal communities of users who frequently connect as friends and visit the same locations, highlighting the influence of social ties on check-in behavior. Finally, user profile visualizations will help identify the most active users and their favorite frequently visited locations.",
+            image: "/images/gowalla.png",
+            dataAiHint: "gowalla dataset exploratory",
+            skills: ["Exploratory Data Analysis", "Geospatial Analysis", "Social Network Analysis", "Data Visualization", "Python"],
+            keyFeatures: [
+                "Geographic distribution mapping of check-ins and location preferences across regions",
+                "Temporal activity analysis using heatmaps and histograms to identify peak check-in times",
+                "Social network analysis (SNA) uncovering friendship networks and community clusters",
+                "Interactive geospatial maps displaying popular venues, restaurants, and entertainment spots",
+                "User profile visualizations identifying the most active users and favorite destinations",
+            ],
+            techStack: ["Python", "Geospatial Analysis", "Social Network Analysis", "Data Visualization", "Pandas", "Folium", "NetworkX"],
+            focus: ["Exploratory Data Analysis", "Geospatial Analytics", "Social Network Analysis", "User Mobility & Behavior"],
+            year: "2024",
+            collaborators: ["Feryadi Yulius"],
+            link: "https://drive.google.com/drive/folders/1vhED9LFEvF52u0-hflfeULJkM6nDu5xc"
         },
     ]
 }
