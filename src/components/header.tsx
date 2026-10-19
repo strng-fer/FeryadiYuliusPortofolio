@@ -58,8 +58,7 @@ export function Header() {
     
     switch(sectionName.toLowerCase()) {
       case 'projects':
-        // Assuming we have project items with IDs 0-8 based on PROJECTS_DATA
-        return hasNewItems(PROJECTS_DATA.projects.map((_, i) => `project-${i}`));
+        return hasNewItems(PROJECTS_DATA.projects.map((p) => `${p.category}-${p.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`));
       case 'publications':
         // Publications items  
         return hasNewItems(PUBLICATIONS_DATA.entries.map((_, i) => `publication-${i}`));

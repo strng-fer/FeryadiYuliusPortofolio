@@ -207,6 +207,30 @@ export const PROJECTS_DATA: {
     description: "Research and applied projects across computer vision, deep learning, NLP, business intelligence, and operations research.",
     projects: [
         {
+            title: "NeuralLens: Platform Edukasi & Simulasi Interaktif Machine Learning & CNN",
+            category: "data-science",
+            description: "Platform edukasi dan simulasi interaktif berbasis web untuk memvisualisasikan konsep Machine Learning hingga Deep Learning secara 100% client-side di dalam peramban web. Menjembatani jurang antara teori matematika kalkulus/aljabar linier yang abstrak dan pustaka tingkat tinggi (PyTorch/TensorFlow) melalui manipulasi parameter real-time dengan kecepatan 60 FPS tanpa memerlukan instalasi Python maupun server backend.",
+            image: "/images/neurallens.png",
+            dataAiHint: "neurallens machine learning cnn simulation",
+            skills: ["Next.js", "React 19", "TypeScript", "Tailwind CSS v4", "Zustand", "KaTeX", "Framer Motion", "Machine Learning", "Deep Learning", "CNN"],
+            keyFeatures: [
+                "Sistem Penjelasan Dual-Mode: Mode Intuisi (analogi awam situasi nyata) dan Mode Matematika (formulasi KaTeX formal dengan variabel tertaut visual ke diagram simulasi)",
+                "Modul 01 — Optimasi & Gradient Descent: Visualisasi kurva lembah rugi kuadratik 2D L(w) = (w - 3)² + 1, eksplorasi learning rate (0.05 – 1.05) untuk konvergensi vs overshooting, serta kontrol Play/Pause, Step, dan Reset",
+                "Modul 02 — Neuron Tunggal (Perceptron): Klasifikasi cuaca biner (Cerah vs Hujan), simulasi penjumlahan terbobot & bias, fungsi aktivasi dinamis (Step, Sigmoid, ReLU), dan plot garis decision boundary real-time",
+                "Modul 03 — Jaringan Saraf Tiruan (MLP): Topologi SVG berlapis, visualisasi aliran sinyal forward pass, transmisi propagasi balik (backpropagation), dan pemantauan penurunan nilai galat Mean Squared Error (MSE)",
+                "Modul 04 — Penglihatan Komputer & CNN: Kanvas interaktif 8x8 untuk menggambar digit 1–5, operasi kernel konvolusi 3x3 dengan sliding window, matriks Feature Map 6x6, Max Pooling 3x3, dan distribusi probabilitas digit",
+                "Arsitektur 100% Client-Side: Seluruh logika aljabar linier, gradien, fungsi aktivasi, dan konvolusi berjalan murni di peramban tanpa latensi server, diekspor statis via GitHub Actions",
+                "Performa Tinggi 60 FPS: Pengelolaan state reaktif atomik menggunakan Zustand untuk menjamin manipulasi slider parameter mulus tanpa re-render pohon komponen berlebih",
+                "Algoritma Analytical Line Clipping: Penanganan garis pemisah keputusan perceptron pada ruang koordinat [0, 1] × [0, 1] secara analitis dengan penanganan nilai ambang batas (epsilon threshold)"
+            ],
+            techStack: ["Next.js (App Router)", "React 19", "TypeScript", "Tailwind CSS v4", "Zustand", "KaTeX", "Framer Motion", "Lucide React", "GitHub Pages"],
+            focus: ["Machine Learning", "Deep Learning", "Convolutional Neural Networks (CNN)", "Interactive Simulation", "Client-Side Computing", "AI Education"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"],
+            link: "https://strng-fer.github.io/neurallens/",
+            relatedUrl1: "https://github.com/strng-fer/neurallens"
+        },
+        {
             title: "Nutrition Facts AI — Extraction & Reconstruction",
             category: "data-science",
             description: "Aplikasi AI cerdas untuk mengekstrak Informasi Nilai Gizi (Nutrition Facts) dari gambar kemasan produk makanan atau minuman. Sistem ini secara otomatis memproses gambar mentah menjadi data JSON terstruktur yang siap digunakan, berjalan secara lokal menggunakan FastAPI yang melayani antarmuka web interaktif (Web UI) sekaligus REST API.",

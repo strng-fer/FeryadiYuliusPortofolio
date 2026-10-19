@@ -466,6 +466,13 @@ export default function Home() {
                             <DialogTrigger asChild>
                               <Button onClick={() => markAsViewed(projectId)}>View details</Button>
                             </DialogTrigger>
+                            {project.link && !project.link.includes('github.com') && (
+                              <Button asChild variant="outline">
+                                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                  <ExternalLink className="w-3.5 h-3.5" /> Live demo
+                                </a>
+                              </Button>
+                            )}
                             {videoDemo && (
                               <Button asChild variant="outline">
                                 <a href={videoDemo} target="_blank" rel="noopener noreferrer">
@@ -611,10 +618,14 @@ export default function Home() {
 
                         <div className="flex flex-wrap items-center gap-2 my-2">
                           {project.link && (
-                            <Button asChild size="sm" variant="outline" className="gap-2 text-xs font-semibold h-8 sm:h-9">
+                            <Button asChild size="sm" variant={!project.link.includes('github.com') ? "default" : "outline"} className={cn("gap-2 text-xs font-semibold h-8 sm:h-9", !project.link.includes('github.com') && "bg-primary hover:bg-primary/90 text-primary-foreground")}>
                               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                <LinkIcon className="w-3.5 h-3.5 text-primary shrink-0" />
-                                <span>{project.link.includes('github.com') ? 'Kode Sumber & Panduan (GitHub)' : 'View Project'}</span>
+                                {!project.link.includes('github.com') ? (
+                                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                                ) : (
+                                  <LinkIcon className="w-3.5 h-3.5 text-primary shrink-0" />
+                                )}
+                                <span>{project.link.includes('github.com') ? 'Kode Sumber & Panduan (GitHub)' : 'Buka Aplikasi / Demo Langsung'}</span>
                               </a>
                             </Button>
                           )}
@@ -622,7 +633,7 @@ export default function Home() {
                             <Button asChild size="sm" variant="outline" className="gap-2 text-xs font-semibold h-8 sm:h-9">
                               <a href={project.relatedUrl1} target="_blank" rel="noopener noreferrer">
                                 <LinkIcon className="w-3.5 h-3.5 text-primary shrink-0" />
-                                <span>{project.relatedUrl1.includes('github.com') ? 'View Source Code (GitHub)' : project.relatedUrl1.includes('youtu') ? 'Watch Video Demo (YouTube)' : 'Related Link'}</span>
+                                <span>{project.relatedUrl1.includes('github.com') ? 'Kode Sumber & Repositori (GitHub)' : project.relatedUrl1.includes('youtu') ? 'Watch Video Demo (YouTube)' : 'Tautan Terkait'}</span>
                               </a>
                             </Button>
                           )}
