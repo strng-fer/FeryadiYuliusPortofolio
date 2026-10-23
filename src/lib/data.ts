@@ -207,6 +207,29 @@ export const PROJECTS_DATA: {
     description: "Research and applied projects across computer vision, deep learning, NLP, business intelligence, and operations research.",
     projects: [
         {
+            title: "AI Portfolio Architect: Autonomous Blueprint & System Generator",
+            category: "data-science",
+            description: "Sistem orkestrasi AI Agent otonom berbasis CLI (Claude Code, OpenCode, Codex) yang menganalisis iklan lowongan kerja nyata, memetakan kesenjangan kompetensi (skill gaps), mengekstraksi referensi mutakhir dari GitHub dan ArXiv, lalu merancang Blueprint Proyek Portofolio berstandar produksi. Dilengkapi diagram arsitektur Mermaid otomatis, evaluasi kualitas bertingkat dengan persona Staff Engineer (Anti-CRUD rule & Google XYZ formula), serta kompilasi dokumen konseptual PDF.",
+            image: "/images/ai-portfolio-architect.png",
+            dataAiHint: "ai portfolio architect autonomous agent blueprint generator",
+            skills: ["AI Agents", "Python", "JobSpy", "Prompt Engineering", "Mermaid.js", "Puppeteer", "ArXiv API", "GitHub API", "Information Extraction", "LLM Workflows"],
+            keyFeatures: [
+                "Autonomous Job Scraping & Scoring: Pengikisan lowongan otomatis via JobSpy (Indeed, LinkedIn, Glassdoor) dan perangkingan kecocokan menggunakan Portfolio Leverage Score (Skill-Bridge 40%, Problem Clarity 30%, Reusability 30%)",
+                "Posting Guard (Prompt Injection Defense): Lapisan keamanan otomatis (posting_guard.py) yang membersihkan iklan lowongan kerja dari upaya prompt injection sebelum diproses oleh model LLM",
+                "Dual-Miner Knowledge Acquisition: Ekstraksi otomatis repositori GitHub relevan (mine_github.py) dan publikasi ilmiah ArXiv (mine_arxiv.py) dengan digest summarizer hemat token",
+                "Drafter-Reviewer Loop Architecture: Mekanisme evaluasi otomatis di mana draf rancangan dikritisi oleh persona Staff Engineer untuk memastikan kepatuhan Anti-CRUD Rule dan kelayakan arsitektur enterprise",
+                "Automated Mermaid Diagrams & PDF Compilation: Menghasilkan diagram alur data dan arsitektur Mermaid (.mmd) yang otomatis dirender ke PNG dan dikompilasi menjadi dokumen PDF elegan (md-to-pdf)",
+                "Executable Agent Prompt Pack: Menggenerasi bundle instruksi terstruktur (05_agent_prompts.md) berisi prompt konteks P0 dan milestone yang siap dieksekusi oleh AI coding agents (Cursor, Claude Code, Codex)",
+                "Token-Lean Discipline: Sistem peringkasan berlapis dan anggaran kata ketat pada setiap modul Markdown untuk efisiensi biaya komputasi dan batas konteks model"
+            ],
+            techStack: ["Python >= 3.10", "Claude Code / OpenCode CLI", "python-jobspy", "Node.js & Puppeteer", "@mermaid-js/mermaid-cli", "md-to-pdf", "Jina Reader API", "ArXiv API", "GitHub REST API"],
+            focus: ["Autonomous AI Agents", "LLM Architecture & Guardrails", "Job Market Intelligence", "Anti-CRUD Engineering", "System Blueprint Design", "Automated Diagramming & Publishing"],
+            year: "Current project",
+            collaborators: ["Feryadi Yulius"],
+            link: "https://github.com/strng-fer/ai-portfolio-architect",
+            relatedUrl1: "https://github.com/strng-fer/ai-portfolio-architect/blob/main/README.id.md"
+        },
+        {
             title: "NeuralLens: Platform Edukasi & Simulasi Interaktif Machine Learning & CNN",
             category: "data-science",
             description: "Platform edukasi dan simulasi interaktif berbasis web untuk memvisualisasikan konsep Machine Learning hingga Deep Learning secara 100% client-side di dalam peramban web. Menjembatani jurang antara teori matematika kalkulus/aljabar linier yang abstrak dan pustaka tingkat tinggi (PyTorch/TensorFlow) melalui manipulasi parameter real-time dengan kecepatan 60 FPS tanpa memerlukan instalasi Python maupun server backend.",
