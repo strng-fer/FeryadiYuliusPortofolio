@@ -2,6 +2,7 @@ import { Github, Linkedin, Phone, Mail, MapPin, Award, FileText, Presentation } 
 
 export const NAV_LINKS = [
     { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Work', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Writing', href: '#publications' },
@@ -33,7 +34,9 @@ export interface SkillItem {
     name: string;
     logo: string;
     secondaryLogo?: string;
+    logos?: string[];
     category: string;
+    group?: 'agentic' | 'deeplearning' | 'engineering' | 'analytics';
     description: string;
 }
 
@@ -42,105 +45,129 @@ export const SKILLS_DATA: {
     description: string;
     skills: SkillItem[];
 } = {
-    title: "Tools I Work With",
-    description: "A practical toolkit of software, frameworks, and developer platforms for data science, AI engineering, and research.",
+    title: "Tools & Agentic Ecosystem",
+    description: "A specialized toolkit spanning Agentic AI IDEs, CLI autonomous agents, deep learning frameworks, and modern data platforms.",
     skills: [
+        {
+            name: 'Antigravity & Agentic CLI',
+            logo: '/logos/antigravity.svg',
+            secondaryLogo: '/logos/claude.svg',
+            logos: [
+                '/logos/antigravity.svg',
+                '/logos/claude.svg',
+                '/logos/opencode.svg',
+                '/logos/pi.svg',
+                '/logos/9router.svg'
+            ],
+            category: 'Agentic IDE & CLI',
+            group: 'agentic',
+            description: "Unified autonomous developer stack: Google Antigravity IDE orchestrator paired with Claude Code, OpenCode, and Pi CLI agents, routed through 9Router."
+        },
         {
             name: 'Python',
             logo: '/logos/python.svg',
             category: 'Core Language',
+            group: 'engineering',
             description: "Core programming language for end-to-end data analysis, machine learning modeling, computer vision, and backend development."
         },
         {
             name: 'PyTorch',
             logo: '/logos/pytorch.svg',
             category: 'Deep Learning',
+            group: 'deeplearning',
             description: "Leading open-source deep learning framework for constructing and training neural networks, CNNs, and computer vision pipelines."
-        },
-        {
-            name: 'Google Colab',
-            logo: '/logos/colab.svg',
-            category: 'Cloud Notebook',
-            description: "Hosted Jupyter notebook service with free GPU/TPU acceleration for rapid prototyping and compute-intensive model training."
-        },
-        {
-            name: 'Google Antigravity',
-            logo: '/logos/antigravity.svg',
-            category: 'Agentic AI IDE',
-            description: "Google's next-generation agentic AI development platform and IDE for autonomous coding, orchestration, and agent workflows."
-        },
-        {
-            name: 'VS Code',
-            logo: '/logos/vscode.svg',
-            category: 'Code Editor',
-            description: "Primary development environment configured with Python extensions, debugging utilities, and integrated Git workflows."
-        },
-        {
-            name: 'Jupyter',
-            logo: '/logos/jupyter.svg',
-            category: 'Data Science Notebook',
-            description: "Interactive computational notebooks for exploratory data analysis, statistical visualization, and reproducible research."
         },
         {
             name: 'Ultralytics YOLO',
             logo: '/logos/yolo.svg',
             category: 'Computer Vision',
+            group: 'deeplearning',
             description: "State-of-the-art real-time object detection and segmentation framework powering precision agriculture and infrastructure monitoring."
         },
         {
             name: 'OpenCV',
             logo: '/logos/opencv.svg',
             category: 'Computer Vision',
+            group: 'deeplearning',
             description: "Comprehensive computer vision library for image manipulation, video capture, bounding boxes, and visual preprocessing."
         },
         {
             name: 'Hugging Face',
             logo: '/logos/huggingface.svg',
             category: 'AI & NLP Hub',
+            group: 'deeplearning',
             description: "The AI community platform for state-of-the-art Transformer models, embeddings, datasets, and natural language pipelines."
         },
         {
             name: 'Streamlit',
             logo: '/logos/streamlit.svg',
             category: 'App Framework',
+            group: 'analytics',
             description: "Fast Python web app framework to build and deploy interactive user interfaces for machine learning and data products."
         },
         {
             name: 'Power BI',
             logo: '/logos/powerbi.svg',
             category: 'Business Intelligence',
+            group: 'analytics',
             description: "Enterprise business intelligence platform for creating interactive executive dashboards, automated reporting, and KPI tracking."
+        },
+        {
+            name: 'Docker',
+            logo: '/logos/docker.svg',
+            category: 'Containerization',
+            group: 'engineering',
+            description: "Containerization platform ensuring isolated, reproducible environments and smooth deployment of AI/ML services."
         },
         {
             name: 'Git & GitHub',
             logo: '/logos/git.svg',
             secondaryLogo: '/logos/github.svg',
             category: 'Version Control',
+            group: 'engineering',
             description: "Distributed version control system and cloud platform for managing codebases, collaboration, and open-source projects."
         },
         {
-            name: 'Notion',
-            logo: '/logos/notion.svg',
-            category: 'Productivity & Wiki',
-            description: "Connected workspace for structuring research notes, thesis literature reviews, sprint planning, and knowledge management."
+            name: 'Google Colab',
+            logo: '/logos/colab.svg',
+            category: 'Cloud Notebook',
+            group: 'engineering',
+            description: "Hosted Jupyter notebook service with free GPU/TPU acceleration for rapid prototyping and compute-intensive model training."
         },
         {
-            name: 'Docker',
-            logo: '/logos/docker.svg',
-            category: 'Containerization',
-            description: "Containerization platform ensuring isolated, reproducible environments and smooth deployment of AI/ML services."
+            name: 'VS Code',
+            logo: '/logos/vscode.svg',
+            category: 'Code Editor',
+            group: 'engineering',
+            description: "Primary development environment configured with Python extensions, debugging utilities, and integrated Git workflows."
         },
         {
-            name: 'Kaggle',
-            logo: '/logos/kaggle.svg',
-            category: 'Data Platform',
-            description: "Platform for predictive modeling competitions, benchmark dataset exploration, and community data science notebooks."
+            name: 'Jupyter',
+            logo: '/logos/jupyter.svg',
+            category: 'Data Science Notebook',
+            group: 'engineering',
+            description: "Interactive computational notebooks for exploratory data analysis, statistical visualization, and reproducible research."
         },
         {
             name: 'R',
             logo: '/logos/r.svg',
             category: 'Statistical Computing',
+            group: 'analytics',
             description: "Statistical programming environment for rigorous hypothesis testing, econometric modeling, and publication graphics."
+        },
+        {
+            name: 'Kaggle',
+            logo: '/logos/kaggle.svg',
+            category: 'Data Platform',
+            group: 'analytics',
+            description: "Platform for predictive modeling competitions, benchmark dataset exploration, and community data science notebooks."
+        },
+        {
+            name: 'Notion',
+            logo: '/logos/notion.svg',
+            category: 'Productivity & Wiki',
+            group: 'analytics',
+            description: "Connected workspace for structuring research notes, thesis literature reviews, sprint planning, and knowledge management."
         },
     ]
 };
@@ -521,18 +548,25 @@ export const EXPERIENCE_DATA = {
     description: "Engineering and research experience in applied AI, computer vision, and data science.",
     entries: [
         {
-            date: "August 2025 – Present",
+            date: "October 2026 – Present",
             title: "AI Engineer",
             company: "Great Giant Foods (GGF)",
             logo: "/images/logo-ggf.png",
-            description: "Developed deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery."
+            description: "Developing deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery."
+        },
+        {
+            date: "August 2026 – October 2026",
+            title: "Data Science Thesis Student",
+            company: "Badan Riset dan Inovasi Nasional (BRIN RI)",
+            logo: "/images/logo-brin.png",
+            description: "Conducted bachelor thesis research evaluating Faster R-CNN and YOLO deep learning architectures for coastal water object detection and ecological monitoring, optimizing trade-offs between precision, mAP, and real-time inference latency."
         },
         {
             date: "June 2025 – August 2025",
             title: "Data Science Intern",
-            company: "Badan Riset dan Inovasi Nasional (BRIN)",
+            company: "Badan Riset dan Inovasi Nasional (BRIN RI)",
             logo: "/images/logo-brin.png",
-            description: "Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan)."
+            description: "Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan with copyright registration)."
         },
     ]
 }
@@ -542,15 +576,15 @@ export const OTHER_EXPERIENCE_DATA = {
     description: "Teaching, tutoring, and academic support roles.",
     entries: [
         {
-            date: "January 2026 – present",
+            date: "January 2026 – October 2026",
             title: "Programming Teacher",
             company: "Timedoor Academy · Bandar Lampung",
             logo: "/images/timedoorlogo.jpg",
-            description: "Teach programming to students aged 5 to 18 across game development, web development, mobile apps, IoT, and artificial intelligence, coaching students from their first line of code to completed projects."
+            description: "Taught programming to students aged 5 to 18 across game development, web development, mobile apps, IoT, and artificial intelligence, coaching students from their first line of code to completed projects."
         },
         {
             date: "June 2026 – July 2026",
-            title: "Main Teacher",
+            title: "Master Teacher",
             company: "Akademia by Ruangguru · Bandar Lampung",
             logo: "/images/ruangguru.jpg",
             description: "Delivered CPNS preparation sessions covering verbal reasoning (Penalaran Umum - TIU), numerical logic, and mathematics at exam speed."

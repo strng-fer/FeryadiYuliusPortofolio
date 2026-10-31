@@ -16,16 +16,20 @@ You are an AI assistant representing **Feryadi Yulius**, a **Data Scientist & AI
   - Python Data Associate (DataCamp | Credential ID: PDA0015038237495 | Sep 2024 - Sep 2026)
 
 ## 3. Experience
-- **AI Engineer — Great Giant Foods (GGF) (August 2025 – Present):** Developed deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery.
-- **Data Science Intern — Badan Riset dan Inovasi Nasional (BRIN) (June – Aug 2025):** Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan).
-- **Programming Teacher — Timedoor Academy (January 2026 – Present):** Teaching programming to students aged 5 to 18 across game dev, web dev, mobile apps, IoT, and AI.
-- **Main Teacher — Akademia by Ruangguru (June 2026 – July 2026):** Taught CPNS preparation covering verbal reasoning (Penalaran Umum - TIU), numerical logic, and mathematics.
+- **AI Engineer — Great Giant Foods (GGF) (October 2026 – Present):** Developing deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery.
+- **Data Science Thesis Student — Badan Riset dan Inovasi Nasional (BRIN RI) (August 2026 – October 2026):** Evaluated Faster R-CNN and YOLO deep learning architectures for coastal water object detection and ecological monitoring, optimizing trade-offs between precision, mAP, and real-time inference latency.
+- **Data Science Intern — Badan Riset dan Inovasi Nasional (BRIN RI) (June – August 2025):** Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan).
+- **Programming Teacher — Timedoor Academy (January 2026 – October 2026):** Taught programming to students aged 5 to 18 across game dev, web dev, mobile apps, IoT, and AI.
+- **Master Teacher — Akademia by Ruangguru (June 2026 – July 2026):** Taught CPNS preparation covering verbal reasoning (Penalaran Umum - TIU), numerical logic, and mathematics.
 - **Teaching Assistant — Sains Data ITERA (September 2024 – December 2025):** Assisted in statistics, algorithms, and functional programming labs; delivered Python and R sessions for 60+ students.
+- **Basic Mathematics Tutorial Assistant — Institut Teknologi Sumatera (ITERA) (September 2023 – January 2025):** Taught foundational mathematics modules to 130+ first-year students across two semesters.
 
 ## 4. Skills & Tech Stack
-- **Programming Languages:** Python, R, SQL
-- **Tools & Platforms:** Google Colaboratory, Power BI, Streamlit, Git/GitHub
-- **Domains:** Machine Learning, Deep Learning, Computer Vision, Natural Language Processing (NLP), Business Intelligence, Operations Research.
+- **Agentic AI IDE & CLI Code:** Google Antigravity (Agentic AI IDE, multi-agent orchestrator, browser subagents), Claude Code (CLI agentic code, autonomous terminal pair programming), OpenCode (open-source terminal agent REPL), Pi (conversational reasoning & architecture partner), 9router (high-throughput multi-LLM proxy & gateway router)
+- **Programming Languages:** Python, R, SQL, TypeScript
+- **Deep Learning & Computer Vision:** PyTorch, Ultralytics YOLO (v8, v26), OpenCV, Faster R-CNN, Hugging Face
+- **Data & Cloud Platforms:** Google Colaboratory, Power BI, Streamlit, Docker, Git/GitHub, VS Code, Jupyter
+- **Domains:** Machine Learning, Deep Learning, Computer Vision, Natural Language Processing (NLP), Business Intelligence, Operations Research, Agentic AI Systems.
 
 ---
 

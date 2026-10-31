@@ -30,6 +30,7 @@ import {
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PixelCard } from '@/components/ui/pixel-card';
+import { ExperienceJourneyMap } from '@/components/experience-journey-map';
 import { cn } from '@/lib/utils';
 import { 
   ExternalLink, 
@@ -69,11 +70,17 @@ import { FloatingRobotButton } from '@/components/floating-robot-button';
 export default function Home() {
   const { isViewed, markAsViewed, isLoaded } = useViewedItems();
   const [selectedCategory, setSelectedCategory] = useState<'all' | ProjectCategory>('all');
+  const [selectedSkillCategory, setSelectedSkillCategory] = useState<'all' | 'agentic' | 'deeplearning' | 'engineering' | 'analytics'>('all');
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'all') return PROJECTS_DATA.projects;
     return PROJECTS_DATA.projects.filter(p => p.category === selectedCategory);
   }, [selectedCategory]);
+
+  const filteredSkills = useMemo(() => {
+    if (selectedSkillCategory === 'all') return SKILLS_DATA.skills;
+    return SKILLS_DATA.skills.filter(s => s.group === selectedSkillCategory);
+  }, [selectedSkillCategory]);
 
   const categoryCounts = useMemo(() => {
     return {
@@ -209,6 +216,50 @@ export default function Home() {
           </SectionWrapper>
 
           <SectionWrapper id="skills" title={SKILLS_DATA.title} description={SKILLS_DATA.description}>
+            {/* Category Filter for Skills Grid */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+              <Button
+                size="sm"
+                variant={selectedSkillCategory === 'all' ? 'default' : 'outline'}
+                onClick={() => setSelectedSkillCategory('all')}
+                className={cn("h-8 text-xs font-headline rounded-lg", selectedSkillCategory === 'all' && "bg-primary text-primary-foreground font-bold")}
+              >
+                All Tools ({SKILLS_DATA.skills.length})
+              </Button>
+              <Button
+                size="sm"
+                variant={selectedSkillCategory === 'agentic' ? 'default' : 'outline'}
+                onClick={() => setSelectedSkillCategory('agentic')}
+                className={cn("h-8 text-xs font-headline rounded-lg", selectedSkillCategory === 'agentic' && "bg-primary text-primary-foreground font-bold")}
+              >
+                🤖 Agentic AI & CLI ({SKILLS_DATA.skills.filter(s => s.group === 'agentic').length})
+              </Button>
+              <Button
+                size="sm"
+                variant={selectedSkillCategory === 'deeplearning' ? 'default' : 'outline'}
+                onClick={() => setSelectedSkillCategory('deeplearning')}
+                className={cn("h-8 text-xs font-headline rounded-lg", selectedSkillCategory === 'deeplearning' && "bg-primary text-primary-foreground font-bold")}
+              >
+                🧠 Deep Learning & CV (4)
+              </Button>
+              <Button
+                size="sm"
+                variant={selectedSkillCategory === 'engineering' ? 'default' : 'outline'}
+                onClick={() => setSelectedSkillCategory('engineering')}
+                className={cn("h-8 text-xs font-headline rounded-lg", selectedSkillCategory === 'engineering' && "bg-primary text-primary-foreground font-bold")}
+              >
+                💻 Engineering & Cloud (6)
+              </Button>
+              <Button
+                size="sm"
+                variant={selectedSkillCategory === 'analytics' ? 'default' : 'outline'}
+                onClick={() => setSelectedSkillCategory('analytics')}
+                className={cn("h-8 text-xs font-headline rounded-lg", selectedSkillCategory === 'analytics' && "bg-primary text-primary-foreground font-bold")}
+              >
+                📊 Analytics & BI (5)
+              </Button>
+            </div>
+
             <TooltipProvider>
               <motion.div 
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5"
@@ -225,8 +276,9 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
+                key={selectedSkillCategory}
               >
-                {SKILLS_DATA.skills.map((skill, index) => (
+                {filteredSkills.map((skill, index) => (
                   <Tooltip key={skill.name}>
                     <TooltipTrigger asChild>
                       <PixelCard 
@@ -249,10 +301,34 @@ export default function Home() {
                             }
                           }}
                           viewport={{ once: true }}
-                          whileHover={{ scale: 1.15, rotate: [0, -3, 3, 0], transition: { duration: 0.3 } }}
-                          className="w-16 h-16 sm:w-20 sm:h-20 mb-3 rounded-2xl flex items-center justify-center p-3 bg-muted/40 dark:bg-muted/20 border border-border/50 group-hover:border-accent/40 group-hover:shadow-lg group-hover:shadow-accent/10 transition-all duration-300"
+                          whileHover={{ scale: 1.08, transition: { duration: 0.25 } }}
+                          className={cn(
+                            "mb-3 rounded-2xl flex items-center justify-center p-2.5 bg-muted/40 dark:bg-muted/20 border border-border/50 group-hover:border-accent/40 group-hover:shadow-lg group-hover:shadow-accent/10 transition-all duration-300",
+                            skill.logos && skill.logos.length > 2 
+                              ? "w-full max-w-[145px] h-16 sm:h-20 px-1.5" 
+                              : "w-16 h-16 sm:w-20 sm:h-20"
+                          )}
                         >
-                          {skill.secondaryLogo ? (
+                          {skill.logos && skill.logos.length > 0 ? (
+                            <div className="flex items-center justify-center -space-x-2 sm:-space-x-2.5">
+                              {skill.logos.map((logoItem, lIdx) => (
+                                <div
+                                  key={lIdx}
+                                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-background/95 p-1 border border-border/80 shadow-md flex items-center justify-center transition-all duration-200 hover:scale-130 hover:z-30 hover:border-accent group/sublogo"
+                                  style={{ zIndex: skill.logos.length - lIdx }}
+                                >
+                                  <Image 
+                                    src={logoItem} 
+                                    alt={`${skill.name} ${lIdx + 1}`} 
+                                    width={28} 
+                                    height={28} 
+                                    unoptimized
+                                    className="w-full h-full object-contain drop-shadow-sm transition-transform group-hover/sublogo:scale-110"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          ) : skill.secondaryLogo ? (
                             <div className="flex items-center justify-center -space-x-2">
                               <Image 
                                 src={skill.logo} 
@@ -667,106 +743,14 @@ export default function Home() {
             </motion.div>
           </SectionWrapper>
 
-          <SectionWrapper id="experience" title={EXPERIENCE_DATA.title} description={EXPERIENCE_DATA.description}>
-            <motion.div 
-              className="relative max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <div className="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-border -translate-x-1/2"></div>
-              {EXPERIENCE_DATA.entries.map((item, index) => (
-                <motion.div 
-                  key={index} 
-                  className="relative mb-8 pl-8 md:pl-0"
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, y: 30 }}
-                  whileInView={{ 
-                    opacity: 1, 
-                    x: 0, 
-                    y: 0,
-                    transition: {
-                      delay: index * 0.2,
-                      type: "spring",
-                      stiffness: 120,
-                      damping: 15,
-                      duration: 0.8
-                    }
-                  }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <motion.div 
-                    className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-primary rounded-full -translate-x-1/2 border-4 border-background"
-                    initial={{ scale: 0 }}
-                    whileInView={{ 
-                      scale: 1,
-                      transition: {
-                        delay: index * 0.2 + 0.3,
-                        type: "spring",
-                        stiffness: 200,
-                        damping: 10
-                      }
-                    }}
-                    viewport={{ once: true }}
-                  ></motion.div>
-                  <div className={ `w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}` }>
-                    <PixelCard delay={index * 0.1}>
-                      <div className="p-6">
-                        <motion.div 
-                          className="flex items-start gap-4"
-                          variants={itemVariants}
-                        >
-                          <Avatar className="w-12 h-12 pixel-border shrink-0 bg-white">
-                            <AvatarImage src={item.logo} alt={`${item.company} logo`} className="image-pixelated object-contain" />
-                            <AvatarFallback>{item.company.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                          <div className="flex-grow">
-                            <p className="text-sm text-muted-foreground">{item.date}</p>
-                            <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
-                            <h4 className="font-semibold">{item.company}</h4>
-                          </div>
-                        </motion.div>
-                        <ScrollArea className="h-40 pr-4 mt-4">
-                          <p className="text-muted-foreground">{item.description}</p>
-                        </ScrollArea>
-                      </div>
-                    </PixelCard>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </SectionWrapper>
-
-          <SectionWrapper id="other-experience" title={OTHER_EXPERIENCE_DATA.title} description={OTHER_EXPERIENCE_DATA.description}>
-            <motion.div className="relative max-w-3xl mx-auto" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, margin: "-50px" }}>
-              <div className="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-border -translate-x-1/2"></div>
-              {OTHER_EXPERIENCE_DATA.entries.map((item, index) => (
-                <motion.div key={item.title + item.company} className="relative mb-8 pl-8 md:pl-0" initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }}>
-                  <div className="absolute left-4 md:left-1/2 top-1 w-4 h-4 bg-accent rounded-full -translate-x-1/2 border-4 border-background"></div>
-                  <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:ml-auto md:pr-12 md:text-right'}`}>
-                    <PixelCard delay={index * 0.1}>
-                      <div className="p-6">
-                        <div className="flex items-start gap-4">
-                          <Avatar className="w-12 h-12 pixel-border shrink-0 bg-white">
-                            <AvatarImage src={item.logo} alt={`${item.company} logo`} className="image-pixelated object-contain" />
-                            <AvatarFallback>{item.company.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                          <div className="flex-grow">
-                            <p className="text-sm text-muted-foreground">{item.date}</p>
-                            <h3 className="font-headline text-xl font-bold text-primary mt-1">{item.title}</h3>
-                            <h4 className="font-semibold">{item.company}</h4>
-                          </div>
-                        </div>
-                        <p className="text-muted-foreground mt-4">{item.description}</p>
-                      </div>
-                    </PixelCard>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+          <SectionWrapper 
+            id="experience" 
+            title="Experience & Questline" 
+            description="An interactive milestone map tracing my path across applied AI engineering, deep learning research, and technical mentorship."
+          >
+            <div id="other-experience" className="w-full">
+              <ExperienceJourneyMap />
+            </div>
           </SectionWrapper>
           
           <SectionWrapper id="education" title={EDUCATION_DATA.title}>
