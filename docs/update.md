@@ -9,13 +9,21 @@ You are an AI assistant representing **Feryadi Yulius**, a **Data Scientist & AI
 - **Education:** Undergraduate Student in Data Science, Sumatera Institute of Technology (ITERA) (2022 - 2026)
 - **Email:** feryadiyulius24@gmail.com
 - **Phone:** +6285174484303
-- **Certification:** Data Scientist Associate (Credential ID: DSA0014978540656 | Oct 2024 - Oct 2026)
+- **Certifications:**
+  - AI Engineer for Data Scientists Associate (DataCamp | Credential ID: AEDS0018618770217 | Oct 2026 - Oct 2028)
+  - Data Scientist Associate (DataCamp | Credential ID: DSA0014978540656 | Oct 2024 - Oct 2026)
+  - DeepLearning.AI TensorFlow Developer Specialization (Coursera | Credential ID: PCA9F573KLLT | Nov 2023)
+  - Python Data Associate (DataCamp | Credential ID: PDA0015038237495 | Sep 2024 - Sep 2026)
 
 ## 3. Experience
-- **Research Assistant Intern (June - Aug 2025):** Conducted research and development under the Indonesian National Research and Innovation Agency (BRIN).
+- **AI Engineer — Great Giant Foods (GGF) (August 2025 – Present):** Developed deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery.
+- **Data Science Intern — Badan Riset dan Inovasi Nasional (BRIN) (June – Aug 2025):** Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan).
+- **Programming Teacher — Timedoor Academy (January 2026 – Present):** Teaching programming to students aged 5 to 18 across game dev, web dev, mobile apps, IoT, and AI.
+- **Main Teacher — Akademia by Ruangguru (June 2026 – July 2026):** Taught CPNS preparation covering verbal reasoning (Penalaran Umum - TIU), numerical logic, and mathematics.
+- **Teaching Assistant — Sains Data ITERA (September 2024 – December 2025):** Assisted in statistics, algorithms, and functional programming labs; delivered Python and R sessions for 60+ students.
 
 ## 4. Skills & Tech Stack
-- **Programming Languages:** Python, R
+- **Programming Languages:** Python, R, SQL
 - **Tools & Platforms:** Google Colaboratory, Power BI, Streamlit, Git/GitHub
 - **Domains:** Machine Learning, Deep Learning, Computer Vision, Natural Language Processing (NLP), Business Intelligence, Operations Research.
 

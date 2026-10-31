@@ -518,14 +518,21 @@ export const PROJECTS_DATA: {
 
 export const EXPERIENCE_DATA = {
     title: "Experience",
-    description: "Research and development experience in applied data science and AI.",
+    description: "Engineering and research experience in applied AI, computer vision, and data science.",
     entries: [
         {
+            date: "August 2025 – Present",
+            title: "AI Engineer",
+            company: "Great Giant Foods (GGF)",
+            logo: "/images/logo-ggf.png",
+            description: "Developed deep learning and computer vision pipelines for precision agriculture, specializing in real-time pineapple detection, automated fruit counting, and plantation yield monitoring using YOLO and PyTorch from aerial drone and field camera imagery."
+        },
+        {
             date: "June 2025 – August 2025",
-            title: "Research Assistant Intern",
+            title: "Data Science Intern",
             company: "Badan Riset dan Inovasi Nasional (BRIN)",
             logo: "/images/logo-brin.png",
-            description: "Conducted research and development activities under the Indonesian National Research and Innovation Agency, supporting applied computational work in data processing, analysis, and AI."
+            description: "Built a deep learning classifier for phytoplankton species recognition from coastal water samples, trained 13 CNN architectures across 10,000+ augmented images, and deployed web and Android prototypes (PlanktoScan)."
         },
     ]
 }
@@ -536,31 +543,31 @@ export const OTHER_EXPERIENCE_DATA = {
     entries: [
         {
             date: "January 2026 – present",
-            title: "Part-time Programming Teacher",
+            title: "Programming Teacher",
             company: "Timedoor Academy · Bandar Lampung",
             logo: "/images/timedoorlogo.jpg",
-            description: "Teach programming logic and coding for students aged 5–18 through age-appropriate lessons, hands-on activities, and guided practice across AI, coding, IoT, and robotics."
+            description: "Teach programming to students aged 5 to 18 across game development, web development, mobile apps, IoT, and artificial intelligence, coaching students from their first line of code to completed projects."
         },
         {
-            date: "June 2026 – present",
-            title: "Part-time Teacher",
-            company: "Ruangguru · Bandar Lampung",
+            date: "June 2026 – July 2026",
+            title: "Main Teacher",
+            company: "Akademia by Ruangguru · Bandar Lampung",
             logo: "/images/ruangguru.jpg",
-            description: "Teach TIU for CASN preparation, focusing on verbal reasoning, numerical logic, analytical thinking, and test-taking strategies."
+            description: "Delivered CPNS preparation sessions covering verbal reasoning (Penalaran Umum - TIU), numerical logic, and mathematics at exam speed."
         },
         {
-            date: "November 2025 – January 2026",
-            title: "Part-time Teacher",
-            company: "Bimbel Ruang Juara",
-            logo: "/images/logo-sman1lubaiulu.png",
-            description: "Provided one-on-one tutoring in basic literacy and numeracy for early learners using personalized teaching methods."
+            date: "September 2024 – December 2025",
+            title: "Teaching Assistant, Statistics & Programming",
+            company: "Sains Data ITERA",
+            logo: "/images/logo-sainsdata.png",
+            description: "Four semesters assisting in statistics, algorithms, and functional programming labs; delivered Python and R sessions for 60+ students and managed course assessments."
         },
         {
-            date: "September 2023 – June 2026",
-            title: "Tutorial & Practicum Assistant",
-            company: "Sumatera Institute of Technology",
+            date: "September 2023 – January 2025",
+            title: "Basic Mathematics Tutorial Assistant",
+            company: "Sumatera Institute of Technology (ITERA)",
             logo: "/images/logo-itera.png",
-            description: "Supported undergraduate tutorials and practicums through academic mentoring, practicum supervision, grading, and assessment across mathematics, statistics, optimization, data mining, programming, and algorithms."
+            description: "Taught foundational mathematics to 130+ first-year students across two semesters with self-study modules and interactive workshops."
         },
     ]
 }
@@ -642,19 +649,50 @@ export const PUBLICATIONS_DATA = {
 
 export const CERTIFICATIONS_DATA = {
     title: "Professional Certifications",
-    description: "Verified DataCamp credentials and their validity periods.",
+    description: "Verified credentials from DataCamp and Coursera.",
     entries: [
         {
-            name: "AI Engineer for Data Scientists Associate certificate",
+            name: "AI Engineer for Data Scientists Associate",
             issuer: "DataCamp",
             url: "https://www.datacamp.com/certificate/AEDS0018618770217",
             credentialId: "AEDS0018618770217",
             issueDate: "October 2026",
             expirationDate: "October 2028",
         },
-
         {
-            name: "Associate Data Scientist",
+            name: "DeepLearning.AI TensorFlow Developer Specialization",
+            issuer: "Coursera",
+            url: "https://www.coursera.org/account/accomplishments/verify/PCA9F573KLLT",
+            credentialId: "PCA9F573KLLT",
+            issueDate: "November 2023",
+            expirationDate: "No Expiration",
+        },
+        {
+            name: "Convolutional Neural Networks in TensorFlow",
+            issuer: "Coursera",
+            url: "https://www.coursera.org/account/accomplishments/verify/LUPEMUBKQFGN",
+            credentialId: "LUPEMUBKQFGN",
+            issueDate: "November 2023",
+            expirationDate: "No Expiration",
+        },
+        {
+            name: "Natural Language Processing in TensorFlow",
+            issuer: "Coursera",
+            url: "https://www.coursera.org/account/accomplishments/verify/NGD73KVHVSYT",
+            credentialId: "NGD73KVHVSYT",
+            issueDate: "November 2023",
+            expirationDate: "No Expiration",
+        },
+        {
+            name: "Sequences, Time Series and Prediction",
+            issuer: "Coursera",
+            url: "https://www.coursera.org/account/accomplishments/verify/6P25BSUG5M63",
+            credentialId: "6P25BSUG5M63",
+            issueDate: "November 2023",
+            expirationDate: "No Expiration",
+        },
+        {
+            name: "Data Scientist Associate",
             issuer: "DataCamp",
             url: "https://www.datacamp.com/certificate/DSA0014978540656",
             credentialId: "DSA0014978540656",
